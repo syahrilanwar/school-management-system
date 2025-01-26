@@ -23,39 +23,50 @@ const verificationLinkSent = computed(
 
 <template>
     <GuestLayout>
-        <Head title="Email Verification" />
-
-        <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-            Thanks for signing up! Before getting started, could you verify your
-            email address by clicking on the link we just emailed to you? If you
-            didn't receive the email, we will gladly send you another.
-        </div>
+        <Head title="Email Verifikasi" />
 
         <div
-            class="mb-4 text-sm font-medium text-green-600 dark:text-green-400"
-            v-if="verificationLinkSent"
+            class="w-full rounded-lg bg-white p-6 shadow dark:border dark:border-gray-700 dark:bg-gray-800 sm:max-w-md sm:p-8 md:mt-0"
         >
-            A new verification link has been sent to the email address you
-            provided during registration.
-        </div>
-
-        <form @submit.prevent="submit">
-            <div class="mt-4 flex items-center justify-between">
+            <h1
+                class="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl"
+            >
+                Verifikasi email Anda
+            </h1>
+            <p class="font-light text-gray-500 dark:text-gray-400">
+                Terima kasih telah mendaftar! Sebelum memulai, bisakah Anda
+                memverifikasi alamat email Anda dengan mengklik tautan yang baru
+                saja kami kirimkan ke email Anda? Jika Anda tidak menerima email
+                tersebut, kami dengan senang hati akan mengirimkan yang baru.
+            </p>
+            <div
+                class="mb-4 text-sm font-medium text-green-600 dark:text-green-400"
+                v-if="verificationLinkSent"
+            >
+                Tautan verifikasi baru telah dikirimkan ke alamat email yang
+                Anda berikan saat pendaftaran.
+            </div>
+            <form
+                @submit.prevent="submit"
+                class="mt-4 space-y-4 md:space-y-5 lg:mt-5"
+            >
                 <PrimaryButton
+                    class="w-full"
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
                 >
-                    Resend Verification Email
+                    Kirim Ulang Verifikasi Email
                 </PrimaryButton>
-
-                <Link
-                    :href="route('logout')"
-                    method="post"
-                    as="button"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
-                    >Log Out</Link
-                >
-            </div>
-        </form>
+                <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                    <Link
+                        :href="route('logout')"
+                        method="post"
+                        as="button"
+                        class="text-primary-600 dark:text-primary-500 font-medium hover:underline"
+                        >Keluar</Link
+                    >
+                </p>
+            </form>
+        </div>
     </GuestLayout>
 </template>
