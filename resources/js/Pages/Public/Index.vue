@@ -1,5 +1,15 @@
+<script>
+import { initFlowbite } from 'flowbite';
+
+export default {
+    mounted() {
+        initFlowbite();
+    },
+};
+</script>
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 
 defineProps({
     canLogin: {
@@ -19,27 +29,23 @@ defineProps({
             class="z-50 border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
         >
             <div
-                class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
+                class="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4"
             >
-                <a
-                    href="#"
+                <Link
+                    href="/"
                     class="flex items-center space-x-3 rtl:space-x-reverse"
                 >
-                    <img
-                        src="/assets/icons/main-school-logo.png"
-                        class="h-12"
-                        alt="School Logo"
-                    />
-                </a>
+                    <ApplicationLogo class="h-12" />
+                </Link>
                 <div
                     class="flex items-center space-x-1 md:order-2 md:space-x-2 rtl:space-x-reverse"
                 >
                     <Link
                         v-if="$page.props.auth.user"
-                        :href="route('dashboard')"
+                        :href="route('portal')"
                         class="rounded-lg bg-yellow-300 px-4 py-2 text-base font-medium text-white hover:bg-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800 md:px-5 md:py-2.5"
                     >
-                        Portal
+                        Portal Anggota
                     </Link>
                     <template v-else>
                         <Link
