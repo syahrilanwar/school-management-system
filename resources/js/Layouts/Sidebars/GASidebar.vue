@@ -68,38 +68,38 @@ import { Link } from '@inertiajs/vue3';
                     </button>
                     <ul id="dropdown-approval" class="hidden space-y-2 py-2">
                         <li>
-                            <a
+                            <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Peralatan & Pemeliharaan</a
+                                >Peralatan & Pemeliharaan</Link
                             >
                         </li>
                         <li>
-                            <a
+                            <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Acara</a
+                                >Acara</Link
                             >
                         </li>
                         <li>
-                            <a
+                            <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Instalasi & Perbaikan</a
+                                >Instalasi & Perbaikan</Link
                             >
                         </li>
                         <li>
-                            <a
+                            <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Material</a
+                                >Material</Link
                             >
                         </li>
                         <li>
-                            <a
+                            <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Kendaraan</a
+                                >Kendaraan</Link
                             >
                         </li>
                     </ul>
@@ -155,10 +155,10 @@ import { Link } from '@inertiajs/vue3';
                     </button>
                     <ul id="dropdown-setting" class="hidden space-y-2 py-2">
                         <li>
-                            <a
+                            <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Petugas Persetujuan</a
+                                >Petugas Persetujuan</Link
                             >
                         </li>
                     </ul>

@@ -17,7 +17,7 @@ import { Head } from '@inertiajs/vue3';
             >
                 <div class="px-4 2xl:px-0">
                     <h1
-                        class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white md:mb-6"
+                        class="mb-4 text-xl font-semibold text-gray-900 dark:text-white md:mb-6"
                     >
                         Selamat datang
                     </h1>

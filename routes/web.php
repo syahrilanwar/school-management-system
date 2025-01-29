@@ -4,6 +4,7 @@ use App\Http\Controllers\Office\Finance\FinanceController;
 use App\Http\Controllers\Office\GA\GAController;
 use App\Http\Controllers\Office\HCM\HCMController;
 use App\Http\Controllers\Office\ICC\ICCController;
+use App\Http\Controllers\Office\ICC\Management\AdmissionStageController;
 use App\Http\Controllers\Office\QRD\QRDController;
 use App\Http\Controllers\Office\OfficeController;
 use App\Http\Controllers\ProfileController;
@@ -44,7 +45,7 @@ Route::middleware(['auth', 'verified'])
                         Route::prefix('admission-stage')
                             ->name('.admissionStage')
                             ->group(function () {
-                                Route::get('/', [GAController::class, 'index']);
+                                Route::get('/', [AdmissionStageController::class, 'index']);
                             });
                     });
             });

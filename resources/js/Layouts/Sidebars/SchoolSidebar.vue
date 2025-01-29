@@ -18,18 +18,16 @@ import { Link } from '@inertiajs/vue3';
             <ul class="space-y-2">
                 <li>
                     <Link
-                        :href="route('office.qrd')"
+                        :href="route('school')"
                         class="group -mt-1 flex items-center rounded-lg bg-blue-800 px-4 py-3 text-base font-medium text-white"
                     >
-                        <span>QRD</span>
+                        <span>Sekolah</span>
                     </Link>
                 </li>
                 <li>
-                    <button
-                        type="button"
-                        class="group flex w-full items-center rounded-lg p-2 text-sm font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                        aria-controls="dropdown-approval"
-                        data-collapse-toggle="dropdown-approval"
+                    <Link
+                        href="#"
+                        class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -42,15 +40,72 @@ import { Link } from '@inertiajs/vue3';
                             class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                            <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
                             <path
-                                d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                                d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"
                             />
-                            <path d="M9 17h6" />
-                            <path d="M9 13h6" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                        </svg>
+                        <span class="ml-3 flex-1 whitespace-nowrap"
+                            >Staf & Guru</span
+                        >
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        href="#"
+                        class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                        >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path
+                                d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"
+                            />
+                            <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M17 10h2a2 2 0 0 1 2 2v1" />
+                            <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M3 13v-1a2 2 0 0 1 2 -2h2" />
+                        </svg>
+                        <span class="ml-3 flex-1 whitespace-nowrap">Siswa</span>
+                    </Link>
+                </li>
+                <li>
+                    <button
+                        type="button"
+                        class="group flex w-full items-center rounded-lg p-2 text-sm font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                        aria-controls="dropdown-activity"
+                        data-collapse-toggle="dropdown-activity"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                        >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18"
+                            />
+                            <path d="M13 8l2 0" />
+                            <path d="M13 12l2 0" />
                         </svg>
                         <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >Persetujuan</span
+                            >Aktifitas</span
                         >
                         <svg
                             aria-hidden="true"
@@ -66,12 +121,26 @@ import { Link } from '@inertiajs/vue3';
                             ></path>
                         </svg>
                     </button>
-                    <ul id="dropdown-approval" class="hidden space-y-2 py-2">
+                    <ul id="dropdown-activity" class="hidden space-y-2 py-2">
                         <li>
                             <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Pelatihan</Link
+                                >Penerimaan Siswa Baru</Link
+                            >
+                        </li>
+                        <li>
+                            <Link
+                                href="#"
+                                class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >Kegiatan Belajar Mengajar</Link
+                            >
+                        </li>
+                        <li>
+                            <Link
+                                href="#"
+                                class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >Rapor Siswa Sekolah</Link
                             >
                         </li>
                     </ul>
@@ -124,7 +193,49 @@ import { Link } from '@inertiajs/vue3';
                             <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Modul Pelatihan</Link
+                                >Tahun Ajaran</Link
+                            >
+                        </li>
+                        <li>
+                            <Link
+                                href="#"
+                                class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >Kurikulum</Link
+                            >
+                        </li>
+                        <li>
+                            <Link
+                                href="#"
+                                class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >Grup Mata Pelajaran</Link
+                            >
+                        </li>
+                        <li>
+                            <Link
+                                href="#"
+                                class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >Mata Pelajaran</Link
+                            >
+                        </li>
+                        <li>
+                            <Link
+                                href="#"
+                                class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >Ruang Kelas</Link
+                            >
+                        </li>
+                        <li>
+                            <Link
+                                href="#"
+                                class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >Ekstrakurikuler</Link
+                            >
+                        </li>
+                        <li>
+                            <Link
+                                href="#"
+                                class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                >Klub</Link
                             >
                         </li>
                     </ul>
@@ -183,7 +294,7 @@ import { Link } from '@inertiajs/vue3';
                             <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Petugas Persetujuan</Link
+                                >Sekolah</Link
                             >
                         </li>
                     </ul>
@@ -194,7 +305,7 @@ import { Link } from '@inertiajs/vue3';
             >
                 <li>
                     <Link
-                        :href="route('office')"
+                        :href="route('school')"
                         class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                         <svg
@@ -208,16 +319,14 @@ import { Link } from '@inertiajs/vue3';
                             class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 13a3 3 0 1 0 0 -6a3 3 0 0 0 0 6z" />
                             <path
-                                d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"
+                                d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18"
                             />
-                            <path
-                                d="M6 20.05v-.05a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v.05"
-                            />
+                            <path d="M13 8l2 0" />
+                            <path d="M13 12l2 0" />
                         </svg>
                         <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >My Profile</span
+                            >Staf</span
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -237,7 +346,7 @@ import { Link } from '@inertiajs/vue3';
                 </li>
                 <li>
                     <Link
-                        :href="route('office.icc')"
+                        :href="route('school')"
                         class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                         <svg
@@ -251,204 +360,11 @@ import { Link } from '@inertiajs/vue3';
                             class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M21 12a9 9 0 1 0 -9 9" />
-                            <path d="M3.6 9h16.8" />
-                            <path d="M3.6 15h8.4" />
-                            <path d="M11.578 3a17 17 0 0 0 0 18" />
-                            <path d="M12.5 3c1.719 2.755 2.5 5.876 2.5 9" />
-                            <path d="M18 21v-7m3 3l-3 -3l-3 3" />
+                            <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                            <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
                         </svg>
                         <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >ICC</span
-                        >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-5 w-5"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M17 7l-10 10" />
-                            <path d="M8 7l9 0l0 9" />
-                        </svg>
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        :href="route('office.hcm')"
-                        class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M21 11v-3c0 -.53 -.211 -1.039 -.586 -1.414c-.375 -.375 -.884 -.586 -1.414 -.586h-6m0 0l3 3m-3 -3l3 -3"
-                            />
-                            <path
-                                d="M3 13.013v3c0 .53 .211 1.039 .586 1.414c.375 .375 .884 .586 1.414 .586h6m0 0l-3 -3m3 3l-3 3"
-                            />
-                            <path
-                                d="M16 16.502c0 .53 .211 1.039 .586 1.414c.375 .375 .884 .586 1.414 .586c.53 0 1.039 -.211 1.414 -.586c.375 -.375 .586 -.884 .586 -1.414c0 -.53 -.211 -1.039 -.586 -1.414c-.375 -.375 -.884 -.586 -1.414 -.586c-.53 0 -1.039 .211 -1.414 .586c-.375 .375 -.586 .884 -.586 1.414z"
-                            />
-                            <path
-                                d="M4 4.502c0 .53 .211 1.039 .586 1.414c.375 .375 .884 .586 1.414 .586c.53 0 1.039 -.211 1.414 -.586c.375 -.375 .586 -.884 .586 -1.414c0 -.53 -.211 -1.039 -.586 -1.414c-.375 -.375 -.884 -.586 -1.414 -.586c-.53 0 -1.039 .211 -1.414 .586c-.375 .375 -.586 .884 -.586 1.414z"
-                            />
-                            <path
-                                d="M21 21.499c0 -.53 -.211 -1.039 -.586 -1.414c-.375 -.375 -.884 -.586 -1.414 -.586h-2c-.53 0 -1.039 .211 -1.414 .586c-.375 .375 -.586 .884 -.586 1.414"
-                            />
-                            <path
-                                d="M9 9.499c0 -.53 -.211 -1.039 -.586 -1.414c-.375 -.375 -.884 -.586 -1.414 -.586h-2c-.53 0 -1.039 .211 -1.414 .586c-.375 .375 -.586 .884 -.586 1.414"
-                            />
-                        </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >HCM</span
-                        >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-5 w-5"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M17 7l-10 10" />
-                            <path d="M8 7l9 0l0 9" />
-                        </svg>
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        :href="route('office.ga')"
-                        class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
-                            />
-                            <path
-                                d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"
-                            />
-                            <path d="M12 12l0 .01" />
-                            <path d="M3 13a20 20 0 0 0 18 0" />
-                        </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >GA</span
-                        >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-5 w-5"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M17 7l-10 10" />
-                            <path d="M8 7l9 0l0 9" />
-                        </svg>
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        :href="route('office.qrd')"
-                        class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <path
-                                d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
-                            />
-                            <path
-                                d="M4.012 16.737a2 2 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
-                            />
-                            <path d="M11 14l2 2l4 -4" />
-                        </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >QRD</span
-                        >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-5 w-5"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M17 7l-10 10" />
-                            <path d="M8 7l9 0l0 9" />
-                        </svg>
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        :href="route('office.finance')"
-                        class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M9 14c0 1.657 2.686 3 6 3s6 -1.343 6 -3s-2.686 -3 -6 -3s-6 1.343 -6 3z"
-                            />
-                            <path
-                                d="M9 14v4c0 1.656 2.686 3 6 3s6 -1.344 6 -3v-4"
-                            />
-                            <path
-                                d="M3 6c0 1.072 1.144 2.062 3 2.598s4.144 .536 6 0c1.856 -.536 3 -1.526 3 -2.598c0 -1.072 -1.144 -2.062 -3 -2.598s-4.144 -.536 -6 0c-1.856 .536 -3 1.526 -3 2.598z"
-                            />
-                            <path d="M3 6v10c0 .888 .772 1.45 2 2" />
-                            <path d="M3 11c0 .888 .772 1.45 2 2" />
-                        </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >Finance</span
+                            >Guru</span
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

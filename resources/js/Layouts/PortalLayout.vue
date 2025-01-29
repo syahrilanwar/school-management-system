@@ -105,10 +105,10 @@ import { Link } from '@inertiajs/vue3';
                             class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse"
                         >
                             <li>
-                                <a
+                                <Link
                                     href="#"
                                     class="block border-b border-gray-100 px-3 py-2 text-gray-900 hover:bg-gray-50 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-600 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
-                                    >Home</a
+                                    >Home</Link
                                 >
                             </li>
                             <li>
@@ -144,24 +144,24 @@ import { Link } from '@inertiajs/vue3';
                                         aria-labelledby="dropdownLargeButton"
                                     >
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Visi & Misi</a
+                                                >Visi & Misi</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Sejarah</a
+                                                >Sejarah</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Jam Operasional</a
+                                                >Jam Operasional</Link
                                             >
                                         </li>
                                     </ul>
@@ -200,10 +200,10 @@ import { Link } from '@inertiajs/vue3';
                                         aria-labelledby="dropdownLargeButton"
                                     >
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Informasi Pendaftaran</a
+                                                >Informasi Pendaftaran</Link
                                             >
                                         </li>
                                     </ul>
@@ -242,31 +242,31 @@ import { Link } from '@inertiajs/vue3';
                                         aria-labelledby="dropdownLargeButton"
                                     >
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Berita</a
+                                                >Berita</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Artikel</a
+                                                >Artikel</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Acara</a
+                                                >Acara</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Galeri</a
+                                                >Galeri</Link
                                             >
                                         </li>
                                     </ul>
@@ -305,24 +305,24 @@ import { Link } from '@inertiajs/vue3';
                                         aria-labelledby="dropdownLargeButton"
                                     >
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Pencapain Guru</a
+                                                >Pencapain Guru</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Pencapaian Siswa</a
+                                                >Pencapaian Siswa</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Testimoni</a
+                                                >Testimoni</Link
                                             >
                                         </li>
                                     </ul>
@@ -361,24 +361,24 @@ import { Link } from '@inertiajs/vue3';
                                         aria-labelledby="dropdownLargeButton"
                                     >
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Masukan Saran</a
+                                                >Masukan Saran</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Kesempatan Karir</a
+                                                >Kesempatan Karir</Link
                                             >
                                         </li>
                                         <li>
-                                            <a
+                                            <Link
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >FAQ</a
+                                                >FAQ</Link
                                             >
                                         </li>
                                     </ul>
@@ -397,22 +397,22 @@ import { Link } from '@inertiajs/vue3';
                 <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div class="gap-2 md:flex md:justify-between">
                         <div class="mb-6 md:mb-0">
-                            <a href="#" class="flex items-center">
+                            <Link href="#" class="flex items-center">
                                 <img
                                     src="/assets/icons/main-school-logo.png"
                                     class="me-3 h-14"
                                     alt="Logo"
                                 />
-                            </a>
+                            </Link>
                         </div>
                         <div class="mb-6 mr-auto md:mb-0">
-                            <a href="#" class="flex items-center">
+                            <Link href="#" class="flex items-center">
                                 <img
                                     src="/assets/icons/main-foundation-logo.png"
                                     class="me-3 h-14"
                                     alt="Logo"
                                 />
-                            </a>
+                            </Link>
                         </div>
                         <div
                             class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6"
@@ -427,8 +427,8 @@ import { Link } from '@inertiajs/vue3';
                                     class="font-medium text-gray-500 dark:text-gray-400"
                                 >
                                     <li class="mb-4">
-                                        <a href="#" class="hover:underline"
-                                            >Info Pendaftaran</a
+                                        <Link href="#" class="hover:underline"
+                                            >Info Pendaftaran</Link
                                         >
                                     </li>
                                 </ul>
@@ -443,27 +443,27 @@ import { Link } from '@inertiajs/vue3';
                                     class="font-medium text-gray-500 dark:text-gray-400"
                                 >
                                     <li class="mb-4">
-                                        <a
+                                        <Link
                                             target="_blank"
                                             href="https://www.facebook.com/HBICS/"
                                             class="hover:underline"
-                                            >Facebook</a
+                                            >Facebook</Link
                                         >
                                     </li>
                                     <li class="mb-4">
-                                        <a
+                                        <Link
                                             target="_blank"
                                             href="https://www.instagram.com/harapanbangsa_balikpapan/"
                                             class="hover:underline"
-                                            >Instagram</a
+                                            >Instagram</Link
                                         >
                                     </li>
                                     <li>
-                                        <a
+                                        <Link
                                             target="_blank"
                                             href="https://www.youtube.com/c/HappyHolyKidsHBICSBalikpapan/"
                                             class="hover:underline"
-                                            >Youtube</a
+                                            >Youtube</Link
                                         >
                                     </li>
                                 </ul>
@@ -478,18 +478,18 @@ import { Link } from '@inertiajs/vue3';
                                     class="font-medium text-gray-500 dark:text-gray-400"
                                 >
                                     <li class="mb-4">
-                                        <a href="#" class="hover:underline"
-                                            >Masukan Saran</a
+                                        <Link href="#" class="hover:underline"
+                                            >Masukan Saran</Link
                                         >
                                     </li>
                                     <li class="mb-4">
-                                        <a href="#" class="hover:underline"
-                                            >Karir</a
+                                        <Link href="#" class="hover:underline"
+                                            >Karir</Link
                                         >
                                     </li>
                                     <li>
-                                        <a href="#" class="hover:underline"
-                                            >FAQ</a
+                                        <Link href="#" class="hover:underline"
+                                            >FAQ</Link
                                         >
                                     </li>
                                 </ul>
@@ -503,15 +503,15 @@ import { Link } from '@inertiajs/vue3';
                         <span
                             class="text-sm text-gray-500 dark:text-gray-400 sm:text-center"
                             >© {{ new Date().getFullYear() }}
-                            <a
+                            <Link
                                 href="https://saffix.id/"
                                 target="_blank"
                                 class="hover:underline"
-                                >saffix.id</a
+                                >saffix.id</Link
                             >. All Rights Reserved.
                         </span>
                         <div class="mt-4 flex sm:mt-0 sm:justify-center">
-                            <a
+                            <Link
                                 href="https://www.facebook.com/HBICS/"
                                 target="_blank"
                                 class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
@@ -534,8 +534,8 @@ import { Link } from '@inertiajs/vue3';
                                     />
                                 </svg>
                                 <span class="sr-only">Facebook page</span>
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="https://www.instagram.com/harapanbangsa_balikpapan/"
                                 target="_blank"
                                 class="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
@@ -558,8 +558,8 @@ import { Link } from '@inertiajs/vue3';
                                     />
                                 </svg>
                                 <span class="sr-only">Instagram page</span>
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="https://www.youtube.com/c/HappyHolyKidsHBICSBalikpapan/"
                                 class="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
                             >
@@ -581,7 +581,7 @@ import { Link } from '@inertiajs/vue3';
                                     />
                                 </svg>
                                 <span class="sr-only">Youtube community</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

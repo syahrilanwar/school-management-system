@@ -105,17 +105,17 @@ import { Link } from '@inertiajs/vue3';
                     </button>
                     <ul id="dropdown-management" class="hidden space-y-2 py-2">
                         <li>
-                            <a
+                            <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Produk</a
+                                >Produk</Link
                             >
                         </li>
                         <li>
-                            <a
+                            <Link
                                 href="#"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Diskon</a
+                                >Diskon</Link
                             >
                         </li>
                     </ul>
