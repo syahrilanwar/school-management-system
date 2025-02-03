@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Observasi Pendaftar",
+        "type": "PRE",
+        "sort_number": 1
+    },
+    {
+        "title": "Penyampaian Hasil Observasi Pendaftar",
+        "type": "PRE",
+        "sort_number": 2
+    },
+    {
+        "title": "Wawancara Orang Tua",
+        "type": "PRE",
+        "sort_number": 3
+    },
+    {
+        "title": "Kelengkapan Seragam",
+        "type": "POST",
+        "sort_number": 1
+    },
+    {
+        "title": "Kelengkapan Buku",
+        "type": "POST",
+        "sort_number": 2
+    }
+]

@@ -1,0 +1,8 @@
+[
+    {
+        "name": "Formulir Pendaftaran Siswa",
+        "code": "REGISTRATION_FORM_STUDENT",
+        "price": 250000,
+        "type": "SYSTEM"
+    }
+]

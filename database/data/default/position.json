@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Principal",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Vice Principal School Operations",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Vice Principal Curriculum Instruction",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Vice Principal Student Affairs",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "School Administrator",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Curriculum Coordinator",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Character Education Coordinator",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Extracurricular Activities Coordinator",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Classroom Teacher",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Extracurricular Instructor",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "School Coordinator",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Worship Activities Coordinator",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Educational Support Staff",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Educational Consultant",
+        "area_group": "SCHOOL"
+    },
+    {
+        "name": "Office Manager",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Assistant Office Manager",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Office Supervisor",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Office Coordinator",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Office Administrator",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Facilities Maintenance Coordinator",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Facilities Maintenance Staff",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Equipment Coordinator",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Facilities Coordinator",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Administrative Support Staff",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Office Staff",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "Office Driver",
+        "area_group": "OFFICE"
+    },
+    {
+        "name": "ICT Support Staff",
+        "area_group": "OFFICE"
+    }
+]
