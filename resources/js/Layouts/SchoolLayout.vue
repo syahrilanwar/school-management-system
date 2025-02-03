@@ -540,7 +540,7 @@ import { Link } from '@inertiajs/vue3';
         <!-- sidebar -->
 
         <aside
-            class="fixed left-0 top-0 z-40 h-screen w-72 -translate-x-full border-r border-gray-200 bg-white pt-20 transition-transform dark:border-gray-700 dark:bg-gray-800 md:translate-x-0"
+            class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full border-r border-gray-200 bg-white pt-20 transition-transform dark:border-gray-700 dark:bg-gray-800 md:translate-x-0"
             aria-label="Sidenav"
             id="drawer-navigation"
             aria-hidden="true"
@@ -550,7 +550,7 @@ import { Link } from '@inertiajs/vue3';
 
         <!-- main -->
 
-        <main class="h-auto p-4 pt-24 md:ml-72">
+        <main class="h-auto p-4 pt-24 md:ml-64">
             <slot name="content" />
         </main>
     </div>
