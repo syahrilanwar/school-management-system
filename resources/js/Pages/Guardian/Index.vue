@@ -1,15 +1,15 @@
 <script setup>
-import SchoolLayout from '@/Layouts/SchoolLayout.vue';
-import SchoolSidebar from '@/Layouts/Sidebars/SchoolSidebar.vue';
+import GuardianLayout from '@/Layouts/GuardianLayout.vue';
+import GuardianSidebar from '@/Layouts/Sidebars/GuardianSidebar.vue';
 import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="Sekolah" />
+    <Head title="Wali" />
 
-    <SchoolLayout>
+    <GuardianLayout>
         <template #sidebar>
-            <SchoolSidebar />
+            <GuardianSidebar />
         </template>
         <template #content>
             <section
@@ -24,5 +24,5 @@ import { Head } from '@inertiajs/vue3';
                 </div>
             </section>
         </template>
-    </SchoolLayout>
+    </GuardianLayout>
 </template>

@@ -17,7 +17,7 @@ import { Head } from '@inertiajs/vue3';
             >
                 <div class="p-4 md:p-6">
                     <h1
-                        class="text-xl font-semibold text-gray-900 dark:text-white"
+                        class="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         Tahap Pendaftaran
                     </h1>
@@ -603,7 +603,7 @@ import { Head } from '@inertiajs/vue3';
                             class="mb-4 flex items-center justify-between rounded-t border-b pb-4 dark:border-gray-600 sm:mb-5"
                         >
                             <h3
-                                class="text-lg font-semibold text-gray-900 dark:text-white"
+                                class="text-base font-semibold text-gray-900 dark:text-white"
                             >
                                 Add Product
                             </h3>
@@ -749,7 +749,7 @@ import { Head } from '@inertiajs/vue3';
                             class="mb-4 flex items-center justify-between rounded-t border-b pb-4 dark:border-gray-600 sm:mb-5"
                         >
                             <h3
-                                class="text-lg font-semibold text-gray-900 dark:text-white"
+                                class="text-base font-semibold text-gray-900 dark:text-white"
                             >
                                 Update Product
                             </h3>
@@ -902,7 +902,7 @@ Standard glass, 3.8GHz 8-core 10th-generation Intel Core i7 processor, Turbo Boo
                             class="mb-4 flex justify-between rounded-t sm:mb-5"
                         >
                             <div
-                                class="text-lg text-gray-900 dark:text-white md:text-xl"
+                                class="text-base text-gray-900 dark:text-white md:text-lg"
                             >
                                 <h3 class="font-semibold">Apple iMac 27”</h3>
                                 <p class="font-bold">$2999</p>

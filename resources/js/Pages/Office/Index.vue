@@ -17,12 +17,12 @@ import { Head } from '@inertiajs/vue3';
             >
                 <div class="px-4 2xl:px-0">
                     <h1
-                        class="mb-4 text-xl font-semibold text-gray-900 dark:text-white md:mb-6"
+                        class="mb-4 text-lg font-semibold text-gray-900 dark:text-white md:mb-6"
                     >
                         Selamat datang
                     </h1>
                     <div
-                        class="grid grid-cols-2 gap-6 border-b border-t border-gray-200 py-4 text-base dark:border-gray-700 md:py-8 lg:grid-cols-4 xl:gap-16"
+                        class="grid grid-cols-2 gap-6 border-b border-t border-gray-200 py-4 text-sm dark:border-gray-700 md:py-8 lg:grid-cols-4 xl:gap-16"
                     >
                         <div>
                             <svg
@@ -61,16 +61,16 @@ import { Head } from '@inertiajs/vue3';
                                 />
                             </svg>
                             <h6
-                                class="mb-2 text-base text-gray-500 dark:text-gray-400"
+                                class="mb-2 text-sm text-gray-500 dark:text-gray-400"
                             >
                                 Permintaan diproses
                             </h6>
                             <span
-                                class="flex items-center text-xl font-bold text-gray-900 dark:text-white"
+                                class="flex items-center text-lg font-bold text-gray-900 dark:text-white"
                                 >24
                             </span>
                             <p
-                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-base"
+                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm"
                             >
                                 <svg
                                     class="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400"
@@ -126,16 +126,16 @@ import { Head } from '@inertiajs/vue3';
                                 <path d="M9 12l2 2l4 -4" />
                             </svg>
                             <h6
-                                class="mb-2 text-base text-gray-500 dark:text-gray-400"
+                                class="mb-2 text-sm text-gray-500 dark:text-gray-400"
                             >
                                 Permintaan disetujui
                             </h6>
                             <span
-                                class="flex items-center text-xl font-bold text-gray-900 dark:text-white"
+                                class="flex items-center text-lg font-bold text-gray-900 dark:text-white"
                                 >16
                             </span>
                             <p
-                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-base"
+                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm"
                             >
                                 <svg
                                     class="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400"
@@ -192,16 +192,16 @@ import { Head } from '@inertiajs/vue3';
                                 <path d="M10 14l4 -4" />
                             </svg>
                             <h6
-                                class="mb-2 text-base text-gray-500 dark:text-gray-400"
+                                class="mb-2 text-sm text-gray-500 dark:text-gray-400"
                             >
                                 Permintaan ditolak
                             </h6>
                             <span
-                                class="flex items-center text-xl font-bold text-gray-900 dark:text-white"
+                                class="flex items-center text-lg font-bold text-gray-900 dark:text-white"
                                 >8
                             </span>
                             <p
-                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-base"
+                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm"
                             >
                                 <svg
                                     class="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400"
@@ -242,7 +242,7 @@ import { Head } from '@inertiajs/vue3';
                                             {{ $page.props.auth.user.email }}
                                         </span>
                                         <h2
-                                            class="flex items-center text-xl font-bold leading-none text-gray-900 dark:text-white"
+                                            class="flex items-center text-lg font-bold leading-none text-gray-900 dark:text-white"
                                         >
                                             {{ $page.props.auth.user.name }}
                                         </h2>

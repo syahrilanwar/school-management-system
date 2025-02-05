@@ -20,7 +20,7 @@ import { Link } from '@inertiajs/vue3';
         >
             <Link
                 href="/"
-                class="mb-6 flex items-center text-2xl font-semibold text-gray-900 dark:text-white"
+                class="mb-6 flex items-center text-xl font-semibold text-gray-900 dark:text-white"
             >
                 <ApplicationLogo class="h-20" />
             </Link>

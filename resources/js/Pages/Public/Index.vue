@@ -43,20 +43,20 @@ defineProps({
                     <Link
                         v-if="$page.props.auth.user"
                         :href="route('portal')"
-                        class="rounded-lg bg-yellow-300 px-4 py-2 text-base font-medium text-white hover:bg-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800 md:px-5 md:py-2.5"
+                        class="rounded-lg bg-yellow-300 px-4 py-2 text-sm font-medium text-white hover:bg-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800 md:px-5 md:py-2.5"
                     >
                         Portal Anggota
                     </Link>
                     <template v-else>
                         <Link
                             :href="route('login')"
-                            class="rounded-lg px-4 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800 md:px-5 md:py-2.5"
+                            class="rounded-lg px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800 md:px-5 md:py-2.5"
                         >
                             Masuk</Link
                         >
                         <Link
                             :href="route('register')"
-                            class="rounded-lg bg-blue-700 px-4 py-2 text-base font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:px-5 md:py-2.5"
+                            class="rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:px-5 md:py-2.5"
                         >
                             Daftar</Link
                         >
@@ -96,7 +96,7 @@ defineProps({
                         <li>
                             <a
                                 href="#"
-                                class="block border-b border-gray-100 px-3 py-2 text-gray-900 hover:bg-gray-50 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-600 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                class="block border-b border-gray-100 px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-600 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                                 >Home</a
                             >
                         </li>
@@ -104,7 +104,7 @@ defineProps({
                             <button
                                 id="dropdownNavbarLinkSchool"
                                 data-dropdown-toggle="dropdownNavbarSchool"
-                                class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                             >
                                 Informasi Sekolah
                                 <svg
@@ -160,7 +160,7 @@ defineProps({
                             <button
                                 id="dropdownNavbarLinkAdmission"
                                 data-dropdown-toggle="dropdownNavbarAdmission"
-                                class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                             >
                                 Pendaftaran
                                 <svg
@@ -202,7 +202,7 @@ defineProps({
                             <button
                                 id="dropdownNavbarLinkPublication"
                                 data-dropdown-toggle="dropdownNavbarPublication"
-                                class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                             >
                                 Publikasi
                                 <svg
@@ -265,7 +265,7 @@ defineProps({
                             <button
                                 id="dropdownNavbarLinkAchievementTestimonial"
                                 data-dropdown-toggle="dropdownNavbarAchievementTestimonial"
-                                class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                             >
                                 Pencapaian & Testimoni
                                 <svg
@@ -321,7 +321,7 @@ defineProps({
                             <button
                                 id="dropdownNavbarLinkContact"
                                 data-dropdown-toggle="dropdownNavbarContact"
-                                class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                             >
                                 Hubungi Kami
                                 <svg
@@ -378,7 +378,7 @@ defineProps({
             </div>
         </nav>
         <!-- main -->
-        <main>
+        <main class="flex-row">
             <!-- jumbotron 1 -->
             <section
                 class="relative flex h-screen bg-[url('/public/assets/pages/jumbotron.jpg')] bg-cover bg-fixed bg-no-repeat"
@@ -386,18 +386,17 @@ defineProps({
                 <div
                     class="absolute inset-0 bg-gradient-to-b from-white to-transparent"
                 ></div>
-
                 <div
                     class="z-10 mx-auto my-auto max-w-5xl py-24 text-center lg:py-56"
                 >
                     <h1
-                        class="mb-4 space-y-4 text-4xl font-extrabold uppercase leading-none tracking-tight text-white md:text-5xl lg:text-6xl"
+                        class="mb-4 space-y-4 text-2xl font-extrabold uppercase leading-none tracking-tight text-white md:text-3xl lg:text-4xl"
                     >
                         <div>Selamat Datang di</div>
                         <div>Sekolah Harapan Bangsa</div>
                     </h1>
                     <p
-                        class="mb-8 text-lg font-normal text-white sm:px-16 lg:px-48 lg:text-2xl"
+                        class="mb-8 text-base font-normal text-white sm:px-16 lg:px-48 lg:text-lg"
                     >
                         Menjadi sekolah terbaik dalam layanan, maksimal
                         mencerdaskan generasi berkarakter yang menghasilkan
@@ -419,7 +418,7 @@ defineProps({
                 >
                     <!-- Carousel wrapper -->
                     <div
-                        class="relative h-56 overflow-hidden bg-black md:h-[50rem]"
+                        class="relative h-48 overflow-hidden bg-black md:h-[50rem]"
                     >
                         <!-- Item 1 -->
                         <div
@@ -536,21 +535,16 @@ defineProps({
                     </button>
                 </div>
             </section>
-            <section
-                id="sponsors"
-                aria-label="Sponsors"
-                class="bg-white py-20 sm:py-32"
-            >
-                <div
-                    class="mx-auto max-w-7xl px-4 pb-16 pt-20 text-center sm:px-6 lg:px-8 lg:pt-32"
-                >
+            <!-- sponsor -->
+            <section id="sponsors" aria-label="Sponsors">
+                <div class="mx-auto max-w-7xl py-8 lg:py-16">
                     <div>
                         <h1
-                            class="mb-4 text-4xl font-extrabold uppercase leading-none text-blue-800 md:mb-12"
+                            class="mb-4 text-center text-xl font-extrabold uppercase leading-none tracking-tight text-blue-700 dark:text-white md:mb-12 md:text-2xl lg:text-3xl"
                         >
                             Rekan
                         </h1>
-                        <div class="mt-24">
+                        <div class="md:mt-18 mt-8">
                             <ul
                                 role="list"
                                 class="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
@@ -563,7 +557,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -573,7 +567,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -583,7 +577,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -593,7 +587,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -603,7 +597,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -618,11 +612,11 @@ defineProps({
                     <hr class="my-12" />
                     <div>
                         <h1
-                            class="mb-4 text-4xl font-extrabold uppercase leading-none text-blue-800 md:mb-12"
+                            class="mb-4 text-center text-xl font-extrabold uppercase leading-none tracking-tight text-blue-700 dark:text-white md:mb-12 md:text-2xl lg:text-3xl"
                         >
                             Disahkan Oleh
                         </h1>
-                        <div class="mt-24">
+                        <div class="md:mt-18 mt-8">
                             <ul
                                 role="list"
                                 class="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
@@ -635,7 +629,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -645,7 +639,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -655,7 +649,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -665,7 +659,7 @@ defineProps({
                                         <li class="flex">
                                             <img
                                                 loading="lazy"
-                                                class="h-11"
+                                                class="h-8 md:h-11"
                                                 decoding="async"
                                                 data-nimg="1"
                                                 style="color: transparent"
@@ -685,7 +679,7 @@ defineProps({
                     class="mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-16"
                 >
                     <h1
-                        class="mb-4 text-4xl font-extrabold uppercase leading-none text-blue-800 md:mb-12"
+                        class="mb-4 text-center text-xl font-extrabold uppercase leading-none tracking-tight text-blue-700 dark:text-white md:mb-12 md:text-2xl lg:text-3xl"
                     >
                         BERITA & ACARA
                     </h1>
@@ -720,11 +714,11 @@ defineProps({
                             </div>
                             <div>
                                 <h3
-                                    class="text-lg font-medium tracking-tight text-gray-900"
+                                    class="text-base font-medium tracking-tight text-gray-900"
                                 >
                                     Event
                                 </h3>
-                                <p class="mt-2 text-base text-gray-600">
+                                <p class="mt-2 text-sm text-gray-600">
                                     Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit. Dolor qui ea fuga aliquam
                                     eaque odio quidem sint voluptas impedit rem
@@ -766,11 +760,11 @@ defineProps({
                             </div>
                             <div>
                                 <h3
-                                    class="text-lg font-medium tracking-tight text-gray-900"
+                                    class="text-base font-medium tracking-tight text-gray-900"
                                 >
                                     News
                                 </h3>
-                                <p class="mt-2 text-base text-gray-600">
+                                <p class="mt-2 text-sm text-gray-600">
                                     Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit. Dolor qui ea fuga aliquam
                                     eaque odio quidem sint voluptas impedit rem
@@ -790,15 +784,15 @@ defineProps({
                     class="absolute inset-0 bg-gradient-to-b from-yellow-300 to-white opacity-70"
                 ></div>
                 <div
-                    class="z-10 mx-auto my-24 max-w-screen-xl px-4 py-8 text-center lg:py-32"
+                    class="z-10 mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-32"
                 >
                     <h1
-                        class="mb-4 text-3xl font-extrabold uppercase leading-none tracking-tight text-blue-700 dark:text-white md:text-4xl lg:text-5xl"
+                        class="mb-4 text-xl font-extrabold uppercase leading-none tracking-tight text-blue-700 dark:text-white md:mb-6 md:text-2xl lg:text-3xl"
                     >
                         Mari Bergabung!
                     </h1>
                     <p
-                        class="mb-8 text-lg font-normal text-gray-900 dark:text-gray-400 sm:px-16 lg:px-48 lg:text-xl"
+                        class="mb-8 text-base font-normal text-gray-900 dark:text-gray-400 sm:px-16 lg:px-48"
                     >
                         Dengan lebih dari 750 siswa dan didukung oleh lebih dari
                         50 guru terbaik, Sekolah Harapan Bangsa telah melahirkan
@@ -809,7 +803,7 @@ defineProps({
                     >
                         <a
                             href="#"
-                            class="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-center text-xl font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                            class="inline-flex items-center justify-center rounded-lg bg-blue-700 px-4 py-3 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                         >
                             Daftar Sekarang
                             <svg
@@ -832,24 +826,18 @@ defineProps({
                 </div>
             </section>
             <!-- testimonial -->
-            <section
-                id="testimonials"
-                aria-label="Testimonials"
-                class="bg-white py-20 sm:py-32"
-            >
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <section id="testimonials" aria-label="Testimonials">
+                <div class="mx-auto max-w-7xl py-8 lg:py-16">
                     <div class="mx-auto max-w-2xl text-center">
                         <h1
-                            class="mb-4 text-4xl font-extrabold uppercase leading-none text-blue-800 md:mb-12"
+                            class="mb-4 text-center text-xl font-extrabold uppercase leading-none tracking-tight text-blue-700 dark:text-white md:mb-12 md:text-2xl lg:text-3xl"
                         >
                             Testimoni
                         </h1>
-                        <p
-                            class="mt-4 text-lg tracking-tight text-gray-700 lg:text-xl"
-                        >
-                            Dipercaya oleh orang tua, murid, dan pengajar.
-                            Sekolah kami mengutamakan kemudahan dan fokus pada
-                            kualitas pendidikan yang efektif.
+                        <p class="mt-4 text-base tracking-tight text-gray-700">
+                            Dipercaya oleh wali, siswa, dan pengajar. Sekolah
+                            kami mengutamakan kemudahan dan fokus pada kualitas
+                            pendidikan yang efektif.
                         </p>
                     </div>
                     <ul
@@ -877,7 +865,7 @@ defineProps({
                                         </svg>
                                         <blockquote class="relative">
                                             <p
-                                                class="text-lg tracking-tight text-gray-900"
+                                                class="text-sm tracking-tight text-gray-900"
                                             >
                                                 TaxPal is so easy to use I can’t
                                                 help but wonder if it’s really
@@ -890,7 +878,7 @@ defineProps({
                                         >
                                             <div>
                                                 <div
-                                                    class="font-display text-base text-gray-900"
+                                                    class="font-display text-sm text-gray-900"
                                                 >
                                                     Sheryl Berge
                                                 </div>
@@ -932,7 +920,7 @@ defineProps({
                                         </svg>
                                         <blockquote class="relative">
                                             <p
-                                                class="text-lg tracking-tight text-gray-900"
+                                                class="text-sm tracking-tight text-gray-900"
                                             >
                                                 I’m trying to get a hold of
                                                 someone in support, I’m in a lot
@@ -947,7 +935,7 @@ defineProps({
                                         >
                                             <div>
                                                 <div
-                                                    class="font-display text-base text-gray-900"
+                                                    class="font-display text-sm text-gray-900"
                                                 >
                                                     Amy Hahn
                                                 </div>
@@ -997,7 +985,7 @@ defineProps({
                                         </svg>
                                         <blockquote class="relative">
                                             <p
-                                                class="text-lg tracking-tight text-gray-900"
+                                                class="text-sm tracking-tight text-gray-900"
                                             >
                                                 The best part about TaxPal is
                                                 every time I pay my employees,
@@ -1013,7 +1001,7 @@ defineProps({
                                         >
                                             <div>
                                                 <div
-                                                    class="font-display text-base text-gray-900"
+                                                    class="font-display text-sm text-gray-900"
                                                 >
                                                     Leland Kiehn
                                                 </div>
@@ -1055,7 +1043,7 @@ defineProps({
                                         </svg>
                                         <blockquote class="relative">
                                             <p
-                                                class="text-lg tracking-tight text-gray-900"
+                                                class="text-sm tracking-tight text-gray-900"
                                             >
                                                 There are so many things I had
                                                 to do with my old software that
@@ -1069,7 +1057,7 @@ defineProps({
                                         >
                                             <div>
                                                 <div
-                                                    class="font-display text-base text-gray-900"
+                                                    class="font-display text-sm text-gray-900"
                                                 >
                                                     Erin Powlowski
                                                 </div>
@@ -1118,7 +1106,7 @@ defineProps({
                                         </svg>
                                         <blockquote class="relative">
                                             <p
-                                                class="text-lg tracking-tight text-gray-900"
+                                                class="text-sm tracking-tight text-gray-900"
                                             >
                                                 I used to have to remit tax to
                                                 the EU and with TaxPal I somehow
@@ -1132,7 +1120,7 @@ defineProps({
                                         >
                                             <div>
                                                 <div
-                                                    class="font-display text-base text-gray-900"
+                                                    class="font-display text-sm text-gray-900"
                                                 >
                                                     Peter Renolds
                                                 </div>
@@ -1174,7 +1162,7 @@ defineProps({
                                         </svg>
                                         <blockquote class="relative">
                                             <p
-                                                class="text-lg tracking-tight text-gray-900"
+                                                class="text-sm tracking-tight text-gray-900"
                                             >
                                                 This is the fourth email I’ve
                                                 sent to your support team. I am
@@ -1188,7 +1176,7 @@ defineProps({
                                         >
                                             <div>
                                                 <div
-                                                    class="font-display text-base text-gray-900"
+                                                    class="font-display text-sm text-gray-900"
                                                 >
                                                     Amy Hahn
                                                 </div>
@@ -1222,9 +1210,9 @@ defineProps({
             </section>
             <!-- map -->
             <section>
-                <div class="mx-auto bg-white pt-8 text-center lg:pt-16">
+                <div class="mx-auto py-8 text-center lg:py-16">
                     <h1
-                        class="mb-4 text-4xl font-extrabold uppercase leading-none text-blue-800 md:mb-20"
+                        class="mb-4 text-3xl font-extrabold uppercase leading-none text-blue-800 md:mb-20"
                     >
                         Temui Kami
                     </h1>
@@ -1242,13 +1230,13 @@ defineProps({
         </main>
         <!-- footer -->
         <footer class="bg-white dark:bg-gray-900">
-            <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
                 <div class="gap-2 md:flex md:justify-between">
                     <div class="mb-6 md:mb-0">
                         <a href="#" class="flex items-center">
                             <img
                                 src="/assets/icons/main-school-logo.png"
-                                class="me-3 h-14"
+                                class="me-3 h-12"
                                 alt="Logo"
                             />
                         </a>
@@ -1257,7 +1245,7 @@ defineProps({
                         <a href="#" class="flex items-center">
                             <img
                                 src="/assets/icons/main-foundation-logo.png"
-                                class="me-3 h-14"
+                                class="me-3 h-12"
                                 alt="Logo"
                             />
                         </a>
@@ -1270,7 +1258,7 @@ defineProps({
                                 Pendaftaran
                             </h2>
                             <ul
-                                class="font-medium text-gray-500 dark:text-gray-400"
+                                class="text-sm font-medium text-gray-500 dark:text-gray-400"
                             >
                                 <li class="mb-4">
                                     <a href="#" class="hover:underline"
@@ -1286,7 +1274,7 @@ defineProps({
                                 Ikuti Kami
                             </h2>
                             <ul
-                                class="font-medium text-gray-500 dark:text-gray-400"
+                                class="text-sm font-medium text-gray-500 dark:text-gray-400"
                             >
                                 <li class="mb-4">
                                     <a
@@ -1321,7 +1309,7 @@ defineProps({
                                 Hubungi Kami
                             </h2>
                             <ul
-                                class="font-medium text-gray-500 dark:text-gray-400"
+                                class="text-sm font-medium text-gray-500 dark:text-gray-400"
                             >
                                 <li class="mb-4">
                                     <a href="#" class="hover:underline"

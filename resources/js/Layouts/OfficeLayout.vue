@@ -91,7 +91,7 @@ import { Link } from '@inertiajs/vue3';
                     <!-- Dropdown menu -->
                     <div
                         v-if="false"
-                        class="z-50 my-4 hidden max-w-sm list-none divide-y divide-gray-100 overflow-hidden rounded-xl bg-white text-base shadow-lg dark:divide-gray-600 dark:bg-gray-700"
+                        class="z-50 my-4 hidden max-w-sm list-none divide-y divide-gray-100 overflow-hidden rounded-xl bg-white text-sm shadow-lg dark:divide-gray-600 dark:bg-gray-700"
                         id="notification-dropdown"
                         data-popper-placement="bottom"
                         style="
@@ -102,7 +102,7 @@ import { Link } from '@inertiajs/vue3';
                         "
                     >
                         <div
-                            class="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-600 dark:text-gray-300"
+                            class="block bg-gray-50 px-4 py-2 text-center text-sm font-medium text-gray-700 dark:bg-gray-600 dark:text-gray-300"
                         >
                             Notifications
                         </div>
@@ -113,7 +113,7 @@ import { Link } from '@inertiajs/vue3';
                             >
                                 <div class="flex-shrink-0">
                                     <img
-                                        class="h-10 w-10 rounded-full"
+                                        class="h-8 w-8 rounded-full"
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
                                         alt="Bonnie Green avatar"
                                     />
@@ -160,7 +160,7 @@ import { Link } from '@inertiajs/vue3';
                             >
                                 <div class="flex-shrink-0">
                                     <img
-                                        class="h-10 w-10 rounded-full"
+                                        class="h-8 w-8 rounded-full"
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                                         alt="Jese Leos avatar"
                                     />
@@ -208,7 +208,7 @@ import { Link } from '@inertiajs/vue3';
                             >
                                 <div class="flex-shrink-0">
                                     <img
-                                        class="h-10 w-10 rounded-full"
+                                        class="h-8 w-8 rounded-full"
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
                                         alt="Joseph McFall avatar"
                                     />
@@ -259,7 +259,7 @@ import { Link } from '@inertiajs/vue3';
                             >
                                 <div class="flex-shrink-0">
                                     <img
-                                        class="h-10 w-10 rounded-full"
+                                        class="h-8 w-8 rounded-full"
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
                                         alt="Roberta Casas image"
                                     />
@@ -309,7 +309,7 @@ import { Link } from '@inertiajs/vue3';
                             >
                                 <div class="flex-shrink-0">
                                     <img
-                                        class="h-10 w-10 rounded-full"
+                                        class="h-8 w-8 rounded-full"
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
                                         alt="Robert image"
                                     />
@@ -395,7 +395,7 @@ import { Link } from '@inertiajs/vue3';
                     </button>
                     <!-- Dropdown menu -->
                     <div
-                        class="z-50 my-4 hidden max-w-sm list-none divide-y divide-gray-100 overflow-hidden rounded-xl bg-white text-base shadow-lg dark:divide-gray-600 dark:bg-gray-700"
+                        class="z-50 my-4 hidden max-w-sm list-none divide-y divide-gray-100 overflow-hidden rounded-xl bg-white text-sm shadow-lg dark:divide-gray-600 dark:bg-gray-700"
                         id="apps-dropdown"
                         data-popper-placement="bottom"
                         style="
@@ -406,7 +406,7 @@ import { Link } from '@inertiajs/vue3';
                         "
                     >
                         <div
-                            class="block bg-gray-50 px-4 py-2 text-center text-base font-medium text-gray-700 dark:bg-gray-600 dark:text-gray-300"
+                            class="block bg-gray-50 px-4 py-2 text-center text-sm font-medium text-gray-700 dark:bg-gray-600 dark:text-gray-300"
                         >
                             Apps
                         </div>
@@ -640,14 +640,14 @@ import { Link } from '@inertiajs/vue3';
                     >
                         <span class="sr-only">Open user menu</span>
                         <img
-                            class="h-10 w-10 rounded-full"
+                            class="h-8 w-8 rounded-full"
                             src="/assets/icons/user-circle.png"
                             alt="user photo"
                         />
                     </button>
                     <!-- Dropdown menu -->
                     <div
-                        class="z-50 my-4 hidden w-56 list-none divide-y divide-gray-100 rounded-xl bg-white text-base shadow dark:divide-gray-600 dark:bg-gray-700"
+                        class="z-50 my-4 hidden w-56 list-none divide-y divide-gray-100 rounded-xl bg-white text-sm shadow dark:divide-gray-600 dark:bg-gray-700"
                         id="dropdown"
                         data-popper-placement="bottom"
                         style="

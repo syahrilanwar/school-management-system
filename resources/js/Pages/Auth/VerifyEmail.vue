@@ -29,7 +29,7 @@ const verificationLinkSent = computed(
             class="w-full rounded-lg bg-white p-6 shadow dark:border dark:border-gray-700 dark:bg-gray-800 sm:max-w-md sm:p-8 md:mt-0"
         >
             <h1
-                class="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl"
+                class="mb-1 text-lg font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-xl"
             >
                 Verifikasi email Anda
             </h1>

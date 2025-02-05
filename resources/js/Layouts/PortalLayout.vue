@@ -40,14 +40,14 @@ import { Link } from '@inertiajs/vue3';
                         >
                             <span class="sr-only">Open user menu</span>
                             <img
-                                class="h-10 w-10 rounded-full"
+                                class="h-8 w-8 rounded-full"
                                 src="/assets/icons/user-circle.png"
                                 alt="user photo"
                             />
                         </button>
                         <!-- Dropdown menu -->
                         <div
-                            class="z-50 my-4 hidden list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow-sm dark:divide-gray-600 dark:bg-gray-700"
+                            class="z-50 my-4 hidden list-none divide-y divide-gray-100 rounded-lg bg-white text-sm shadow-sm dark:divide-gray-600 dark:bg-gray-700"
                             id="user-dropdown"
                         >
                             <div class="px-4 py-3">
@@ -107,7 +107,7 @@ import { Link } from '@inertiajs/vue3';
                             <li>
                                 <Link
                                     href="#"
-                                    class="block border-b border-gray-100 px-3 py-2 text-gray-900 hover:bg-gray-50 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-600 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                    class="block border-b border-gray-100 px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-600 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                                     >Home</Link
                                 >
                             </li>
@@ -115,7 +115,7 @@ import { Link } from '@inertiajs/vue3';
                                 <button
                                     id="dropdownNavbarLinkSchool"
                                     data-dropdown-toggle="dropdownNavbarSchool"
-                                    class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                    class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                                 >
                                     Informasi Sekolah
                                     <svg
@@ -171,7 +171,7 @@ import { Link } from '@inertiajs/vue3';
                                 <button
                                     id="dropdownNavbarLinkAdmission"
                                     data-dropdown-toggle="dropdownNavbarAdmission"
-                                    class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                    class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                                 >
                                     Pendaftaran
                                     <svg
@@ -213,7 +213,7 @@ import { Link } from '@inertiajs/vue3';
                                 <button
                                     id="dropdownNavbarLinkPublication"
                                     data-dropdown-toggle="dropdownNavbarPublication"
-                                    class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                    class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                                 >
                                     Publikasi
                                     <svg
@@ -276,7 +276,7 @@ import { Link } from '@inertiajs/vue3';
                                 <button
                                     id="dropdownNavbarLinkAchievementTestimonial"
                                     data-dropdown-toggle="dropdownNavbarAchievementTestimonial"
-                                    class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                    class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                                 >
                                     Pencapaian & Testimoni
                                     <svg
@@ -332,7 +332,7 @@ import { Link } from '@inertiajs/vue3';
                                 <button
                                     id="dropdownNavbarLinkContact"
                                     data-dropdown-toggle="dropdownNavbarContact"
-                                    class="flex w-full items-center justify-between px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
+                                    class="flex w-full items-center justify-between px-3 py-2 text-sm text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:focus:text-white md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
                                 >
                                     Hubungi Kami
                                     <svg
@@ -394,13 +394,13 @@ import { Link } from '@inertiajs/vue3';
             </main>
             <!-- footer -->
             <footer class="mt-auto bg-white dark:bg-gray-900">
-                <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <div class="mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
                     <div class="gap-2 md:flex md:justify-between">
                         <div class="mb-6 md:mb-0">
                             <Link href="#" class="flex items-center">
                                 <img
                                     src="/assets/icons/main-school-logo.png"
-                                    class="me-3 h-14"
+                                    class="me-3 h-12"
                                     alt="Logo"
                                 />
                             </Link>
@@ -409,7 +409,7 @@ import { Link } from '@inertiajs/vue3';
                             <Link href="#" class="flex items-center">
                                 <img
                                     src="/assets/icons/main-foundation-logo.png"
-                                    class="me-3 h-14"
+                                    class="me-3 h-12"
                                     alt="Logo"
                                 />
                             </Link>
@@ -424,7 +424,7 @@ import { Link } from '@inertiajs/vue3';
                                     Pendaftaran
                                 </h2>
                                 <ul
-                                    class="font-medium text-gray-500 dark:text-gray-400"
+                                    class="text-sm font-medium text-gray-500 dark:text-gray-400"
                                 >
                                     <li class="mb-4">
                                         <Link href="#" class="hover:underline"
@@ -440,7 +440,7 @@ import { Link } from '@inertiajs/vue3';
                                     Ikuti Kami
                                 </h2>
                                 <ul
-                                    class="font-medium text-gray-500 dark:text-gray-400"
+                                    class="text-sm font-medium text-gray-500 dark:text-gray-400"
                                 >
                                     <li class="mb-4">
                                         <Link
@@ -475,7 +475,7 @@ import { Link } from '@inertiajs/vue3';
                                     Hubungi Kami
                                 </h2>
                                 <ul
-                                    class="font-medium text-gray-500 dark:text-gray-400"
+                                    class="text-sm font-medium text-gray-500 dark:text-gray-400"
                                 >
                                     <li class="mb-4">
                                         <Link href="#" class="hover:underline"

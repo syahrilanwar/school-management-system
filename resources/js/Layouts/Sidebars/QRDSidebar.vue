@@ -19,7 +19,7 @@ import { Link } from '@inertiajs/vue3';
                 <li>
                     <Link
                         :href="route('office.qrd')"
-                        class="group -mt-1 flex items-center rounded-lg bg-blue-800 px-4 py-3 text-base font-medium text-white"
+                        class="group -mt-1 flex items-center rounded-lg bg-blue-800 px-4 py-3 text-sm font-medium text-white"
                     >
                         <span>QRD</span>
                     </Link>

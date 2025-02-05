@@ -19,7 +19,7 @@ import { Link } from '@inertiajs/vue3';
                 <li>
                     <Link
                         :href="route('office')"
-                        class="group -mt-1 flex items-center rounded-lg bg-blue-800 px-4 py-3 text-base font-medium text-white"
+                        class="group -mt-1 flex items-center rounded-lg bg-blue-800 px-4 py-3 text-sm font-medium text-white"
                     >
                         <span>My Profile</span>
                     </Link>
@@ -511,7 +511,7 @@ import { Link } from '@inertiajs/vue3';
             </button>
             <!-- Dropdown -->
             <div
-                class="z-50 my-4 hidden list-none divide-y divide-gray-100 rounded bg-white text-base shadow dark:bg-gray-700"
+                class="z-50 my-4 hidden list-none divide-y divide-gray-100 rounded bg-white text-sm shadow dark:bg-gray-700"
                 id="language-dropdown"
                 data-popper-placement="bottom"
                 data-popper-reference-hidden=""
