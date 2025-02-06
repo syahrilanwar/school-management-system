@@ -25,9 +25,11 @@ return new class extends Migration
         Schema::create('admission_students', function (Blueprint $table) {
             $table->id('id');
             $table->uuid('uuid');
-            $table->foreignId('order_id')->constrained('orders');
+            $table->foreignId('transaction_id')->constrained('transactions');
             $table->foreignId('school_id')->constrained('schools');
             $table->foreignId('school_grade_id')->constrained('school_grades');
+            $table->string('registration_number');
+            $table->dateTime('submitted_at')->nullable();
             $table->string('name')->nullable();
             $table->string('avatar')->nullable();
             $table->string('birth_place')->nullable();
@@ -98,7 +100,7 @@ return new class extends Migration
             $table->uuid('uuid');
             $table->foreignId('admission_student_id')->constrained('admission_students');
             $table->foreignId('admission_stage_id')->constrained('admission_stages');
-            $table->foreignId('officer_id')->constrained('employees');
+            $table->foreignId('officer_id')->nullable()->constrained('employees');
             $table->dateTime('scheduled_at')->nullable();
             $table->text('description')->nullable();
             $table->string('status'); // OPEN, CLOSED, ACCEPTED, REJECTED, INTERVIEW, AWAITING

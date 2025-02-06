@@ -73,7 +73,7 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->foreignId('sub_install_repair_id')->constrained('sub_install_repairs');
             $table->string('name');
-            $table->integer('qty')->default(0);
+            $table->integer('quantity')->default(0);
             $table->string('unit')->nullable();
             $table->date('due_date')->nullable();
             $table->text('description')->nullable();
@@ -170,7 +170,7 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->foreignId('sub_material_id')->constrained('sub_materials');
             $table->string('name');
-            $table->integer('qty')->nullable();
+            $table->integer('quantity')->nullable();
             $table->string('unit')->nullable();
             $table->decimal('price', 15, 2)->default(0);
             $table->decimal('bill_amount', 15, 2)->default(0);
@@ -201,7 +201,7 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->foreignId('sub_event_id')->constrained('sub_events');
             $table->string('name');
-            $table->integer('qty')->default(0);
+            $table->integer('quantity')->default(0);
             $table->string('unit')->nullable();
             $table->decimal('price', 15, 2)->default(0);
             $table->decimal('bill_amount', 15, 2)->default(0);
@@ -235,7 +235,7 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->foreignId('sub_equipment_id')->constrained('sub_equipments');
             $table->string('name');
-            $table->integer('qty')->default(0);
+            $table->integer('quantity')->default(0);
             $table->date('due_date')->nullable();
             $table->text('description')->nullable();
             $table->string('status'); // APPROVED, REJECTED, PENDING

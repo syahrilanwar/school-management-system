@@ -6,7 +6,11 @@ use App\Traits\GenerateUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Payment extends Model
+class TransactionItem extends Model
 {
     use GenerateUuid, SoftDeletes;
+
+    protected $casts = [
+        'options' => 'json'
+    ];
 }

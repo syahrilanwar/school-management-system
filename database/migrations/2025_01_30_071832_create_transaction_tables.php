@@ -22,11 +22,12 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id('id');
             $table->uuid('uuid')->unique();
-            $table->foreignId('buyer_id')->constrained('users');
-            $table->string('type'); // PURCHASE, SALES
+            $table->foreignId('customer_id')->constrained('users');
+            $table->string('type'); // PURCHASE
+            $table->string('sub_type'); // ADMISSION_STUDENT_FORM
             $table->string('reference_number');
             $table->dateTime('due_date');
             $table->decimal('total_amount', 15, 2)->default(0);
@@ -37,15 +38,16 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('order_items', function (Blueprint $table) {
+        Schema::create('transaction_items', function (Blueprint $table) {
             $table->id('id');
             $table->uuid('uuid')->unique();
-            $table->foreignId('order_id')->constrained('orders');
+            $table->foreignId('transaction_id')->constrained('transactions');
             $table->foreignId('product_id')->constrained('products');
             $table->decimal('price', 15, 2)->default(0);
-            $table->integer('qty')->default(0);
+            $table->integer('quantity')->default(0);
             $table->decimal('total_amount', 15, 2)->default(0);
             $table->decimal('bill_amount', 15, 2)->default(0);
+            $table->json('options')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -53,10 +55,10 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id('id');
             $table->uuid('uuid')->unique();
-            $table->foreignId('order_id')->constrained('orders');
+            $table->foreignId('transaction_id')->constrained('transactions');
             $table->string('gateway_provider')->nullable();
             $table->text('gateway_token')->nullable();
-            $table->json('options');
+            $table->json('options')->nullable();
             $table->string('status');
             $table->timestamps();
             $table->softDeletes();
@@ -69,8 +71,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('payments');
-        Schema::dropIfExists('order_items');
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('transaction_items');
+        Schema::dropIfExists('transactions');
         Schema::dropIfExists('products');
     }
 };

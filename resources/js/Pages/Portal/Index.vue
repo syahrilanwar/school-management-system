@@ -7,8 +7,8 @@ import { Head, Link } from '@inertiajs/vue3';
     <Head title="Portal" />
 
     <PortalLayout>
-        <div class="py-12">
-            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="flex h-screen">
+            <div class="mx-auto my-auto w-full max-w-7xl sm:px-6 lg:px-8">
                 <div
                     class="grid grid-cols-1 gap-6 overflow-hidden md:grid-cols-2"
                 >

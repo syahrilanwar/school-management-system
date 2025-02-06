@@ -9,19 +9,19 @@
                 "sort_number": 1,
                 "grades": [
                     {
-                        "title": "Grade 1",
+                        "title": "1",
                         "sort_number": 1
                     },
                     {
-                        "title": "Grade 2",
+                        "title": "2",
                         "sort_number": 2
                     },
                     {
-                        "title": "Grade 3",
+                        "title": "3",
                         "sort_number": 3
                     },
                     {
-                        "title": "Grade 4",
+                        "title": "4",
                         "sort_number": 4
                     }
                 ]
@@ -38,11 +38,11 @@
                 "sort_number": 1,
                 "grades": [
                     {
-                        "title": "Grade 1",
+                        "title": "1",
                         "sort_number": 1
                     },
                     {
-                        "title": "Grade 2",
+                        "title": "2",
                         "sort_number": 2
                     }
                 ]
@@ -52,11 +52,11 @@
                 "sort_number": 2,
                 "grades": [
                     {
-                        "title": "Grade 3",
+                        "title": "3",
                         "sort_number": 3
                     },
                     {
-                        "title": "Grade 4",
+                        "title": "4",
                         "sort_number": 4
                     }
                 ]
@@ -66,11 +66,11 @@
                 "sort_number": 3,
                 "grades": [
                     {
-                        "title": "Grade 5",
+                        "title": "5",
                         "sort_number": 5
                     },
                     {
-                        "title": "Grade 6",
+                        "title": "6",
                         "sort_number": 6
                     }
                 ]
@@ -87,15 +87,15 @@
                 "sort_number": 1,
                 "grades": [
                     {
-                        "title": "Grade 7",
+                        "title": "7",
                         "sort_number": 7
                     },
                     {
-                        "title": "Grade 8",
+                        "title": "8",
                         "sort_number": 8
                     },
                     {
-                        "title": "Grade 9",
+                        "title": "9",
                         "sort_number": 9
                     }
                 ]
@@ -112,7 +112,7 @@
                 "sort_number": 1,
                 "grades": [
                     {
-                        "title": "Grade 10",
+                        "title": "10",
                         "sort_number": 10
                     }
                 ]
@@ -122,11 +122,11 @@
                 "sort_number": 2,
                 "grades": [
                     {
-                        "title": "Grade 11",
+                        "title": "11",
                         "sort_number": 11
                     },
                     {
-                        "title": "Grade 12",
+                        "title": "12",
                         "sort_number": 12
                     }
                 ]

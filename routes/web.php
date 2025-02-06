@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guardian\AdmissionStudent\AdmissionStudentController;
+use App\Http\Controllers\Guardian\GuardianController;
 use App\Http\Controllers\Office\Finance\FinanceController;
 use App\Http\Controllers\Office\GA\GAController;
 use App\Http\Controllers\Office\HCM\HCMController;
@@ -80,6 +82,22 @@ Route::middleware(['auth', 'verified'])
     ->name('school')
     ->group(function () {
         Route::get('/', [SchoolController::class, 'index']);
+    });
+
+// guardian routes
+Route::middleware(['auth', 'verified'])
+    ->prefix('guardian')
+    ->name('guardian')
+    ->group(function () {
+        Route::get('/', [GuardianController::class, 'index']);
+        // admission student routes
+        Route::prefix('admission-student')
+            ->name('.admissionStudent')
+            ->group(function () {
+                Route::get('/', [AdmissionStudentController::class, 'index']);
+                Route::get('purchase', [AdmissionStudentController::class, 'purchase'])->name('.purchase');
+                Route::get('option-school', [AdmissionStudentController::class, 'optionSchool'])->name('.optionSchool');
+            });
     });
 
 Route::middleware('auth')->group(function () {

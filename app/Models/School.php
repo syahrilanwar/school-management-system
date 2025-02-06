@@ -22,6 +22,16 @@ class School extends Model
         return $this->morphOne(Area::class, 'model');
     }
 
+    public function level()
+    {
+        return $this->belongsTo(SchoolLevel::class, 'school_level_id');
+    }
+
+    public function grades()
+    {
+        return $this->hasMany(SchoolGrade::class, 'school_level_id', 'school_level_id');
+    }
+
     public function admission_stages()
     {
         return $this->morphMany(AdmissionStage::class, 'model');

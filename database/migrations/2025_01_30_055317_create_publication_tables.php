@@ -114,7 +114,7 @@ return new class extends Migration
             $table->text('question');
             $table->text('answer');
             $table->string('status');
-            $table->integer('order_number')->default(0);
+            $table->integer('transaction_number')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

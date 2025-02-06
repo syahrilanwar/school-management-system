@@ -23,7 +23,7 @@ class DefaultOrganizationSeeder extends Seeder
         $offices = json_decode(file_get_contents('database/data/default/office.json'));
         $schools = json_decode(file_get_contents('database/data/default/school.json'));
         $positions = json_decode(file_get_contents('database/data/default/position.json'));
-        
+
         if (App::environment(['local', 'testing', 'production'])) {
             // create school
             $this->command->warn('Create school');
@@ -51,7 +51,7 @@ class DefaultOrganizationSeeder extends Seeder
                 } catch (\Throwable $th) {
                     DB::rollBack();
 
-                    $this->command->error($th->getMessage());
+                    throw $th;
                 }
                 $this->command->getOutput()->progressAdvance();
             }
@@ -75,7 +75,7 @@ class DefaultOrganizationSeeder extends Seeder
                 } catch (\Throwable $th) {
                     DB::rollBack();
 
-                    $this->command->error($th->getMessage());
+                    throw $th;
                 }
                 $this->command->getOutput()->progressAdvance();
             }
@@ -109,7 +109,7 @@ class DefaultOrganizationSeeder extends Seeder
                 } catch (\Throwable $th) {
                     DB::rollBack();
 
-                    $this->command->error($th->getMessage());
+                    throw $th;
                 }
                 $this->command->getOutput()->progressAdvance();
             }

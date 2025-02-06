@@ -54,7 +54,7 @@ import { Link } from '@inertiajs/vue3';
                 </li>
                 <li>
                     <Link
-                        href="#"
+                        :href="route('guardian.admissionStudent')"
                         class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                         <svg
@@ -76,7 +76,7 @@ import { Link } from '@inertiajs/vue3';
                             <path d="M9 13h6" />
                         </svg>
                         <span class="ml-3 flex-1 whitespace-nowrap"
-                            >Pendaftaran</span
+                            >Pendaftaran Anak</span
                         >
                     </Link>
                 </li>

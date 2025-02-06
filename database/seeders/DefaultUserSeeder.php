@@ -48,7 +48,7 @@ class DefaultUserSeeder extends Seeder
                 } catch (\Throwable $th) {
                     DB::rollBack();
 
-                    $this->command->error($th->getMessage());
+                    throw $th;
                 }
                 $this->command->getOutput()->progressAdvance();
             }

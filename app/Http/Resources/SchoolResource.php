@@ -14,6 +14,11 @@ class SchoolResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'uuid' => $this->uuid,
+            'area' => $this->area,
+            'level' => $this->level,
+            'grades' => $this->whenLoaded('grades', SchoolGradeResource::collection($this->grades)),
+        ];
     }
 }

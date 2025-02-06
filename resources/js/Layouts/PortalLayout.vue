@@ -52,7 +52,7 @@ import { Link } from '@inertiajs/vue3';
                         >
                             <div class="px-4 py-3">
                                 <span
-                                    class="block text-sm text-gray-900 dark:text-white"
+                                    class="block text-sm font-semibold text-gray-900 dark:text-white"
                                     >{{ $page.props.auth.user.name }}</span
                                 >
                                 <span

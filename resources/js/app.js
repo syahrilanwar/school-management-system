@@ -1,8 +1,10 @@
 import 'flowbite';
 import '../css/app.css';
+import '../css/element-plus.scss';
 import './bootstrap';
 
 import { createInertiaApp } from '@inertiajs/vue3';
+import ElementPlus from 'element-plus';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
@@ -18,6 +20,7 @@ createInertiaApp({
         ),
     setup({ el, App, props, plugin }) {
         return createApp({ render: () => h(App, props) })
+            .use(ElementPlus, { size: 'large' })
             .use(plugin)
             .use(ZiggyVue)
             .mount(el);
