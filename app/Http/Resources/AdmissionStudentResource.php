@@ -29,6 +29,9 @@ class AdmissionStudentResource extends JsonResource
             case 'VERIFIED':
                 $status_label = 'Terverifikasi';
                 break;
+            case 'UNVERIFIED':
+                $status_label = 'Belum Terverifikasi';
+                break;
             case 'WAITING_INTERVIEW':
                 $status_label = 'Menunggu Wawancara';
                 break;

@@ -41,15 +41,11 @@ import { Link } from '@inertiajs/vue3';
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                            <path
-                                d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"
-                            />
+                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
                         </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap"
-                            >Staf & Guru</span
-                        >
+                        <span class="ml-3 flex-1 whitespace-nowrap">Staf & Guru</span>
                     </Link>
                 </li>
                 <li>
@@ -69,9 +65,7 @@ import { Link } from '@inertiajs/vue3';
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                            <path
-                                d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"
-                            />
+                            <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" />
                             <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
                             <path d="M17 10h2a2 2 0 0 1 2 2v1" />
                             <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
@@ -104,9 +98,7 @@ import { Link } from '@inertiajs/vue3';
                             <path d="M13 8l2 0" />
                             <path d="M13 12l2 0" />
                         </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >Aktifitas</span
-                        >
+                        <span class="ml-3 flex-1 whitespace-nowrap text-left">Aktifitas</span>
                         <svg
                             aria-hidden="true"
                             class="h-5 w-5"
@@ -163,17 +155,11 @@ import { Link } from '@inertiajs/vue3';
                             class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
-                            />
-                            <path
-                                d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"
-                            />
+                            <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                            <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
                             <path d="M10 12l4 0" />
                         </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >Pengelolaan</span
-                        >
+                        <span class="ml-3 flex-1 whitespace-nowrap text-left">Pengelolaan</span>
                         <svg
                             aria-hidden="true"
                             class="h-5 w-5"
@@ -262,9 +248,7 @@ import { Link } from '@inertiajs/vue3';
                                 d="M12.003 21c-.732 .001 -1.465 -.438 -1.678 -1.317a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c.886 .215 1.325 .957 1.318 1.694"
                             />
                             <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                            <path
-                                d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
-                            />
+                            <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                             <path d="M19.001 15.5v1.5" />
                             <path d="M19.001 21v1.5" />
                             <path d="M22.032 17.25l-1.299 .75" />
@@ -272,9 +256,7 @@ import { Link } from '@inertiajs/vue3';
                             <path d="M15.97 17.25l1.3 .75" />
                             <path d="M20.733 20l1.3 .75" />
                         </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >Pengaturan</span
-                        >
+                        <span class="ml-3 flex-1 whitespace-nowrap text-left">Pengaturan</span>
                         <svg
                             aria-hidden="true"
                             class="h-5 w-5"
@@ -300,9 +282,7 @@ import { Link } from '@inertiajs/vue3';
                     </ul>
                 </li>
             </ul>
-            <ul
-                class="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700"
-            >
+            <ul class="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
                 <li>
                     <Link
                         :href="route('school')"
@@ -325,9 +305,7 @@ import { Link } from '@inertiajs/vue3';
                             <path d="M13 8l2 0" />
                             <path d="M13 12l2 0" />
                         </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >Staf</span
-                        >
+                        <span class="ml-3 flex-1 whitespace-nowrap text-left">Staf</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -363,9 +341,7 @@ import { Link } from '@inertiajs/vue3';
                             <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
                             <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
                         </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap text-left"
-                            >Guru</span
-                        >
+                        <span class="ml-3 flex-1 whitespace-nowrap text-left">Guru</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"

@@ -21,7 +21,7 @@ class TransactionResource extends JsonResource
 
         switch ($this->sub_type) {
             case 'ADMISSION_STUDENT_FORM':
-                $sub_type_label  = 'Formulir Pendaftaran Siswa';
+                $sub_type_label  = 'Formulir Pendaftaran Siswa Baru';
                 break;
 
             default:

@@ -116,7 +116,7 @@ class DummyAdmissionStudentActivitySeeder extends Seeder
 
                 try {
 
-                    $admission_status = ['DRAFT', 'PENDING', 'VERIFIED'];
+                    $admission_status = ['DRAFT', 'PENDING', 'VERIFIED', 'UNVERIFIED'];
                     $admission_status_selected = Arr::random($admission_status);
                     $module = $transaction->items()->first() ? $transaction->items()->first()->options['module'] : null;
 

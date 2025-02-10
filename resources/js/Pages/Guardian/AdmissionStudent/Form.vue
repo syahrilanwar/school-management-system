@@ -1782,7 +1782,7 @@ export default {
                     <div class="flex justify-start space-x-4">
                         <DefaultButton
                             v-if="activeForm != 0"
-                            type="alternative"
+                            type="light"
                             @click="
                                 moveToForm(activeForm == 0 ? 4 : activeForm - 1);
                                 scrollToTop();
@@ -1835,7 +1835,7 @@ export default {
                                 })
                             "
                         >
-                            <DefaultButton type="alternative">Balik ke Form Pendaftaran </DefaultButton>
+                            <DefaultButton type="light">Balik ke Form Pendaftaran </DefaultButton>
                         </Link>
 
                         <Link

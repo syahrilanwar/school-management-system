@@ -41,9 +41,7 @@ import { Link } from '@inertiajs/vue3';
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                            <path
-                                d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"
-                            />
+                            <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" />
                             <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
                             <path d="M17 10h2a2 2 0 0 1 2 2v1" />
                             <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
@@ -69,15 +67,11 @@ import { Link } from '@inertiajs/vue3';
                         >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                            <path
-                                d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
-                            />
+                            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
                             <path d="M9 17h6" />
                             <path d="M9 13h6" />
                         </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap"
-                            >Pendaftaran Siswa</span
-                        >
+                        <span class="ml-3 flex-1 whitespace-nowrap">Pendaftaran Siswa Baru</span>
                     </Link>
                 </li>
                 <li>
@@ -111,9 +105,7 @@ import { Link } from '@inertiajs/vue3';
                             <path d="M12 13.99v.01" />
                             <path d="M12 17v.01" />
                         </svg>
-                        <span class="ml-3 flex-1 whitespace-nowrap"
-                            >Tagihan & Pembayaran</span
-                        >
+                        <span class="ml-3 flex-1 whitespace-nowrap">Tagihan & Pembayaran</span>
                     </Link>
                 </li>
             </ul>

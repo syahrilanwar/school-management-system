@@ -1,9 +1,9 @@
 <script setup>
-import GuardianLayout from '@/Layouts/GuardianLayout.vue';
-import GuardianSidebar from '@/Layouts/Sidebars/GuardianSidebar.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import OfficeLayout from '@/Layouts/OfficeLayout.vue';
+import ICCSidebar from '@/Layouts/Sidebars/ICCSidebar.vue';
+import { Head } from '@inertiajs/vue3';
 import Modal from '@/Components/Modal.vue';
-import CheckoutForm from './CheckoutForm.vue';
+import StatusForm from './StatusForm.vue';
 import DefaultButton from '@/Components/DefaultButton.vue';
 import Badge from '@/Components/Badge.vue';
 </script>
@@ -45,9 +45,9 @@ export default {
 <template>
     <Head title="Wali" />
 
-    <GuardianLayout>
+    <OfficeLayout>
         <template #sidebar>
-            <GuardianSidebar />
+            <ICCSidebar />
         </template>
         <template #content>
             <!-- Data -->
@@ -422,26 +422,45 @@ export default {
                         </div>
                     </div>
                     <div v-if="admission_student.data.status != 'VERIFIED'" class="flex justify-start space-x-4">
-                        <Link
-                            :href="
-                                route('guardian.admissionStudent.form', {
-                                    registration_number: admission_student.data.registration_number,
+                        <DefaultButton
+                            v-if="admission_student.data.status != 'UNVERIFIED'"
+                            type="red"
+                            @click="
+                                openModal({
+                                    title: 'Tolak Formulir',
+                                    mode: 'unverified-status-form',
+                                    maxWidth: 'sm',
+                                    data: {
+                                        description: 'Ingin menolak formulir pendaftaran?',
+                                        actionUrl: route('office.icc.activity.admissionStudent.updateVerification', {
+                                            registration_number: admission_student.data.registration_number,
+                                            status: 'UNVERIFIED',
+                                        }),
+                                    },
                                 })
                             "
+                            >Tolak Formulir</DefaultButton
                         >
-                            <DefaultButton type="light">Sunting Form Pendaftaran </DefaultButton>
-                        </Link>
-                        <Link
-                            :href="
-                                route('guardian.admissionStudent.detail', {
-                                    registration_number: admission_student.data.registration_number,
+                        <DefaultButton
+                            type="purple"
+                            @click="
+                                openModal({
+                                    title: 'Verifikasi Formulir',
+                                    mode: 'verified-status-form',
+                                    maxWidth: 'sm',
+                                    data: {
+                                        description: 'Ingin memverifikasi formulir pendaftaran?',
+                                        actionUrl: route('office.icc.activity.admissionStudent.updateVerification', {
+                                            registration_number: admission_student.data.registration_number,
+                                            status: 'VERIFIED',
+                                        }),
+                                    },
                                 })
                             "
+                            >Verifikasi Formulir</DefaultButton
                         >
-                            <DefaultButton>Kirim Form Pendaftaran</DefaultButton>
-                        </Link>
                     </div>
-                    <div c>
+                    <div v-if="admission_student.data.status == 'VERIFIED'">
                         <hr class="my-4" />
                         <h1 class="text-lg font-semibold text-gray-900 dark:text-white md:pb-4">Tahapan Pendaftaran</h1>
                         <ol class="relative mx-3 max-w-4xl border-s border-gray-200 dark:border-gray-700">
@@ -531,13 +550,16 @@ export default {
             <!-- Modal -->
             <Modal :show="showModal" :property="propertyModal" :maxWidth="propertyModal?.maxWidth" @close="closeModal">
                 <template v-slot="{ propertyModal }">
-                    <CheckoutForm
-                        v-if="propertyModal?.mode == 'attachment-form'"
+                    <StatusForm
+                        v-if="
+                            propertyModal?.mode == 'unverified-status-form' ||
+                            propertyModal?.mode == 'verified-status-form'
+                        "
                         :propertyModal="propertyModal"
                         @close="closeModal()"
                     />
                 </template>
             </Modal>
         </template>
-    </GuardianLayout>
+    </OfficeLayout>
 </template>

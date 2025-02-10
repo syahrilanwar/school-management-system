@@ -63,7 +63,7 @@ export default {
                     >
                         <div class="flex flex-1 items-center space-x-2">
                             <h5>
-                                <span class="text-lg font-bold text-gray-900">Pendaftaran Siswa</span>
+                                <span class="text-lg font-bold text-gray-900">Pendaftaran Siswa Baru</span>
                             </h5>
                         </div>
                     </div>
@@ -1035,6 +1035,9 @@ export default {
                                             admission_student.status_label
                                         }}</Badge>
                                         <Badge v-if="admission_student.status == 'VERIFIED'" type="purple">{{
+                                            admission_student.status_label
+                                        }}</Badge>
+                                        <Badge v-if="admission_student.status == 'UNVERIFIED'" type="red">{{
                                             admission_student.status_label
                                         }}</Badge>
                                     </td>

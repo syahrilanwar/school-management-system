@@ -6,6 +6,7 @@ use App\Http\Controllers\Guardian\TransactionPaymentController;
 use App\Http\Controllers\Office\Finance\FinanceController;
 use App\Http\Controllers\Office\GA\GAController;
 use App\Http\Controllers\Office\HCM\HCMController;
+use App\Http\Controllers\Office\ICC\Activity\AdmissionStudentController as ActivityAdmissionStudentController;
 use App\Http\Controllers\Office\ICC\ICCController;
 use App\Http\Controllers\Office\ICC\Management\AdmissionStageController;
 use App\Http\Controllers\Office\QRD\QRDController;
@@ -40,6 +41,14 @@ Route::middleware(['auth', 'verified'])
             ->name('.icc')
             ->group(function () {
                 Route::get('/', [ICCController::class, 'index']);
+                // activity routes
+                Route::prefix('activity/admission-student')
+                    ->name('.activity.admissionStudent')
+                    ->group(function () {
+                        Route::get('/', [ActivityAdmissionStudentController::class, 'index']);
+                        Route::get('{registration_number}/detail', [ActivityAdmissionStudentController::class, 'detail'])->name('.detail');
+                        Route::post('update-verification', [ActivityAdmissionStudentController::class, 'updateVerification'])->name('.updateVerification');
+                    });
                 // management routes
                 Route::prefix('management')
                     ->name('.management')
