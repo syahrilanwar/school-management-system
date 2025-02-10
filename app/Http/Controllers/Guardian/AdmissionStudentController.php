@@ -87,7 +87,7 @@ class AdmissionStudentController extends Controller
             });
         }
 
-        return response()->json(SchoolResource::collection($schools->with('grades')->latest()->get()), 200);
+        return response()->json(SchoolResource::collection($schools->with('area')->with('grades')->latest()->get()), 200);
     }
 
     public function form($registration_number)
