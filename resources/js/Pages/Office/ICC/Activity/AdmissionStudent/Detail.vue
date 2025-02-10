@@ -513,7 +513,7 @@ export default {
                                 </h3>
 
                                 <time
-                                    class="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                                    class="mb-2 block text-xs font-normal leading-none text-gray-400 dark:text-gray-500"
                                     >{{ stage.scheduled_at_label }}</time
                                 >
                                 <div v-if="stage.officer" class="my-3 flex items-center gap-4">
@@ -532,13 +532,13 @@ export default {
                                             <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                                         </svg>
                                     </div>
-                                    <div class="text-sm font-medium dark:text-white">
+                                    <div class="text-xs font-medium dark:text-white">
                                         <div>{{ stage.officer.profile.name }}</div>
-                                        <div class="text-sm text-gray-500 dark:text-gray-400">-</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400">-</div>
                                     </div>
                                 </div>
                                 <p
-                                    class="mb-4 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-normal text-gray-500 dark:text-gray-400"
+                                    class="mb-4 rounded-lg border border-gray-200 bg-white px-4 py-2 text-xs font-normal text-gray-500 dark:text-gray-400"
                                 >
                                     {{ stage.description }}
                                 </p>

@@ -7,24 +7,16 @@ import { Head, Link } from '@inertiajs/vue3';
     <Head title="Portal" />
 
     <PortalLayout>
-        <div class="flex h-screen">
+        <div class="flex">
             <div class="mx-auto my-auto w-full max-w-7xl sm:px-6 lg:px-8">
-                <div
-                    class="grid grid-cols-1 gap-6 overflow-hidden md:grid-cols-2"
-                >
+                <div class="grid grid-cols-1 gap-6 overflow-hidden md:grid-cols-2">
                     <div
                         class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
                     >
                         <Link :href="route('school')">
-                            <h5
-                                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Sekolah
-                            </h5>
+                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Sekolah</h5>
                         </Link>
-                        <p
-                            class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400"
-                        >
+                        <p class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400">
                             Akses untuk pengelolaan sekolah
                         </p>
                         <Link
@@ -53,15 +45,9 @@ import { Head, Link } from '@inertiajs/vue3';
                         class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
                     >
                         <Link :href="route('office')">
-                            <h5
-                                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Yayasan
-                            </h5>
+                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Yayasan</h5>
                         </Link>
-                        <p
-                            class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400"
-                        >
+                        <p class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400">
                             Akses untuk pengelolaan yayasan
                         </p>
                         <Link
@@ -90,17 +76,9 @@ import { Head, Link } from '@inertiajs/vue3';
                         class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
                     >
                         <Link href="#">
-                            <h5
-                                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Siswa
-                            </h5>
+                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Siswa</h5>
                         </Link>
-                        <p
-                            class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400"
-                        >
-                            Akses untuk siswa
-                        </p>
+                        <p class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400">Akses untuk siswa</p>
                         <Link
                             href="#"
                             class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -127,17 +105,9 @@ import { Head, Link } from '@inertiajs/vue3';
                         class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
                     >
                         <Link :href="route('guardian')">
-                            <h5
-                                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
-                            >
-                                Wali
-                            </h5>
+                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Wali</h5>
                         </Link>
-                        <p
-                            class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400"
-                        >
-                            Akses untuk wali
-                        </p>
+                        <p class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400">Akses untuk wali</p>
                         <Link
                             :href="route('guardian')"
                             class="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

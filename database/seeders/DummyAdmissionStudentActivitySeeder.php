@@ -124,7 +124,7 @@ class DummyAdmissionStudentActivitySeeder extends Seeder
                         'transaction_id' => $transaction->id,
                         'school_id' => $module['school_id'],
                         'school_grade_id' => $module['school_grade_id'],
-                        'submitted_at' => $admission_status_selected == 'PENDING' ? now()->addDays(rand(3, 10)) : null,
+                        'submitted_at' => $admission_status_selected == 'VERIFIED' ? now()->addDays(rand(3, 10)) : null,
                         'registration_number' => 'ADM-' . now()->format('YmdHis') . '-' . Str::upper(Str::random(6)),
                         'name' => $module['name'],
                         'avatar' => $faker->imageUrl(200, 200, 'people'),

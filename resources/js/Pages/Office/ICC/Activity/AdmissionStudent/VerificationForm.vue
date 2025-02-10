@@ -41,6 +41,11 @@ export default {
                             message: response.data.message,
                             type: 'success',
                         });
+
+                        setTimeout(() => {
+                            this.close();
+                            this.$inertia.reload();
+                        }, 2000);
                     } else if (response.data.status === 'error') {
                         ElNotification({
                             title: 'Error',

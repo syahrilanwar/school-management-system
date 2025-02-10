@@ -93,44 +93,31 @@ export default {
                     this.process = true;
                     let requestPayload = JSON.parse(JSON.stringify(this.form));
                     requestPayload.school = requestPayload.school?.uuid;
-                    requestPayload.school_grade =
-                        requestPayload.school_grade?.uuid;
+                    requestPayload.school_grade = requestPayload.school_grade?.uuid;
 
                     axios
-                        .post(
-                            route('guardian.admissionStudent.checkout'),
-                            requestPayload,
-                            {
-                                headers: { 'Content-Type': 'application/json' },
-                            },
-                        )
+                        .post(route('guardian.admissionStudent.checkout'), requestPayload, {
+                            headers: { 'Content-Type': 'application/json' },
+                        })
                         .then((response) => {
-                            let transaction_payment =
-                                response.data.transaction_payment;
+                            let transaction_payment = response.data.transaction_payment;
                             let snap_token = response.data.snap_token;
 
                             try {
                                 window.snap.pay(snap_token, {
                                     onSuccess: (gateway_response) => {
-                                        this.processPayment(
-                                            transaction_payment,
-                                            gateway_response,
-                                        );
+                                        this.processPayment(transaction_payment, gateway_response);
 
                                         ElNotification({
                                             title: 'Pembayaran Berhasil',
-                                            message:
-                                                'Terima kasih! Pembayaran Anda telah berhasil diproses.',
+                                            message: 'Terima kasih! Pembayaran Anda telah berhasil diproses.',
                                             type: 'success',
                                         });
 
                                         this.process = false;
                                     },
                                     onPending: (gateway_response) => {
-                                        this.processPayment(
-                                            transaction_payment,
-                                            gateway_response,
-                                        );
+                                        this.processPayment(transaction_payment, gateway_response);
 
                                         ElNotification({
                                             title: 'Menunggu Pembayaran',
@@ -142,15 +129,11 @@ export default {
                                         this.process = false;
                                     },
                                     onError: (gateway_response) => {
-                                        this.processPayment(
-                                            transaction_payment,
-                                            gateway_response,
-                                        );
+                                        this.processPayment(transaction_payment, gateway_response);
 
                                         ElNotification({
                                             title: 'Pembayaran Gagal',
-                                            message:
-                                                'Terjadi kesalahan dalam proses pembayaran. Silakan coba lagi.',
+                                            message: 'Terjadi kesalahan dalam proses pembayaran. Silakan coba lagi.',
                                             type: 'error',
                                         });
 
@@ -161,8 +144,7 @@ export default {
 
                                         ElNotification({
                                             title: 'Transaksi Ditutup',
-                                            message:
-                                                'Anda telah menutup pembayaran sebelum menyelesaikannya.',
+                                            message: 'Anda telah menutup pembayaran sebelum menyelesaikannya.',
                                             type: 'info',
                                         });
 
@@ -184,11 +166,8 @@ export default {
 
                             if (error.response?.data?.errors) {
                                 for (let field in error.response.data.errors) {
-                                    this.field[field].error =
-                                        error.response.data.errors[field];
-                                    this.$refs['checkoutForm'].validateField(
-                                        field,
-                                    );
+                                    this.field[field].error = error.response.data.errors[field];
+                                    this.$refs['checkoutForm'].validateField(field);
                                 }
                             }
                         })
@@ -244,13 +223,7 @@ export default {
             {{ propertyModal?.title }}
         </h2>
         <div class="px-2">
-            <el-form
-                v-if="loaded"
-                ref="checkoutForm"
-                label-position="top"
-                :model="form"
-                :disabled="process"
-            >
+            <el-form v-if="loaded" ref="checkoutForm" label-position="top" :model="form" :disabled="process">
                 <el-form-item
                     class="font-bold"
                     :label="field.name.label"
@@ -337,47 +310,25 @@ export default {
         >
             <div class="space-y-4">
                 <dl class="flex items-center justify-between gap-4">
-                    <dt class="font-normal text-gray-500 dark:text-gray-400">
-                        Harga
-                    </dt>
-                    <dd class="font-medium text-gray-900 dark:text-white">
-                        IDR {{ product.price }}
-                    </dd>
+                    <dt class="font-normal text-gray-500 dark:text-gray-400">Harga</dt>
+                    <dd class="font-medium text-gray-900 dark:text-white">IDR {{ product.price }}</dd>
                 </dl>
                 <dl class="flex items-center justify-between gap-4">
-                    <dt class="font-normal text-gray-500 dark:text-gray-400">
-                        Diskon
-                    </dt>
-                    <dd class="font-medium text-green-500 dark:text-white">
-                        -
-                    </dd>
+                    <dt class="font-normal text-gray-500 dark:text-gray-400">Diskon</dt>
+                    <dd class="font-medium text-green-500 dark:text-white">-</dd>
                 </dl>
             </div>
             <dl
                 class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 text-base dark:border-gray-700"
             >
                 <dt class="font-bold text-gray-900 dark:text-white">Total</dt>
-                <dd class="font-bold text-gray-900 dark:text-white">
-                    IDR {{ product.price }}
-                </dd>
+                <dd class="font-bold text-gray-900 dark:text-white">IDR {{ product.price }}</dd>
             </dl>
         </div>
         <div class="flex justify-end space-x-3">
-            <DefaultButton
-                class="w-full"
-                type="light"
-                @click="close"
-                :disabled="process"
-            >
-                Batal
-            </DefaultButton>
+            <DefaultButton class="w-full" type="light" @click="close" :disabled="process"> Batal </DefaultButton>
 
-            <DefaultButton
-                class="w-full"
-                type="default"
-                @click="submit"
-                :disabled="process"
-            >
+            <DefaultButton class="w-full" type="default" @click="submit" :disabled="process">
                 Beli Formulir
             </DefaultButton>
         </div>

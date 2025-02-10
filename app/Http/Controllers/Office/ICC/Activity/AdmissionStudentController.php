@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\AdmissionStudentResource;
 use App\Http\Resources\ProductResource;
 use App\Http\Resources\SchoolResource;
+use App\Models\AdmissionStage;
 use App\Models\AdmissionStudent;
 use App\Models\Product;
 use App\Models\School;
@@ -57,9 +58,7 @@ class AdmissionStudentController extends Controller
 
     public function detail($registration_number)
     {
-        $admission_student = AdmissionStudent::whereHas('transaction', function ($transaction) {
-            $transaction->where('customer_id', Auth::user()->id);
-        })->where('registration_number', $registration_number)
+        $admission_student = AdmissionStudent::where('registration_number', $registration_number)
             ->with('school.area')
             ->with('school_grade')
             ->with('stages')
@@ -72,5 +71,43 @@ class AdmissionStudentController extends Controller
         return Inertia::render('Office/ICC/Activity/AdmissionStudent/Detail', $data);
     }
 
-    public function updateVerification() {}
+    public function updateVerification()
+    {
+        DB::beginTransaction();
+
+        try {
+            $admission_student = AdmissionStudent::where('registration_number', request('registration_number'))->firstOrFail();
+
+            $admission_student->update(['status' => request('status')]);
+
+            $message = request('status') == 'VERIFIED' ? 'Berhasil memverifikasi formulir' : 'Berhasil menolak formulir';
+
+            if (request('status') == 'VERIFIED') {
+                $admission_stages = AdmissionStage::whereHasMorph('model', School::class, function ($school) use ($admission_student) {
+                    $school->where('id', $admission_student->school_id);
+                })->get();
+
+                foreach ($admission_stages as $admission_stage) {
+                    $admission_student->stages()->create([
+                        'admission_stage_id' => $admission_stage->id,
+                        'status' => 'PENDING',
+                    ]);
+                }
+            }
+
+            DB::commit();
+
+            return response()->json([
+                'status' => 'success',
+                'message' => $message,
+            ], 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            return response()->json([
+                'status' => 'error',
+                'message' => $th->getMessage(),
+            ], 500);
+        }
+    }
 }

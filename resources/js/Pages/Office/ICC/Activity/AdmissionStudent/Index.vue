@@ -118,7 +118,7 @@ export default {
                                             {{ admission_student.submitted_at_label }}
                                         </div>
                                         <div v-else>
-                                            <Badge type="dark">Belum Melakukan Pendaftaran</Badge>
+                                            <Badge type="dark">Belum Terdaftar</Badge>
                                         </div>
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-3">

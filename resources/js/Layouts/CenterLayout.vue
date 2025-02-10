@@ -21,7 +21,7 @@ import { Link } from '@inertiajs/vue3';
         >
             <div class="flex flex-wrap items-center justify-between">
                 <div class="flex items-center justify-start">
-                    <Link :href="route('school')" class="mr-4 flex items-center justify-between">
+                    <Link :href="route('guardian')" class="mr-4 flex items-center justify-between">
                         <img src="/assets/icons/main-school-logo.png" class="mr-3 h-14" alt="School Logo" />
                     </Link>
                 </div>
@@ -61,7 +61,7 @@ import { Link } from '@inertiajs/vue3';
                         </div>
                         <div class="grid grid-cols-3 gap-4 p-4">
                             <Link
-                                :href="route('school')"
+                                :href="route('guardian')"
                                 class="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                             >
                                 <svg
@@ -84,7 +84,7 @@ import { Link } from '@inertiajs/vue3';
                                 <div class="text-sm text-gray-900 dark:text-white">Staf</div>
                             </Link>
                             <Link
-                                :href="route('school')"
+                                :href="route('guardian')"
                                 class="group block rounded-lg p-4 text-center hover:bg-gray-100 dark:hover:bg-gray-600"
                             >
                                 <svg
