@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Guardian\AdmissionStudent\AdmissionStudentController;
+use App\Http\Controllers\Guardian\AdmissionStudentController;
 use App\Http\Controllers\Guardian\GuardianController;
+use App\Http\Controllers\Guardian\TransactionPaymentController;
 use App\Http\Controllers\Office\Finance\FinanceController;
 use App\Http\Controllers\Office\GA\GAController;
 use App\Http\Controllers\Office\HCM\HCMController;
@@ -95,8 +96,18 @@ Route::middleware(['auth', 'verified'])
             ->name('.admissionStudent')
             ->group(function () {
                 Route::get('/', [AdmissionStudentController::class, 'index']);
-                Route::get('purchase', [AdmissionStudentController::class, 'purchase'])->name('.purchase');
+                Route::post('checkout', [AdmissionStudentController::class, 'checkout'])->name('.checkout');
                 Route::get('option-school', [AdmissionStudentController::class, 'optionSchool'])->name('.optionSchool');
+                Route::get('{registration_number}/form', [AdmissionStudentController::class, 'form'])->name('.form');
+                Route::get('{registration_number}/detail', [AdmissionStudentController::class, 'detail'])->name('.detail');
+                Route::post('submit', [AdmissionStudentController::class, 'submit'])->name('.submit');
+            });
+        // transaction payment routes
+        Route::prefix('transaction-payment')
+            ->name('.transactionPayment')
+            ->group(function () {
+                Route::get('/', [TransactionPaymentController::class, 'index']);
+                Route::post('process-payment', [TransactionPaymentController::class, 'processPayment'])->name('.processPayment');
             });
     });
 

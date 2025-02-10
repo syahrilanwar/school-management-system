@@ -13,11 +13,11 @@ import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <div class="min-h-screen bg-gray-50 antialiased dark:bg-gray-900">
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         <!-- navbar -->
 
         <nav
-            class="fixed left-0 right-0 top-0 z-40 border-b border-gray-200 bg-white px-4 py-2.5 dark:border-gray-700 dark:bg-gray-800"
+            class="fixed left-0 right-0 top-0 z-50 border-b border-gray-200 bg-white px-4 py-2.5 dark:border-gray-700 dark:bg-gray-800"
         >
             <div class="flex flex-wrap items-center justify-between">
                 <div class="flex items-center justify-start">

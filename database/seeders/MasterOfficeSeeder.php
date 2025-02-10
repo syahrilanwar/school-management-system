@@ -25,8 +25,9 @@ class MasterOfficeSeeder extends Seeder
             $this->command->warn('Create product');
             $this->command->getOutput()->progressStart(count($products));
             foreach ($products as $product) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     Product::firstOrCreate([
                         'name' => $product->name,
@@ -49,8 +50,9 @@ class MasterOfficeSeeder extends Seeder
             $this->command->warn('Create admission stage');
             $this->command->getOutput()->progressStart(count($admission_stages));
             foreach ($admission_stages as $admission_stage) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     $schools = School::get();
 

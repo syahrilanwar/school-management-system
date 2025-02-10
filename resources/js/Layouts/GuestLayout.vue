@@ -14,7 +14,7 @@ import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <section class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <section class="min-h-screen bg-gray-100 dark:bg-gray-900">
         <div
             class="mx-auto flex flex-col items-center justify-center px-6 py-8 md:h-screen lg:py-0"
         >

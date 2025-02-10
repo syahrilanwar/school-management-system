@@ -28,7 +28,7 @@ return new class extends Migration
             $table->foreignId('transaction_id')->constrained('transactions');
             $table->foreignId('school_id')->constrained('schools');
             $table->foreignId('school_grade_id')->constrained('school_grades');
-            $table->string('registration_number');
+            $table->string('registration_number')->unique();
             $table->dateTime('submitted_at')->nullable();
             $table->string('name')->nullable();
             $table->string('avatar')->nullable();
@@ -53,7 +53,7 @@ return new class extends Migration
             $table->string('father_occupation')->nullable();
             $table->string('father_company')->nullable();
             $table->string('father_position')->nullable();
-            $table->integer('father_national_id')->nullable();
+            $table->string('father_national_id')->nullable();
             $table->string('mother_name')->nullable();
             $table->string('mother_birth_place')->nullable();
             $table->date('mother_birth_date')->nullable();
@@ -65,7 +65,7 @@ return new class extends Migration
             $table->string('mother_occupation')->nullable();
             $table->string('mother_company')->nullable();
             $table->string('mother_position')->nullable();
-            $table->integer('mother_national_id')->nullable();
+            $table->string('mother_national_id')->nullable();
             $table->string('emergency_name')->nullable();
             $table->string('emergency_phone')->nullable();
             $table->string('emergency_home_phone')->nullable();
@@ -90,7 +90,7 @@ return new class extends Migration
             $table->json('families')->nullable();
             $table->json('questionnaires')->nullable();
             $table->json('school_info_source')->nullable();
-            $table->string('status'); // OPEN, CLOSED, ACCEPTED, REJECTED, INTERVIEW, AWAITING
+            $table->string('status'); // DRAFT, PENDING, VERIFIED, WAITING_INTERVIEW, PASSED, FAILED, WAITING_PAYMENT, ACCEPTED, CANCELED
             $table->timestampsTz();
             $table->softDeletes();
         });
@@ -103,7 +103,7 @@ return new class extends Migration
             $table->foreignId('officer_id')->nullable()->constrained('employees');
             $table->dateTime('scheduled_at')->nullable();
             $table->text('description')->nullable();
-            $table->string('status'); // OPEN, CLOSED, ACCEPTED, REJECTED, INTERVIEW, AWAITING
+            $table->string('status'); // PENDING, SCHEDULED, INTERVIEW, PASSED, FAILED
             $table->timestampsTz();
             $table->softDeletes();
         });

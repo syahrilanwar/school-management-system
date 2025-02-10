@@ -16,9 +16,9 @@ class SchoolResource extends JsonResource
     {
         return [
             'uuid' => $this->uuid,
-            'area' => $this->area,
-            'level' => $this->level,
-            'grades' => $this->whenLoaded('grades', SchoolGradeResource::collection($this->grades)),
+            'area' => $this->whenLoaded('area', fn() => AreaResource::make($this->area)),
+            'level' => $this->whenLoaded('level', fn() => SchoolLevelResource::make($this->level)),
+            'grades' => $this->whenLoaded('grades', fn() => SchoolGradeResource::collection($this->grades)),
         ];
     }
 }

@@ -29,8 +29,9 @@ class DefaultOrganizationSeeder extends Seeder
             $this->command->warn('Create school');
             $this->command->getOutput()->progressStart(count($schools));
             foreach ($schools as $school) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     $school_level = SchoolLevel::where('code', $school->level)->firstOrFail();
 
@@ -60,8 +61,9 @@ class DefaultOrganizationSeeder extends Seeder
             $this->command->warn('Create office');
             $this->command->getOutput()->progressStart(count($offices));
             foreach ($offices as $office) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     $office_created = Office::firstOrCreate([
                         'name' => $office->name,
@@ -84,8 +86,9 @@ class DefaultOrganizationSeeder extends Seeder
             $this->command->warn('Create position');
             $this->command->getOutput()->progressStart(count($positions));
             foreach ($positions as $position) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     $areas = [];
 

@@ -6,9 +6,9 @@ import DefaultButton from '@/Components/DefaultButton.vue';
 import OutlineButton from '@/Components/OutlineButton.vue';
 import GuardianLayout from '@/Layouts/GuardianLayout.vue';
 import GuardianSidebar from '@/Layouts/Sidebars/GuardianSidebar.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 import Modal from '@/Components/Modal.vue';
-import PurchaseForm from './PurchaseForm.vue';
+import CheckoutForm from '../AdmissionStudent/CheckoutForm.vue';
 </script>
 
 <script>
@@ -57,17 +57,13 @@ export default {
         <template #content>
             <!-- Data -->
             <section class="bg-gray-50 antialiased dark:bg-gray-900">
-                <div
-                    class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg"
-                >
+                <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
                     <div
                         class="flex flex-col space-y-3 p-4 md:flex-row md:items-center md:justify-between md:space-x-4 md:space-y-0"
                     >
                         <div class="flex flex-1 items-center space-x-2">
                             <h5>
-                                <span class="text-lg font-bold text-gray-900"
-                                    >Pendaftaran Anak</span
-                                >
+                                <span class="text-lg font-bold text-gray-900">Pendaftaran Siswa</span>
                             </h5>
                         </div>
                     </div>
@@ -94,9 +90,7 @@ export default {
                                     })
                                 "
                             >
-                                <div
-                                    class="flex items-center space-x-1 text-sm"
-                                >
+                                <div class="flex items-center space-x-1 text-sm">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 24 24"
@@ -107,11 +101,7 @@ export default {
                                         stroke-linejoin="round"
                                         class="h-4"
                                     >
-                                        <path
-                                            stroke="none"
-                                            d="M0 0h24v24H0z"
-                                            fill="none"
-                                        />
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <path d="M14 3v4a1 1 0 0 0 1 1h4" />
                                         <path
                                             d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
@@ -161,14 +151,8 @@ export default {
                                 id="filterDropdown"
                                 class="right-0 z-10 hidden w-80 rounded-lg bg-white px-3 pt-1 shadow dark:bg-gray-700"
                             >
-                                <div
-                                    class="flex items-center justify-between pt-2"
-                                >
-                                    <h6
-                                        class="text-sm font-medium text-black dark:text-white"
-                                    >
-                                        Filters
-                                    </h6>
+                                <div class="flex items-center justify-between pt-2">
+                                    <h6 class="text-sm font-medium text-black dark:text-white">Filters</h6>
                                     <div class="flex items-center space-x-3">
                                         <a
                                             href="#"
@@ -183,11 +167,7 @@ export default {
                                     </div>
                                 </div>
                                 <div class="pb-2 pt-3">
-                                    <label
-                                        for="input-group-search"
-                                        class="sr-only"
-                                        >Search</label
-                                    >
+                                    <label for="input-group-search" class="sr-only">Search</label>
                                     <div class="relative">
                                         <div
                                             class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4"
@@ -246,14 +226,8 @@ export default {
                                             </svg>
                                         </button>
                                     </h2>
-                                    <div
-                                        id="category-body"
-                                        class="hidden"
-                                        aria-labelledby="category-heading"
-                                    >
-                                        <div
-                                            class="border-b border-gray-200 py-2 font-light dark:border-gray-600"
-                                        >
+                                    <div id="category-body" class="hidden" aria-labelledby="category-heading">
+                                        <div class="border-b border-gray-200 py-2 font-light dark:border-gray-600">
                                             <ul class="space-y-2">
                                                 <li class="flex items-center">
                                                     <input
@@ -422,11 +396,7 @@ export default {
                                             </svg>
                                         </button>
                                     </h2>
-                                    <div
-                                        id="price-body"
-                                        class="hidden"
-                                        aria-labelledby="price-heading"
-                                    >
+                                    <div id="price-body" class="hidden" aria-labelledby="price-heading">
                                         <div
                                             class="flex items-center space-x-3 border-b border-gray-200 py-2 font-light dark:border-gray-600"
                                         >
@@ -434,9 +404,7 @@ export default {
                                                 id="price-from"
                                                 class="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
                                             >
-                                                <option disabled="" selected="">
-                                                    From
-                                                </option>
+                                                <option disabled="" selected="">From</option>
                                                 <option>$500</option>
                                                 <option>$2500</option>
                                                 <option>$5000</option></select
@@ -444,9 +412,7 @@ export default {
                                                 id="price-to"
                                                 class="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
                                             >
-                                                <option disabled="" selected="">
-                                                    To
-                                                </option>
+                                                <option disabled="" selected="">To</option>
                                                 <option>$500</option>
                                                 <option>$2500</option>
                                                 <option>$5000</option>
@@ -487,9 +453,7 @@ export default {
                                         <div
                                             class="space-y-2 border-b border-gray-200 py-2 font-light dark:border-gray-600"
                                         >
-                                            <label
-                                                class="relative flex cursor-pointer items-center"
-                                            >
+                                            <label class="relative flex cursor-pointer items-center">
                                                 <input
                                                     type="checkbox"
                                                     value=""
@@ -500,48 +464,29 @@ export default {
                                                 <div
                                                     class="peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 peer-checked:bg-primary-600 peer h-5 w-9 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 dark:border-gray-600 dark:bg-gray-700"
                                                 ></div>
-                                                <span
-                                                    class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
                                                     >North America</span
                                                 >
                                             </label>
-                                            <label
-                                                class="relative flex cursor-pointer items-center"
-                                            >
-                                                <input
-                                                    type="checkbox"
-                                                    value=""
-                                                    class="peer sr-only"
-                                                    name="shipping"
-                                                />
+                                            <label class="relative flex cursor-pointer items-center">
+                                                <input type="checkbox" value="" class="peer sr-only" name="shipping" />
                                                 <div
                                                     class="peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 peer-checked:bg-primary-600 peer h-5 w-9 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 dark:border-gray-600 dark:bg-gray-700"
                                                 ></div>
-                                                <span
-                                                    class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
                                                     >South America</span
                                                 >
                                             </label>
-                                            <label
-                                                class="relative flex cursor-pointer items-center"
-                                            >
-                                                <input
-                                                    type="checkbox"
-                                                    value=""
-                                                    class="peer sr-only"
-                                                    name="shipping"
-                                                />
+                                            <label class="relative flex cursor-pointer items-center">
+                                                <input type="checkbox" value="" class="peer sr-only" name="shipping" />
                                                 <div
                                                     class="peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 peer-checked:bg-primary-600 peer h-5 w-9 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 dark:border-gray-600 dark:bg-gray-700"
                                                 ></div>
-                                                <span
-                                                    class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
                                                     >Asia</span
                                                 >
                                             </label>
-                                            <label
-                                                class="relative flex cursor-pointer items-center"
-                                            >
+                                            <label class="relative flex cursor-pointer items-center">
                                                 <input
                                                     type="checkbox"
                                                     value=""
@@ -552,25 +497,16 @@ export default {
                                                 <div
                                                     class="peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 peer-checked:bg-primary-600 peer h-5 w-9 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 dark:border-gray-600 dark:bg-gray-700"
                                                 ></div>
-                                                <span
-                                                    class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
                                                     >Australia</span
                                                 >
                                             </label>
-                                            <label
-                                                class="relative flex cursor-pointer items-center"
-                                            >
-                                                <input
-                                                    type="checkbox"
-                                                    value=""
-                                                    class="peer sr-only"
-                                                    name="shipping"
-                                                />
+                                            <label class="relative flex cursor-pointer items-center">
+                                                <input type="checkbox" value="" class="peer sr-only" name="shipping" />
                                                 <div
                                                     class="peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 peer-checked:bg-primary-600 peer h-5 w-9 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 dark:border-gray-600 dark:bg-gray-700"
                                                 ></div>
-                                                <span
-                                                    class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
                                                     >Europe</span
                                                 >
                                             </label>
@@ -602,11 +538,7 @@ export default {
                                             </svg>
                                         </button>
                                     </h2>
-                                    <div
-                                        id="rating-body"
-                                        class="hidden"
-                                        aria-labelledby="rating-heading"
-                                    >
+                                    <div id="rating-body" class="hidden" aria-labelledby="rating-heading">
                                         <div
                                             class="space-y-2 border-b border-gray-200 py-2 font-light dark:border-gray-600"
                                         >
@@ -618,10 +550,7 @@ export default {
                                                     name="rating"
                                                     class="text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-700"
                                                 />
-                                                <label
-                                                    for="five-stars"
-                                                    class="ml-2 flex items-center"
-                                                >
+                                                <label for="five-stars" class="ml-2 flex items-center">
                                                     <svg
                                                         aria-hidden="true"
                                                         class="h-5 w-5 text-yellow-400"
@@ -629,9 +558,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            First star
-                                                        </title>
+                                                        <title>First star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -643,9 +570,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Second star
-                                                        </title>
+                                                        <title>Second star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -657,9 +582,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Third star
-                                                        </title>
+                                                        <title>Third star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -671,9 +594,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fourth star
-                                                        </title>
+                                                        <title>Fourth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -685,9 +606,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fifth star
-                                                        </title>
+                                                        <title>Fifth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -702,10 +621,7 @@ export default {
                                                     name="rating"
                                                     class="text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-700"
                                                 />
-                                                <label
-                                                    for="four-stars"
-                                                    class="ml-2 flex items-center"
-                                                >
+                                                <label for="four-stars" class="ml-2 flex items-center">
                                                     <svg
                                                         aria-hidden="true"
                                                         class="h-5 w-5 text-yellow-400"
@@ -713,9 +629,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            First star
-                                                        </title>
+                                                        <title>First star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -727,9 +641,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Second star
-                                                        </title>
+                                                        <title>Second star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -741,9 +653,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Third star
-                                                        </title>
+                                                        <title>Third star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -755,9 +665,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fourth star
-                                                        </title>
+                                                        <title>Fourth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -769,9 +677,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fifth star
-                                                        </title>
+                                                        <title>Fifth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -787,10 +693,7 @@ export default {
                                                     checked=""
                                                     class="text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-700"
                                                 />
-                                                <label
-                                                    for="three-stars"
-                                                    class="ml-2 flex items-center"
-                                                >
+                                                <label for="three-stars" class="ml-2 flex items-center">
                                                     <svg
                                                         aria-hidden="true"
                                                         class="h-5 w-5 text-yellow-400"
@@ -798,9 +701,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            First star
-                                                        </title>
+                                                        <title>First star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -812,9 +713,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Second star
-                                                        </title>
+                                                        <title>Second star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -826,9 +725,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Third star
-                                                        </title>
+                                                        <title>Third star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -840,9 +737,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fourth star
-                                                        </title>
+                                                        <title>Fourth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -854,9 +749,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fifth star
-                                                        </title>
+                                                        <title>Fifth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -871,10 +764,7 @@ export default {
                                                     name="rating"
                                                     class="text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-700"
                                                 />
-                                                <label
-                                                    for="two-stars"
-                                                    class="ml-2 flex items-center"
-                                                >
+                                                <label for="two-stars" class="ml-2 flex items-center">
                                                     <svg
                                                         aria-hidden="true"
                                                         class="h-5 w-5 text-yellow-400"
@@ -882,9 +772,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            First star
-                                                        </title>
+                                                        <title>First star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -896,9 +784,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Second star
-                                                        </title>
+                                                        <title>Second star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -910,9 +796,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Third star
-                                                        </title>
+                                                        <title>Third star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -924,9 +808,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fourth star
-                                                        </title>
+                                                        <title>Fourth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -938,9 +820,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fifth star
-                                                        </title>
+                                                        <title>Fifth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -955,10 +835,7 @@ export default {
                                                     name="rating"
                                                     class="text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-700"
                                                 />
-                                                <label
-                                                    for="one-star"
-                                                    class="ml-2 flex items-center"
-                                                >
+                                                <label for="one-star" class="ml-2 flex items-center">
                                                     <svg
                                                         aria-hidden="true"
                                                         class="h-5 w-5 text-yellow-400"
@@ -966,9 +843,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            First star
-                                                        </title>
+                                                        <title>First star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -980,9 +855,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Second star
-                                                        </title>
+                                                        <title>Second star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -994,9 +867,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Third star
-                                                        </title>
+                                                        <title>Third star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -1008,9 +879,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fourth star
-                                                        </title>
+                                                        <title>Fourth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -1022,9 +891,7 @@ export default {
                                                         viewbox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                     >
-                                                        <title>
-                                                            Fifth star
-                                                        </title>
+                                                        <title>Fifth star</title>
                                                         <path
                                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                                                         />
@@ -1035,10 +902,7 @@ export default {
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                v-if="false"
-                                class="flex w-full items-center space-x-3 md:w-auto"
-                            >
+                            <div v-if="false" class="flex w-full items-center space-x-3 md:w-auto">
                                 <button
                                     id="actionsDropdownButton"
                                     data-dropdown-toggle="actionsDropdown"
@@ -1089,9 +953,7 @@ export default {
                     </div>
                     <!-- Table List -->
                     <div class="overflow-x-auto">
-                        <table
-                            class="w-full text-left text-sm text-gray-500 dark:text-gray-400"
-                        >
+                        <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
                             <thead
                                 class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400"
                             >
@@ -1103,33 +965,21 @@ export default {
                                                 type="checkbox"
                                                 class="text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800"
                                             />
-                                            <label
-                                                for="checkbox-all"
-                                                class="sr-only"
-                                                >checkbox</label
-                                            >
+                                            <label for="checkbox-all" class="sr-only">checkbox</label>
                                         </div>
                                     </th>
                                     <th scope="col" class="p-4">Siswa</th>
-                                    <th scope="col" class="p-4">
-                                        Nomor Pendaftaran
-                                    </th>
+                                    <th scope="col" class="p-4">Nomor Pendaftaran</th>
                                     <th scope="col" class="p-4">Sekolah</th>
-                                    <th scope="col" class="p-4">
-                                        Tanggal Pendaftaran
-                                    </th>
-                                    <th scope="col" class="p-4">
-                                        Terakhir di Perbarui
-                                    </th>
+                                    <th scope="col" class="p-4">Tanggal Terdaftar</th>
+                                    <th scope="col" class="p-4">Terakhir di Perbarui</th>
                                     <th scope="col" class="p-4">Status</th>
                                     <th scope="col" class="p-4"></th>
                                 </tr>
                             </thead>
                             <tbody class="text-xs">
                                 <tr
-                                    v-for="(
-                                        admission_student, index
-                                    ) in admission_students.data"
+                                    v-for="(admission_student, index) in admission_students.data"
                                     :key="index"
                                     class="border-b hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-700"
                                 >
@@ -1141,11 +991,7 @@ export default {
                                                 onclick="event.stopPropagation()"
                                                 class="text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800"
                                             />
-                                            <label
-                                                for="checkbox-table-search"
-                                                class="sr-only"
-                                                >checkbox</label
-                                            >
+                                            <label for="checkbox-table-search" class="sr-only">checkbox</label>
                                         </div>
                                     </td>
                                     <th
@@ -1156,140 +1002,109 @@ export default {
                                             {{ admission_student.name }}
                                         </div>
                                     </th>
-                                    <td class="px-4 py-3">
-                                        <span
-                                            class="bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300 rounded py-0.5 text-xs font-medium"
-                                            >{{
-                                                admission_student.registration_number
-                                            }}</span
+                                    <td class="whitespace-nowrap px-4 py-3">
+                                        <div
+                                            class="bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300 rounded py-0.5 font-medium"
                                         >
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white"
-                                    >
-                                        <div class="flex items-center">
-                                            {{
-                                                admission_student.school.area
-                                                    .name
-                                            }}
-                                            > Kelas
-                                            {{
-                                                admission_student.school_grade
-                                                    .title
-                                            }}
+                                            {{ admission_student.registration_number }}
                                         </div>
                                     </td>
-                                    <td
-                                        class="whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white"
-                                    >
-                                        <div
-                                            v-if="
-                                                admission_student.submitted_at
-                                            "
-                                        >
-                                            {{ admission_student.submitted_at }}
+                                    <td class="whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white">
+                                        <div class="flex items-center">
+                                            {{ admission_student.school.area.name }}
+                                            > Kelas
+                                            {{ admission_student.school_grade.title }}
+                                        </div>
+                                    </td>
+                                    <td class="whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white">
+                                        <div v-if="admission_student.submitted_at">
+                                            {{ admission_student.submitted_at_label }}
                                         </div>
                                         <div v-else>
-                                            <Badge type="dark"
-                                                >Belum Melakukan
-                                                Pendaftaran</Badge
-                                            >
+                                            <Badge type="dark">Belum Melakukan Pendaftaran</Badge>
                                         </div>
                                     </td>
-                                    <td class="px-4 py-3">
+                                    <td class="whitespace-nowrap px-4 py-3">
                                         {{ admission_student.updated_at }}
                                     </td>
                                     <td class="px-4 py-3">
-                                        <Badge
-                                            v-if="
-                                                admission_student.status ==
-                                                'OPEN'
-                                            "
-                                            type="default"
-                                            >{{
-                                                admission_student.status
-                                            }}</Badge
-                                        >
-                                        <Badge
-                                            v-if="
-                                                admission_student.status ==
-                                                'PROCESS'
-                                            "
-                                            type="yellow"
-                                            >{{
-                                                admission_student.status
-                                            }}</Badge
-                                        >
+                                        <Badge v-if="admission_student.status == 'DRAFT'" type="default">{{
+                                            admission_student.status_label
+                                        }}</Badge>
+                                        <Badge v-if="admission_student.status == 'PENDING'" type="yellow">{{
+                                            admission_student.status_label
+                                        }}</Badge>
+                                        <Badge v-if="admission_student.status == 'VERIFIED'" type="purple">{{
+                                            admission_student.status_label
+                                        }}</Badge>
                                     </td>
-                                    <td
-                                        class="whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white"
-                                    >
-                                        <div
-                                            class="flex items-center justify-end space-x-3"
-                                        >
-                                            <OutlineButton type="default">
-                                                <div
-                                                    class="flex items-center space-x-1"
-                                                >
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        stroke-width="2"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        class="h-4"
-                                                    >
-                                                        <path
-                                                            stroke="none"
-                                                            d="M0 0h24v24H0z"
+                                    <td class="whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white">
+                                        <div class="flex items-center justify-end space-x-3">
+                                            <Link
+                                                v-if="
+                                                    admission_student.status == 'DRAFT' ||
+                                                    admission_student.status == 'PENDING'
+                                                "
+                                                :href="
+                                                    route('guardian.admissionStudent.form', {
+                                                        registration_number: admission_student.registration_number,
+                                                    })
+                                                "
+                                            >
+                                                <OutlineButton type="default">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 24 24"
                                                             fill="none"
-                                                        />
-                                                        <path
-                                                            d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
-                                                        />
-                                                        <path
-                                                            d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
-                                                        />
-                                                        <path d="M16 5l3 3" />
-                                                    </svg>
-                                                    <div>Sunting</div>
-                                                </div>
-                                            </OutlineButton>
-                                            <OutlineButton type="yellow">
-                                                <div
-                                                    class="flex items-center space-x-1"
-                                                >
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        stroke-width="2"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        class="h-4"
-                                                    >
-                                                        <path
-                                                            stroke="none"
-                                                            d="M0 0h24v24H0z"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="h-4"
+                                                        >
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                            <path
+                                                                d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
+                                                            />
+                                                            <path
+                                                                d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
+                                                            />
+                                                            <path d="M16 5l3 3" />
+                                                        </svg>
+                                                        <div>Sunting</div>
+                                                    </div>
+                                                </OutlineButton>
+                                            </Link>
+                                            <Link
+                                                :href="
+                                                    route('guardian.admissionStudent.detail', {
+                                                        registration_number: admission_student.registration_number,
+                                                    })
+                                                "
+                                            >
+                                                <OutlineButton type="yellow">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 24 24"
                                                             fill="none"
-                                                        />
-                                                        <path
-                                                            d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"
-                                                        />
-                                                        <path
-                                                            d="M21 21l-6 -6"
-                                                        />
-                                                    </svg>
-                                                    <div>Lihat</div>
-                                                </div>
-                                            </OutlineButton>
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="h-4"
+                                                        >
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                                            <path d="M21 21l-6 -6" />
+                                                        </svg>
+                                                        <div>Lihat</div>
+                                                    </div>
+                                                </OutlineButton>
+                                            </Link>
                                             <OutlineButton type="red">
-                                                <div
-                                                    class="flex items-center space-x-1"
-                                                >
+                                                <div class="flex items-center space-x-1">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         viewBox="0 0 24 24"
@@ -1300,22 +1115,11 @@ export default {
                                                         stroke-linejoin="round"
                                                         class="h-4"
                                                     >
-                                                        <path
-                                                            stroke="none"
-                                                            d="M0 0h24v24H0z"
-                                                            fill="none"
-                                                        />
-                                                        <path d="M4 7l16 0" />
-                                                        <path d="M10 11l0 6" />
-                                                        <path d="M14 11l0 6" />
-                                                        <path
-                                                            d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"
-                                                        />
-                                                        <path
-                                                            d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
-                                                        />
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                                                        <path d="M18.364 5.636l-12.728 12.728" />
                                                     </svg>
-                                                    <div>Hapus</div>
+                                                    <div>Batalkan</div>
                                                 </div>
                                             </OutlineButton>
                                         </div>
@@ -1333,14 +1137,9 @@ export default {
                 </div>
             </section>
             <!-- Modal -->
-            <Modal
-                :show="showModal"
-                :property="propertyModal"
-                :maxWidth="propertyModal?.maxWidth"
-                @close="closeModal"
-            >
+            <Modal :show="showModal" :property="propertyModal" :maxWidth="propertyModal?.maxWidth" @close="closeModal">
                 <template v-slot="{ propertyModal }">
-                    <PurchaseForm
+                    <CheckoutForm
                         v-if="propertyModal?.mode == 'purchase-form'"
                         :propertyModal="propertyModal"
                         @close="closeModal()"

@@ -12,15 +12,9 @@ import { Head } from '@inertiajs/vue3';
             <MyProfileSidebar />
         </template>
         <template #content>
-            <section
-                class="rounded-xl bg-white p-4 antialiased dark:bg-gray-900 md:p-6"
-            >
+            <section class="rounded-xl bg-white p-4 antialiased dark:bg-gray-900 md:p-6">
                 <div class="px-4 2xl:px-0">
-                    <h1
-                        class="mb-4 text-lg font-semibold text-gray-900 dark:text-white md:mb-6"
-                    >
-                        Selamat datang
-                    </h1>
+                    <h1 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white md:mb-6">Selamat datang</h1>
                     <div
                         class="grid grid-cols-2 gap-6 border-b border-t border-gray-200 py-4 text-sm dark:border-gray-700 md:py-8 lg:grid-cols-4 xl:gap-16"
                     >
@@ -35,43 +29,18 @@ import { Head } from '@inertiajs/vue3';
                                 stroke-linejoin="round"
                                 class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500"
                             >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M12 16v.01" />
-                                <path
-                                    d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483"
-                                />
-                                <path
-                                    d="M10 20.777a8.942 8.942 0 0 1 -2.48 -.969"
-                                />
-                                <path
-                                    d="M14 3.223a9.003 9.003 0 0 1 0 17.554"
-                                />
-                                <path
-                                    d="M4.579 17.093a8.961 8.961 0 0 1 -1.227 -2.592"
-                                />
-                                <path
-                                    d="M3.124 10.5c.16 -.95 .468 -1.85 .9 -2.675l.169 -.305"
-                                />
-                                <path
-                                    d="M6.907 4.579a8.954 8.954 0 0 1 3.093 -1.356"
-                                />
+                                <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
+                                <path d="M10 20.777a8.942 8.942 0 0 1 -2.48 -.969" />
+                                <path d="M14 3.223a9.003 9.003 0 0 1 0 17.554" />
+                                <path d="M4.579 17.093a8.961 8.961 0 0 1 -1.227 -2.592" />
+                                <path d="M3.124 10.5c.16 -.95 .468 -1.85 .9 -2.675l.169 -.305" />
+                                <path d="M6.907 4.579a8.954 8.954 0 0 1 3.093 -1.356" />
                             </svg>
-                            <h6
-                                class="mb-2 text-sm text-gray-500 dark:text-gray-400"
-                            >
-                                Permintaan diproses
-                            </h6>
-                            <span
-                                class="flex items-center text-lg font-bold text-gray-900 dark:text-white"
-                                >24
-                            </span>
-                            <p
-                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm"
-                            >
+                            <h6 class="mb-2 text-sm text-gray-500 dark:text-gray-400">Permintaan diproses</h6>
+                            <span class="flex items-center text-lg font-bold text-gray-900 dark:text-white">24 </span>
+                            <p class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm">
                                 <svg
                                     class="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400"
                                     aria-hidden="true"
@@ -103,40 +72,17 @@ import { Head } from '@inertiajs/vue3';
                                 stroke-linejoin="round"
                                 class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500"
                             >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                />
-                                <path
-                                    d="M10 20.777a8.942 8.942 0 0 1 -2.48 -.969"
-                                />
-                                <path
-                                    d="M14 3.223a9.003 9.003 0 0 1 0 17.554"
-                                />
-                                <path
-                                    d="M4.579 17.093a8.961 8.961 0 0 1 -1.227 -2.592"
-                                />
-                                <path
-                                    d="M3.124 10.5c.16 -.95 .468 -1.85 .9 -2.675l.169 -.305"
-                                />
-                                <path
-                                    d="M6.907 4.579a8.954 8.954 0 0 1 3.093 -1.356"
-                                />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M10 20.777a8.942 8.942 0 0 1 -2.48 -.969" />
+                                <path d="M14 3.223a9.003 9.003 0 0 1 0 17.554" />
+                                <path d="M4.579 17.093a8.961 8.961 0 0 1 -1.227 -2.592" />
+                                <path d="M3.124 10.5c.16 -.95 .468 -1.85 .9 -2.675l.169 -.305" />
+                                <path d="M6.907 4.579a8.954 8.954 0 0 1 3.093 -1.356" />
                                 <path d="M9 12l2 2l4 -4" />
                             </svg>
-                            <h6
-                                class="mb-2 text-sm text-gray-500 dark:text-gray-400"
-                            >
-                                Permintaan disetujui
-                            </h6>
-                            <span
-                                class="flex items-center text-lg font-bold text-gray-900 dark:text-white"
-                                >16
-                            </span>
-                            <p
-                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm"
-                            >
+                            <h6 class="mb-2 text-sm text-gray-500 dark:text-gray-400">Permintaan disetujui</h6>
+                            <span class="flex items-center text-lg font-bold text-gray-900 dark:text-white">16 </span>
+                            <p class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm">
                                 <svg
                                     class="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400"
                                     aria-hidden="true"
@@ -168,41 +114,18 @@ import { Head } from '@inertiajs/vue3';
                                 stroke-linejoin="round"
                                 class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500"
                             >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                />
-                                <path
-                                    d="M10 20.777a8.942 8.942 0 0 1 -2.48 -.969"
-                                />
-                                <path
-                                    d="M14 3.223a9.003 9.003 0 0 1 0 17.554"
-                                />
-                                <path
-                                    d="M4.579 17.093a8.961 8.961 0 0 1 -1.227 -2.592"
-                                />
-                                <path
-                                    d="M3.124 10.5c.16 -.95 .468 -1.85 .9 -2.675l.169 -.305"
-                                />
-                                <path
-                                    d="M6.907 4.579a8.954 8.954 0 0 1 3.093 -1.356"
-                                />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M10 20.777a8.942 8.942 0 0 1 -2.48 -.969" />
+                                <path d="M14 3.223a9.003 9.003 0 0 1 0 17.554" />
+                                <path d="M4.579 17.093a8.961 8.961 0 0 1 -1.227 -2.592" />
+                                <path d="M3.124 10.5c.16 -.95 .468 -1.85 .9 -2.675l.169 -.305" />
+                                <path d="M6.907 4.579a8.954 8.954 0 0 1 3.093 -1.356" />
                                 <path d="M14 14l-4 -4" />
                                 <path d="M10 14l4 -4" />
                             </svg>
-                            <h6
-                                class="mb-2 text-sm text-gray-500 dark:text-gray-400"
-                            >
-                                Permintaan ditolak
-                            </h6>
-                            <span
-                                class="flex items-center text-lg font-bold text-gray-900 dark:text-white"
-                                >8
-                            </span>
-                            <p
-                                class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm"
-                            >
+                            <h6 class="mb-2 text-sm text-gray-500 dark:text-gray-400">Permintaan ditolak</h6>
+                            <span class="flex items-center text-lg font-bold text-gray-900 dark:text-white">8 </span>
+                            <p class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-sm">
                                 <svg
                                     class="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400"
                                     aria-hidden="true"
@@ -225,9 +148,7 @@ import { Head } from '@inertiajs/vue3';
                         </div>
                     </div>
                     <div class="pt-4 md:pt-8">
-                        <div
-                            class="mb-4 grid gap-4 sm:grid-cols-2 sm:gap-8 lg:gap-16"
-                        >
+                        <div class="mb-4 grid gap-4 sm:grid-cols-2 sm:gap-8 lg:gap-16">
                             <div class="space-y-4">
                                 <div class="flex space-x-4">
                                     <img
@@ -249,102 +170,44 @@ import { Head } from '@inertiajs/vue3';
                                     </div>
                                 </div>
                                 <dl>
-                                    <dt
-                                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                                    >
+                                    <dt class="text-sm font-semibold text-gray-900 dark:text-white">
                                         Tempat, Tanggal Lahir
                                     </dt>
-                                    <dd
-                                        class="text-sm text-gray-500 dark:text-gray-400"
-                                    >
+                                    <dd class="text-sm text-gray-500 dark:text-gray-400">
                                         Indonesia, 04 November 2023
                                     </dd>
                                 </dl>
                                 <dl>
-                                    <dt
-                                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                                    >
-                                        Jenis Kelamin
-                                    </dt>
-                                    <dd
-                                        class="text-sm text-gray-500 dark:text-gray-400"
-                                    >
-                                        Laki-laki
-                                    </dd>
+                                    <dt class="text-sm font-semibold text-gray-900 dark:text-white">Jenis Kelamin</dt>
+                                    <dd class="text-sm text-gray-500 dark:text-gray-400">Laki-laki</dd>
                                 </dl>
                                 <dl>
-                                    <dt
-                                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                                    >
-                                        Golongan Darah
-                                    </dt>
-                                    <dd
-                                        class="text-sm text-gray-500 dark:text-gray-400"
-                                    >
-                                        -
-                                    </dd>
+                                    <dt class="text-sm font-semibold text-gray-900 dark:text-white">Golongan Darah</dt>
+                                    <dd class="text-sm text-gray-500 dark:text-gray-400">-</dd>
                                 </dl>
                                 <dl>
-                                    <dt
-                                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                                    >
-                                        Agama
-                                    </dt>
-                                    <dd
-                                        class="text-sm text-gray-500 dark:text-gray-400"
-                                    >
-                                        Islam
-                                    </dd>
+                                    <dt class="text-sm font-semibold text-gray-900 dark:text-white">Agama</dt>
+                                    <dd class="text-sm text-gray-500 dark:text-gray-400">Islam</dd>
                                 </dl>
                             </div>
                             <div class="space-y-4">
                                 <dl>
-                                    <dt
-                                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                                    >
+                                    <dt class="text-sm font-semibold text-gray-900 dark:text-white">
                                         Status Pernikahan
                                     </dt>
-                                    <dd
-                                        class="text-sm text-gray-500 dark:text-gray-400"
-                                    >
-                                        -
-                                    </dd>
+                                    <dd class="text-sm text-gray-500 dark:text-gray-400">-</dd>
                                 </dl>
                                 <dl>
-                                    <dt
-                                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                                    >
-                                        Nomor Telepon
-                                    </dt>
-                                    <dd
-                                        class="text-sm text-gray-500 dark:text-gray-400"
-                                    >
-                                        -
-                                    </dd>
+                                    <dt class="text-sm font-semibold text-gray-900 dark:text-white">Nomor Telepon</dt>
+                                    <dd class="text-sm text-gray-500 dark:text-gray-400">-</dd>
                                 </dl>
                                 <dl>
-                                    <dt
-                                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                                    >
-                                        Alamat
-                                    </dt>
-                                    <dd
-                                        class="text-sm text-gray-500 dark:text-gray-400"
-                                    >
-                                        -
-                                    </dd>
+                                    <dt class="text-sm font-semibold text-gray-900 dark:text-white">Alamat</dt>
+                                    <dd class="text-sm text-gray-500 dark:text-gray-400">-</dd>
                                 </dl>
                                 <dl>
-                                    <dt
-                                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                                    >
-                                        Kode Pos
-                                    </dt>
-                                    <dd
-                                        class="text-sm text-gray-500 dark:text-gray-400"
-                                    >
-                                        -
-                                    </dd>
+                                    <dt class="text-sm font-semibold text-gray-900 dark:text-white">Kode Pos</dt>
+                                    <dd class="text-sm text-gray-500 dark:text-gray-400">-</dd>
                                 </dl>
                             </div>
                         </div>
@@ -363,17 +226,9 @@ import { Head } from '@inertiajs/vue3';
                                 stroke-linejoin="round"
                                 class="me-2 h-3.5 w-3.5"
                             >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                />
-                                <path
-                                    d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"
-                                />
-                                <path
-                                    d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
-                                />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                 <path d="M16 5l3 3" />
                             </svg>
                             Sunting Profil

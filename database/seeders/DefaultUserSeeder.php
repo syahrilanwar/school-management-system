@@ -25,8 +25,9 @@ class DefaultUserSeeder extends Seeder
             $this->command->warn('Create user');
             $this->command->getOutput()->progressStart(count($users));
             foreach ($users as $user) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     $user_created = User::firstOrCreate([
                         'name' => $user->name,

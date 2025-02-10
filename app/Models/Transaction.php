@@ -10,9 +10,27 @@ class Transaction extends Model
 {
     use GenerateUuid, SoftDeletes;
 
-    public function payment()
+    protected $fillable = [
+        'customer_id',
+        'type',
+        'sub_type',
+        'reference_number',
+        'due_date',
+        'total_amount',
+        'discount_amount',
+        'bill_amount',
+        'paid_amount',
+    ];
+
+
+    public function customer()
     {
-        return $this->hasOne(Payment::class, 'transaction_id', 'id');
+        return $this->belongsTo(User::class, 'customer_id');
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(TransactionPayment::class, 'transaction_id');
     }
 
     public function items()

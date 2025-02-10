@@ -1,8 +1,10 @@
 <script setup>
 import DefaultButton from '@/Components/DefaultButton.vue';
+import midtrans from '@/Configs/midtrans';
 import fieldValidation from '@/Helpers/fieldValidation';
 import axios from 'axios';
 import { ElNotification } from 'element-plus';
+midtrans.init();
 </script>
 <script>
 export default {
@@ -14,7 +16,6 @@ export default {
     },
     data() {
         return {
-            url: new URL(document.URL),
             process: false,
             loaded: true,
             isValid: false,
@@ -26,10 +27,8 @@ export default {
             },
             field: {
                 name: {
-                    label: 'Nama Lengkap Pendaftar',
-                    rules: [
-                        fieldValidation.isRequired('Nama Lengkap Pendaftar'),
-                    ],
+                    label: 'Nama Lengkap Siswa',
+                    rules: [fieldValidation.isRequired('Nama Lengkap Siswa')],
                     error: null,
                 },
                 birth_date: {
@@ -89,35 +88,97 @@ export default {
                 });
         },
         submit() {
-            this.$refs['purchaseForm'].validate((valid) => {
+            this.$refs['checkoutForm'].validate((valid) => {
                 if (valid) {
                     this.process = true;
+                    let requestPayload = JSON.parse(JSON.stringify(this.form));
+                    requestPayload.school = requestPayload.school?.uuid;
+                    requestPayload.school_grade =
+                        requestPayload.school_grade?.uuid;
 
                     axios
                         .post(
-                            route('guardian.admissionStudent.purchase'),
-                            this.form,
+                            route('guardian.admissionStudent.checkout'),
+                            requestPayload,
                             {
                                 headers: { 'Content-Type': 'application/json' },
                             },
                         )
-                        .then(() => {
-                            ElNotification({
-                                title: 'Berhasil',
-                                message: 'berhasil disimpan',
-                                type: 'success',
-                            });
+                        .then((response) => {
+                            let transaction_payment =
+                                response.data.transaction_payment;
+                            let snap_token = response.data.snap_token;
 
-                            setTimeout(() => {
-                                this.close();
-                                this.form.reset();
-                                this.$inertia.reload();
-                            }, 1000);
+                            try {
+                                window.snap.pay(snap_token, {
+                                    onSuccess: (gateway_response) => {
+                                        this.processPayment(
+                                            transaction_payment,
+                                            gateway_response,
+                                        );
+
+                                        ElNotification({
+                                            title: 'Pembayaran Berhasil',
+                                            message:
+                                                'Terima kasih! Pembayaran Anda telah berhasil diproses.',
+                                            type: 'success',
+                                        });
+
+                                        this.process = false;
+                                    },
+                                    onPending: (gateway_response) => {
+                                        this.processPayment(
+                                            transaction_payment,
+                                            gateway_response,
+                                        );
+
+                                        ElNotification({
+                                            title: 'Menunggu Pembayaran',
+                                            message:
+                                                'Pembayaran Anda telah dimasukkan ke dalam tagihan. Silakan selesaikan transaksi segera.',
+                                            type: 'warning',
+                                        });
+
+                                        this.process = false;
+                                    },
+                                    onError: (gateway_response) => {
+                                        this.processPayment(
+                                            transaction_payment,
+                                            gateway_response,
+                                        );
+
+                                        ElNotification({
+                                            title: 'Pembayaran Gagal',
+                                            message:
+                                                'Terjadi kesalahan dalam proses pembayaran. Silakan coba lagi.',
+                                            type: 'error',
+                                        });
+
+                                        this.process = false;
+                                    },
+                                    onClose: (gateway_response) => {
+                                        console.log(gateway_response);
+
+                                        ElNotification({
+                                            title: 'Transaksi Ditutup',
+                                            message:
+                                                'Anda telah menutup pembayaran sebelum menyelesaikannya.',
+                                            type: 'info',
+                                        });
+
+                                        this.process = false;
+                                    },
+                                });
+                            } catch (error) {
+                                this.process = true;
+
+                                console.error(error);
+                            }
                         })
                         .catch((error) => {
                             ElNotification({
-                                title: 'Gagal',
-                                message: 'gagal disimpan',
+                                title: 'Error',
+                                message: 'Terjadi kesalahan.',
                                 type: 'error',
                             });
 
@@ -125,7 +186,7 @@ export default {
                                 for (let field in error.response.data.errors) {
                                     this.field[field].error =
                                         error.response.data.errors[field];
-                                    this.$refs['purchaseForm'].validateField(
+                                    this.$refs['checkoutForm'].validateField(
                                         field,
                                     );
                                 }
@@ -136,6 +197,40 @@ export default {
                         });
                 }
             });
+        },
+        processPayment(transaction_payment, gateway_response) {
+            this.process = true;
+
+            axios
+                .post(
+                    route('guardian.transactionPayment.processPayment'),
+                    {
+                        transaction_payment: transaction_payment.uuid,
+                        gateway_response: gateway_response,
+                    },
+                    {
+                        headers: { 'Content-Type': 'application/json' },
+                    },
+                )
+                .then((response) => {
+                    console.log(response.data.status);
+                    if (response.data.status) {
+                        setTimeout(() => {
+                            this.close();
+                            this.$inertia.reload();
+                        }, 2000);
+                    }
+                })
+                .catch((error) => {
+                    ElNotification({
+                        title: 'Error',
+                        message: error,
+                        type: 'error',
+                    });
+                })
+                .finally(() => {
+                    this.process = false;
+                });
         },
         close() {
             this.$emit('close');
@@ -151,7 +246,7 @@ export default {
         <div class="px-2">
             <el-form
                 v-if="loaded"
-                ref="purchaseForm"
+                ref="checkoutForm"
                 label-position="top"
                 :model="form"
                 :disabled="process"
@@ -231,54 +326,49 @@ export default {
                             v-for="option in field.school_grade.options"
                             :key="option.uuid"
                             :label="option.title"
-                            :value="option.uuid"
+                            :value="option"
                         />
                     </el-select>
                 </el-form-item>
             </el-form>
         </div>
         <div
-            class="space-y-4 rounded-lg border border-gray-100 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800"
+            class="space-y-4 rounded-lg border border-gray-100 bg-gray-50 p-6 text-sm dark:border-gray-700 dark:bg-gray-800"
         >
-            <div class="space-y-2">
+            <div class="space-y-4">
                 <dl class="flex items-center justify-between gap-4">
-                    <dt
-                        class="text-base font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <dt class="font-normal text-gray-500 dark:text-gray-400">
                         Harga
                     </dt>
-                    <dd
-                        class="text-base font-medium text-gray-900 dark:text-white"
-                    >
+                    <dd class="font-medium text-gray-900 dark:text-white">
                         IDR {{ product.price }}
                     </dd>
                 </dl>
                 <dl class="flex items-center justify-between gap-4">
-                    <dt
-                        class="text-base font-normal text-gray-500 dark:text-gray-400"
-                    >
+                    <dt class="font-normal text-gray-500 dark:text-gray-400">
                         Diskon
                     </dt>
-                    <dd
-                        class="text-base font-medium text-green-500 dark:text-white"
-                    >
+                    <dd class="font-medium text-green-500 dark:text-white">
                         -
                     </dd>
                 </dl>
             </div>
             <dl
-                class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700"
+                class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 text-base dark:border-gray-700"
             >
-                <dt class="text-base font-bold text-gray-900 dark:text-white">
-                    Total
-                </dt>
-                <dd class="text-base font-bold text-gray-900 dark:text-white">
+                <dt class="font-bold text-gray-900 dark:text-white">Total</dt>
+                <dd class="font-bold text-gray-900 dark:text-white">
                     IDR {{ product.price }}
                 </dd>
             </dl>
         </div>
         <div class="flex justify-end space-x-3">
-            <DefaultButton class="w-full" type="light" @click="close">
+            <DefaultButton
+                class="w-full"
+                type="light"
+                @click="close"
+                :disabled="process"
+            >
                 Batal
             </DefaultButton>
 

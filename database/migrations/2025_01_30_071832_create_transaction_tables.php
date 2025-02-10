@@ -21,14 +21,14 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-
+        // todo: paid off calculation
         Schema::create('transactions', function (Blueprint $table) {
             $table->id('id');
             $table->uuid('uuid')->unique();
             $table->foreignId('customer_id')->constrained('users');
-            $table->string('type'); // PURCHASE
+            $table->string('type'); // SALES, PURCHASE
             $table->string('sub_type'); // ADMISSION_STUDENT_FORM
-            $table->string('reference_number');
+            $table->string('reference_number')->unique();
             $table->dateTime('due_date');
             $table->decimal('total_amount', 15, 2)->default(0);
             $table->decimal('discount_amount', 15, 2)->default(0);
@@ -51,13 +51,14 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-
-        Schema::create('payments', function (Blueprint $table) {
+        // todo: field amount
+        Schema::create('transaction_payments', function (Blueprint $table) {
             $table->id('id');
             $table->uuid('uuid')->unique();
             $table->foreignId('transaction_id')->constrained('transactions');
-            $table->string('gateway_provider')->nullable();
-            $table->text('gateway_token')->nullable();
+            $table->string('reference_number')->unique();
+            $table->string('type'); // ONLINE, OFFLINE
+            $table->decimal('amount', 15, 2)->default(0);
             $table->json('options')->nullable();
             $table->string('status');
             $table->timestamps();
@@ -70,7 +71,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('transaction_payments');
         Schema::dropIfExists('transaction_items');
         Schema::dropIfExists('transactions');
         Schema::dropIfExists('products');

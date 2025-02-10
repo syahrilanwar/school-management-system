@@ -28,8 +28,9 @@ class DefaultSystemSeeder extends Seeder
             $this->command->warn('Create role');
             $this->command->getOutput()->progressStart(count($roles));
             foreach ($roles as $role) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     Role::firstOrCreate([
                         'name' => $role->name,
@@ -48,8 +49,9 @@ class DefaultSystemSeeder extends Seeder
             $this->command->warn('Create submission group');
             $this->command->getOutput()->progressStart(count($submission_groups));
             foreach ($submission_groups as $submission_group) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     SubmissionGroup::firstOrCreate([
                         'name' => $submission_group->name,
@@ -72,8 +74,9 @@ class DefaultSystemSeeder extends Seeder
             $this->command->warn('Create school level');
             $this->command->getOutput()->progressStart(count($school_levels));
             foreach ($school_levels as $school_level) {
+                DB::beginTransaction();
+
                 try {
-                    DB::beginTransaction();
 
                     $school_level_created = SchoolLevel::firstOrCreate([
                         'title' => $school_level->title,

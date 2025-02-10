@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class ICCController extends Controller
+class MyProfileController extends Controller
 {
     public function index()
     {
         $data = [];
 
-        return Inertia::render('Office/ICC/Index', $data);
+        return Inertia::render('Office/MyProfile/Index', $data);
     }
 }
