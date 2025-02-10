@@ -110,6 +110,8 @@ Route::middleware(['auth', 'verified'])
                 Route::get('{registration_number}/form', [AdmissionStudentController::class, 'form'])->name('.form');
                 Route::get('{registration_number}/detail', [AdmissionStudentController::class, 'detail'])->name('.detail');
                 Route::post('submit', [AdmissionStudentController::class, 'submit'])->name('.submit');
+                Route::post('send', [AdmissionStudentController::class, 'send'])->name('.send');
+                Route::post('set-schedule', [AdmissionStudentController::class, 'setSchedule'])->name('.setSchedule');
             });
         // transaction payment routes
         Route::prefix('transaction-payment')

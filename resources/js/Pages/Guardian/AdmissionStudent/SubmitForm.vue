@@ -100,24 +100,10 @@ export default {
             {{ content.description }}
         </h3>
         <div class="flex justify-center space-x-3">
-            <DefaultButton
-                v-if="mode == 'verified-form'"
-                type="purple"
-                class="w-full md:w-1/2"
-                @click="submit()"
-                :disabled="process"
-            >
-                Ya, Verifikasi Formulir
+            <DefaultButton type="default" class="w-full md:w-1/2" @click="submit()" :disabled="process">
+                Ya, Kirim Formulir
             </DefaultButton>
-            <DefaultButton
-                v-if="mode == 'unverified-form'"
-                type="red"
-                class="w-full md:w-1/2"
-                @click="submit()"
-                :disabled="process"
-            >
-                Ya, Tolak Formulir
-            </DefaultButton>
+
             <DefaultButton type="light" class="w-full md:w-1/2" @click="close" :disabled="process"
                 >Tidak, Batalkan
             </DefaultButton>

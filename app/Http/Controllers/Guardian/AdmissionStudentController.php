@@ -7,6 +7,7 @@ use App\Http\Resources\AdmissionStudentResource;
 use App\Http\Resources\ProductResource;
 use App\Http\Resources\SchoolResource;
 use App\Models\AdmissionStudent;
+use App\Models\AdmissionStudentStage;
 use App\Models\Product;
 use App\Models\School;
 use App\Services\AdmissionStudentService;
@@ -160,6 +161,56 @@ class AdmissionStudentController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'Terima kasih! Pendaftaran Anda telah berhasil disimpan.'
+            ], 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            return response()->json([
+                'status' => 'error',
+                'message' => $th->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function send()
+    {
+        DB::beginTransaction();
+
+        try {
+            $admission_student = AdmissionStudent::where('registration_number', request('registration_number'))->firstOrFail();
+
+            $admission_student->update(['status' => 'PENDING']);
+
+            DB::commit();
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Formulir berhasil dikirim',
+            ], 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            return response()->json([
+                'status' => 'error',
+                'message' => $th->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function setSchedule()
+    {
+        DB::beginTransaction();
+
+        try {
+            $admission_student_stage = AdmissionStudentStage::where('uuid', request('admission_student_stage'))->firstOrFail();
+
+            $admission_student_stage->update(['scheduled_at' => request('scheduled_at')]);
+
+            DB::commit();
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Jadwal telah diatur',
             ], 200);
         } catch (\Throwable $th) {
             DB::rollBack();

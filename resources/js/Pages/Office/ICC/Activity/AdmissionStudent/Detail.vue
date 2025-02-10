@@ -428,7 +428,7 @@ export default {
                             @click="
                                 openModal({
                                     title: 'Tolak Formulir',
-                                    mode: 'unverified-status-form',
+                                    mode: 'unverified-form',
                                     maxWidth: 'sm',
                                     data: {
                                         description: 'Ingin menolak formulir pendaftaran?',
@@ -446,7 +446,7 @@ export default {
                             @click="
                                 openModal({
                                     title: 'Verifikasi Formulir',
-                                    mode: 'verified-status-form',
+                                    mode: 'verified-form',
                                     maxWidth: 'sm',
                                     data: {
                                         description: 'Ingin memverifikasi formulir pendaftaran?',
@@ -551,10 +551,7 @@ export default {
             <Modal :show="showModal" :property="propertyModal" :maxWidth="propertyModal?.maxWidth" @close="closeModal">
                 <template v-slot="{ propertyModal }">
                     <VerificationForm
-                        v-if="
-                            propertyModal?.mode == 'unverified-status-form' ||
-                            propertyModal?.mode == 'verified-status-form'
-                        "
+                        v-if="propertyModal?.mode == 'unverified-form' || propertyModal?.mode == 'verified-form'"
                         :propertyModal="propertyModal"
                         @close="closeModal()"
                     />

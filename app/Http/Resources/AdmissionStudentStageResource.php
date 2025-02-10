@@ -52,6 +52,7 @@ class AdmissionStudentStageResource extends JsonResource
             'admission_stage' => $this->whenLoaded('admission_stage', fn() => AdmissionStageResource::make($this->admission_stage)),
             'officer' => $this->whenLoaded('officer', fn() => EmployeeResource::make($this->officer)),
             'title' => $this->admission_stage->title,
+            'type' => $this->admission_stage->type,
             'scheduled_at' => $this->scheduled_at,
             'scheduled_at_label' => $this->scheduled_at ? $carbon->parse($this->scheduled_at)->format('d-m-Y h:i') : 'Belum dijadwalkan',
             'description' => $this->description ?? 'Belum ada keterangan',
