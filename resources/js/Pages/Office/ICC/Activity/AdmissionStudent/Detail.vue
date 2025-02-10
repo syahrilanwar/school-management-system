@@ -3,7 +3,7 @@ import OfficeLayout from '@/Layouts/OfficeLayout.vue';
 import ICCSidebar from '@/Layouts/Sidebars/ICCSidebar.vue';
 import { Head } from '@inertiajs/vue3';
 import Modal from '@/Components/Modal.vue';
-import StatusForm from './StatusForm.vue';
+import VerificationForm from './VerificationForm.vue';
 import DefaultButton from '@/Components/DefaultButton.vue';
 import Badge from '@/Components/Badge.vue';
 </script>
@@ -550,7 +550,7 @@ export default {
             <!-- Modal -->
             <Modal :show="showModal" :property="propertyModal" :maxWidth="propertyModal?.maxWidth" @close="closeModal">
                 <template v-slot="{ propertyModal }">
-                    <StatusForm
+                    <VerificationForm
                         v-if="
                             propertyModal?.mode == 'unverified-status-form' ||
                             propertyModal?.mode == 'verified-status-form'
