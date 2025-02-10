@@ -21,4 +21,16 @@ const religions = [
     { value: 'OTHER', label: 'Lainnya' },
 ];
 
-export { religions, schoolInformationSources };
+const admissionStagePreStatuses = [
+    { value: 'PENDING', label: 'Menunggu' },
+    { value: 'INTERVIEW', label: 'Wawancara' },
+    { value: 'PASSED', label: 'Lulus' },
+    { value: 'FAILED', label: 'Gagal' },
+];
+
+const admissionStagePostStatuses = [
+    { value: 'DOING', label: 'Sedang Berlangsung' },
+    { value: 'DONE', label: 'Selesai' },
+];
+
+export { admissionStagePostStatuses, admissionStagePreStatuses, religions, schoolInformationSources };

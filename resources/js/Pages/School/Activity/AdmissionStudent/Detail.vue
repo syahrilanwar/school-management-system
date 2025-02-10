@@ -1,12 +1,12 @@
 <script setup>
-import GuardianLayout from '@/Layouts/GuardianLayout.vue';
-import GuardianSidebar from '@/Layouts/Sidebars/GuardianSidebar.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import SchoolLayout from '@/Layouts/SchoolLayout.vue';
+import SchoolSidebar from '@/Layouts/Sidebars/SchoolSidebar.vue';
+import { Head } from '@inertiajs/vue3';
 import Modal from '@/Components/Modal.vue';
-import SubmitForm from './SubmitForm.vue';
 import DefaultButton from '@/Components/DefaultButton.vue';
-import ScheduleForm from './ScheduleForm.vue';
+import StageForm from './StageForm.vue';
 import Badge from '@/Components/Badge.vue';
+import AcceptForm from './AcceptForm.vue';
 </script>
 
 <script>
@@ -44,92 +44,20 @@ export default {
 </script>
 
 <template>
-    <Head title="Wali" />
+    <Head title="Sekolah" />
 
-    <GuardianLayout>
+    <SchoolLayout>
         <template #sidebar>
-            <GuardianSidebar />
+            <SchoolSidebar />
         </template>
         <template #content>
             <!-- Data -->
             <section class="rounded-lg bg-white p-4 antialiased dark:bg-gray-900 md:p-6">
                 <div class="px-4 2xl:px-0">
+                    <!--  -->
                     <h1 class="text-lg font-semibold text-gray-900 dark:text-white md:pb-2">
                         Detail Pendaftaran Siswa Baru
                     </h1>
-                    <div
-                        v-if="admission_student.data.status == 'VERIFIED'"
-                        id="alert-verified"
-                        class="mb-4 rounded-lg border border-purple-300 bg-purple-50 p-4 text-purple-800 dark:border-purple-800 dark:bg-gray-800 dark:text-purple-400"
-                        role="alert"
-                    >
-                        <div class="flex items-center">
-                            <svg
-                                class="me-2 h-4 w-4 shrink-0"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
-                                />
-                            </svg>
-                            <span class="sr-only">Info</span>
-                            <h3 class="text-base font-medium">Pendaftaran telah diverifikasi</h3>
-                        </div>
-                        <div class="mb-4 mt-2 text-sm">
-                            Selamat! Pendaftaran Anda telah berhasil diverifikasi. Silakan atur jadwal pertemuan atau
-                            interview sesuai ketersediaan Anda dan konfirmasi segera. Kami menantikan kehadiran Anda!
-                        </div>
-                        <div class="flex">
-                            <button
-                                type="button"
-                                class="rounded-lg border border-purple-800 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-purple-800 hover:bg-purple-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-200 dark:border-purple-600 dark:text-purple-400 dark:hover:bg-purple-600 dark:hover:text-white dark:focus:ring-purple-800"
-                                data-dismiss-target="#alert-verified"
-                                aria-label="Close"
-                            >
-                                tutup
-                            </button>
-                        </div>
-                    </div>
-                    <div
-                        v-if="admission_student.data.status == 'UNVERIFIED'"
-                        id="alert-unverified"
-                        class="mb-4 rounded-lg border border-red-300 bg-red-50 p-4 text-red-800 dark:border-red-800 dark:bg-gray-800 dark:text-red-400"
-                        role="alert"
-                    >
-                        <div class="flex items-center">
-                            <svg
-                                class="me-2 h-4 w-4 shrink-0"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
-                                />
-                            </svg>
-                            <span class="sr-only">Info</span>
-                            <h3 class="text-base font-medium">Pendaftaran telah ditolak</h3>
-                        </div>
-                        <div class="mb-4 mt-2 text-sm">
-                            Maaf, pendaftaran Anda tidak dapat diproses karena data tidak valid. Pastikan formulir
-                            terisi lengkap dan berkas sesuai ketentuan. Silakan periksa kembali, coba lagi, atau hubungi
-                            kami untuk bantuan.
-                        </div>
-                        <div class="flex">
-                            <button
-                                type="button"
-                                class="rounded-lg border border-red-800 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-red-800 hover:bg-red-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-200 dark:border-red-600 dark:text-red-400 dark:hover:bg-red-600 dark:hover:text-white dark:focus:ring-red-800"
-                                data-dismiss-target="#alert-unverified"
-                                aria-label="Close"
-                            >
-                                tutup
-                            </button>
-                        </div>
-                    </div>
                     <div class="grid gap-4 py-2 sm:gap-8 md:grid-cols-2 md:py-4">
                         <div class="grid gap-4 sm:grid-cols-2 sm:gap-8 lg:gap-12">
                             <div class="space-y-4">
@@ -495,42 +423,20 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div v-if="admission_student.data.status != 'VERIFIED'" class="flex justify-start space-x-4">
-                        <Link
-                            :href="
-                                route('guardian.admissionStudent.form', {
-                                    registration_number: admission_student.data.registration_number,
-                                })
-                            "
-                        >
-                            <DefaultButton type="light">Sunting Form Pendaftaran </DefaultButton>
-                        </Link>
-                        <DefaultButton
-                            type="default"
-                            @click="
-                                openModal({
-                                    title: 'Kirim Formulir',
-                                    mode: 'submit-form',
-                                    maxWidth: 'sm',
-                                    data: {
-                                        description: 'Kirim formulir pendaftaran?',
-                                        actionUrl: route('guardian.admissionStudent.send', {
-                                            registration_number: admission_student.data.registration_number,
-                                        }),
-                                    },
-                                })
-                            "
-                            >Kirim Form Pendaftaran</DefaultButton
-                        >
-                    </div>
-                    <div v-if="admission_student.data.status == 'VERIFIED'">
-                        <hr class="my-4" />
+                    <hr class="my-4" />
+                    <!--  -->
+                    <div>
                         <h1 class="text-lg font-semibold text-gray-900 dark:text-white md:pb-4">Tahapan Pendaftaran</h1>
                         <ol class="relative mx-3 max-w-4xl border-s border-gray-200 dark:border-gray-700">
                             <template v-for="(stage, index) in admission_student.data.stages" :key="index">
                                 <li
-                                    v-if="admission_student.data.status == 'ACCEPTED' || stage.type == 'PRE'"
                                     class="mb-10 ms-8"
+                                    v-if="
+                                        admission_student.data.status == 'ACCEPTED' ||
+                                        admission_student.data.status == 'REJECTED' ||
+                                        admission_student.data.status == 'ENROLLED' ||
+                                        stage.type == 'PRE'
+                                    "
                                 >
                                     <span
                                         class="absolute -start-4 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
@@ -612,41 +518,114 @@ export default {
                                         {{ stage.description }}
                                     </p>
                                     <DefaultButton
-                                        v-if="!stage.scheduled_at"
+                                        v-if="
+                                            stage.status == 'INTERVIEW' ||
+                                            stage.status == 'PENDING' ||
+                                            stage.status == 'DOING'
+                                        "
                                         type="light"
                                         @click="
                                             openModal({
                                                 title: stage.title,
-                                                mode: 'schedule-form',
-                                                maxWidth: 'md',
+                                                mode: 'stage-form',
+                                                maxWidth: '2xl',
                                                 data: {
-                                                    admission_student_stage: stage.uuid,
+                                                    admission_student_stage: stage,
                                                 },
                                             })
                                         "
-                                        >Atur jadwal</DefaultButton
+                                        >Perbarui Status</DefaultButton
                                     >
                                 </li>
                             </template>
                         </ol>
+                        <div
+                            v-if="
+                                admission_student.data.status != 'ACCEPTED' &&
+                                admission_student.data.status != 'REJECTED' &&
+                                admission_student.data.status != 'ENROLLED'
+                            "
+                            class="flex justify-start space-x-4"
+                        >
+                            <DefaultButton
+                                type="red"
+                                @click="
+                                    openModal({
+                                        title: 'Tolak Calon Siswa',
+                                        mode: 'rejected-form',
+                                        maxWidth: 'sm',
+                                        data: {
+                                            description: 'Ingin menolak Calon Siswa?',
+                                            actionUrl: route('school.activity.admissionStudent.updateStatus', {
+                                                registration_number: admission_student.data.registration_number,
+                                                status: 'REJECTED',
+                                            }),
+                                        },
+                                    })
+                                "
+                                >Tolak Calon Siswa</DefaultButton
+                            >
+                            <DefaultButton
+                                type="green"
+                                @click="
+                                    openModal({
+                                        title: 'Terima Calon Siswa',
+                                        mode: 'accepted-form',
+                                        maxWidth: 'sm',
+                                        data: {
+                                            description: 'Ingin menerima Calon Siswa?',
+                                            actionUrl: route('school.activity.admissionStudent.updateStatus', {
+                                                registration_number: admission_student.data.registration_number,
+                                                status: 'ACCEPTED',
+                                            }),
+                                        },
+                                    })
+                                "
+                                >Terima Calon Siswa</DefaultButton
+                            >
+                        </div>
+                        <div v-if="admission_student.data.status == 'ACCEPTED'" class="flex justify-start space-x-4">
+                            <DefaultButton
+                                type="green"
+                                @click="
+                                    openModal({
+                                        title: 'Selesaikan Pendaftaran',
+                                        mode: 'enrolled-form',
+                                        maxWidth: 'sm',
+                                        data: {
+                                            description: 'Selesaikan pendaftaran Siswa?',
+                                            actionUrl: route('school.activity.admissionStudent.updateStatus', {
+                                                registration_number: admission_student.data.registration_number,
+                                                status: 'ENROLLED ',
+                                            }),
+                                        },
+                                    })
+                                "
+                                >Selesaikan Pendaftaran</DefaultButton
+                            >
+                        </div>
                     </div>
                 </div>
             </section>
             <!-- Modal -->
             <Modal :show="showModal" :property="propertyModal" :maxWidth="propertyModal?.maxWidth" @close="closeModal">
                 <template v-slot="{ propertyModal }">
-                    <SubmitForm
-                        v-if="propertyModal?.mode == 'submit-form'"
+                    <AcceptForm
+                        v-if="
+                            propertyModal?.mode == 'accepted-form' ||
+                            propertyModal?.mode == 'rejected-form' ||
+                            propertyModal?.mode == 'enrolled-form'
+                        "
                         :propertyModal="propertyModal"
                         @close="closeModal()"
                     />
-                    <ScheduleForm
-                        v-if="propertyModal?.mode == 'schedule-form'"
+                    <StageForm
+                        v-if="propertyModal?.mode == 'stage-form'"
                         :propertyModal="propertyModal"
                         @close="closeModal()"
                     />
                 </template>
             </Modal>
         </template>
-    </GuardianLayout>
+    </SchoolLayout>
 </template>

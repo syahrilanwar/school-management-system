@@ -98,10 +98,33 @@ export default {
             {{ content.description }}
         </h3>
         <div class="flex justify-center space-x-3">
-            <DefaultButton type="default" class="w-full md:w-1/2" @click="submit()" :disabled="process">
-                Ya, Kirim Formulir
+            <DefaultButton
+                v-if="mode == 'enrolled-form'"
+                type="green"
+                class="w-full md:w-1/2"
+                @click="submit()"
+                :disabled="process"
+            >
+                Ya, Selesaikan Pendaftaran
             </DefaultButton>
-
+            <DefaultButton
+                v-if="mode == 'accepted-form'"
+                type="green"
+                class="w-full md:w-1/2"
+                @click="submit()"
+                :disabled="process"
+            >
+                Ya, Terima Sebagai Siswa
+            </DefaultButton>
+            <DefaultButton
+                v-if="mode == 'rejected-form'"
+                type="red"
+                class="w-full md:w-1/2"
+                @click="submit()"
+                :disabled="process"
+            >
+                Ya, Tolak Sebagai Siswa
+            </DefaultButton>
             <DefaultButton type="light" class="w-full md:w-1/2" @click="close" :disabled="process"
                 >Tidak, Batalkan
             </DefaultButton>

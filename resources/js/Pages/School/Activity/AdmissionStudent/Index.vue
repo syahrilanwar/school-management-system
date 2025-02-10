@@ -3,8 +3,8 @@ import Pagination from '@/Components/Pagination.vue';
 import Badge from '@/Components/Badge.vue';
 import Search from '@/Components/Search.vue';
 import OutlineButton from '@/Components/OutlineButton.vue';
-import OfficeLayout from '@/Layouts/OfficeLayout.vue';
-import ICCSidebar from '@/Layouts/Sidebars/ICCSidebar.vue';
+import SchoolLayout from '@/Layouts/SchoolLayout.vue';
+import SchoolSidebar from '@/Layouts/Sidebars/SchoolSidebar.vue';
 import { Head, Link } from '@inertiajs/vue3';
 </script>
 
@@ -21,11 +21,11 @@ export default {
 </script>
 
 <template>
-    <Head title="Yayasan" />
+    <Head title="Sekolah" />
 
-    <OfficeLayout>
+    <SchoolLayout>
         <template #sidebar>
-            <ICCSidebar />
+            <SchoolSidebar />
         </template>
         <template #content>
             <!-- Data -->
@@ -137,12 +137,18 @@ export default {
                                         <Badge v-if="admission_student.status == 'UNVERIFIED'" type="red">{{
                                             admission_student.status_label
                                         }}</Badge>
+                                        <Badge v-if="admission_student.status == 'ACCEPTED'" type="green">{{
+                                            admission_student.status_label
+                                        }}</Badge>
+                                        <Badge v-if="admission_student.status == 'REJECTED'" type="red">{{
+                                            admission_student.status_label
+                                        }}</Badge>
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white">
                                         <div class="flex items-center justify-end space-x-3">
                                             <Link
                                                 :href="
-                                                    route('office.icc.activity.admissionStudent.detail', {
+                                                    route('school.activity.admissionStudent.detail', {
                                                         registration_number: admission_student.registration_number,
                                                     })
                                                 "
@@ -182,5 +188,5 @@ export default {
                 </div>
             </section>
         </template>
-    </OfficeLayout>
+    </SchoolLayout>
 </template>

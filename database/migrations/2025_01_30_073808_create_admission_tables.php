@@ -102,7 +102,7 @@ return new class extends Migration
             $table->foreignId('admission_stage_id')->constrained('admission_stages');
             $table->foreignId('officer_id')->nullable()->constrained('employees');
             $table->dateTime('scheduled_at')->nullable();
-            $table->text('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('status'); // PENDING, SCHEDULED, INTERVIEW, PASSED, FAILED
             $table->timestampsTz();
             $table->softDeletes();

@@ -12,6 +12,7 @@ use App\Http\Controllers\Office\ICC\Management\AdmissionStageController;
 use App\Http\Controllers\Office\QRD\QRDController;
 use App\Http\Controllers\Office\OfficeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\School\Activity\AdmissionStudentController as SchoolActivityAdmissionStudentController;
 use App\Http\Controllers\School\SchoolController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -92,6 +93,15 @@ Route::middleware(['auth', 'verified'])
     ->name('school')
     ->group(function () {
         Route::get('/', [SchoolController::class, 'index']);
+        // activity routes
+        Route::prefix('activity/admission-student')
+            ->name('.activity.admissionStudent')
+            ->group(function () {
+                Route::get('/', [SchoolActivityAdmissionStudentController::class, 'index']);
+                Route::get('{registration_number}/detail', [SchoolActivityAdmissionStudentController::class, 'detail'])->name('.detail');
+                Route::post('update-stage', [SchoolActivityAdmissionStudentController::class, 'updateStage'])->name('.updateStage');
+                Route::post('update-status', [SchoolActivityAdmissionStudentController::class, 'updateStatus'])->name('.updateStatus');
+            });
     });
 
 // guardian routes

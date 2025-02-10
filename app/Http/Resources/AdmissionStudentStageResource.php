@@ -22,9 +22,6 @@ class AdmissionStudentStageResource extends JsonResource
             case 'PENDING':
                 $status_label = 'Menunggu';
                 break;
-            case 'SCHEDULED':
-                $status_label = 'Dijadwalkan';
-                break;
             case 'INTERVIEW':
                 $status_label = 'Wawancara';
                 break;

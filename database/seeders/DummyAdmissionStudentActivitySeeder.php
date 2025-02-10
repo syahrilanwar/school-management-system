@@ -219,4 +219,6 @@ class DummyAdmissionStudentActivitySeeder extends Seeder
             $this->command->getOutput()->progressFinish();
         }
     }
+
+    public function verifyAdmissionSchema() {}
 }

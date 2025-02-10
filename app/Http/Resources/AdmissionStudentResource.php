@@ -32,23 +32,20 @@ class AdmissionStudentResource extends JsonResource
             case 'UNVERIFIED':
                 $status_label = 'Belum Terverifikasi';
                 break;
-            case 'WAITING_INTERVIEW':
-                $status_label = 'Menunggu Wawancara';
-                break;
-            case 'PASSED':
-                $status_label = 'Lulus';
-                break;
-            case 'FAILED':
-                $status_label = 'Gagal';
-                break;
             case 'WAITING_PAYMENT':
                 $status_label = 'Menunggu Pembayaran';
                 break;
             case 'ACCEPTED':
                 $status_label = 'Diterima';
                 break;
-            case 'CANCELED':
-                $status_label = 'Dibatalkan';
+            case 'REJECTED':
+                $status_label = 'Ditolak';
+                break;
+            case 'ACCEPTED':
+                $status_label = 'Diterima';
+                break;
+            case 'ENROLLED':
+                $status_label = 'Pendaftaran Selesai';
                 break;
             default:
                 $status_label = 'Tidak Diketahui';

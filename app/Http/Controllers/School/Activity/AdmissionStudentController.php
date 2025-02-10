@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Office\ICC\Activity;
+namespace App\Http\Controllers\School\Activity;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AdmissionStudentResource;
-use App\Models\AdmissionStage;
 use App\Models\AdmissionStudent;
-use App\Models\School;
+use App\Models\AdmissionStudentStage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
@@ -15,7 +14,7 @@ class AdmissionStudentController extends Controller
 {
     public function index()
     {
-        $admission_students = AdmissionStudent::where('status', '!=', 'DRAFT');
+        $admission_students = AdmissionStudent::whereNotIn('status', ['DRAFT', 'PENDING', 'UNVERIFIED']);
 
         if (request()->has('search')) {
             $admission_students->where('name', 'like', '%' . request('search') . '%')
@@ -34,7 +33,7 @@ class AdmissionStudentController extends Controller
             'admission_students' => AdmissionStudentResource::collection($admission_students),
         ];
 
-        return Inertia::render('Office/ICC/Activity/AdmissionStudent/Index', $data);
+        return Inertia::render('School/Activity/AdmissionStudent/Index', $data);
     }
 
     public function detail($registration_number)
@@ -49,10 +48,38 @@ class AdmissionStudentController extends Controller
             'admission_student' => AdmissionStudentResource::make($admission_student),
         ];
 
-        return Inertia::render('Office/ICC/Activity/AdmissionStudent/Detail', $data);
+        return Inertia::render('School/Activity/AdmissionStudent/Detail', $data);
     }
 
-    public function updateVerification()
+    public function updateStage()
+    {
+        DB::beginTransaction();
+
+        try {
+            $admission_student_stage = AdmissionStudentStage::where('uuid', request('admission_student_stage'))->firstOrFail();
+
+            $admission_student_stage->update([
+                'description' => request('description'),
+                'status' => request('status')
+            ]);
+
+            DB::commit();
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Tahapan diperbarui',
+            ], 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            return response()->json([
+                'status' => 'error',
+                'message' => $th->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function updateStatus()
     {
         DB::beginTransaction();
 
@@ -60,24 +87,10 @@ class AdmissionStudentController extends Controller
             $admission_student = AdmissionStudent::where('registration_number', request('registration_number'))->firstOrFail();
 
             $admission_student->update([
-                'submitted_at' => now(),
                 'status' => request('status'),
             ]);
 
-            $message = request('status') == 'VERIFIED' ? 'Berhasil memverifikasi formulir' : 'Berhasil menolak formulir';
-
-            if (request('status') == 'VERIFIED') {
-                $admission_stages = AdmissionStage::whereHasMorph('model', School::class, function ($school) use ($admission_student) {
-                    $school->where('id', $admission_student->school_id);
-                })->get();
-
-                foreach ($admission_stages as $admission_stage) {
-                    $admission_student->stages()->create([
-                        'admission_stage_id' => $admission_stage->id,
-                        'status' => 'PENDING',
-                    ]);
-                }
-            }
+            $message = request('status') == 'ACCEPTED' ? 'Berhasil menerima sebagai Siswa' : 'Berhasil menolak calon Siswa';
 
             DB::commit();
 

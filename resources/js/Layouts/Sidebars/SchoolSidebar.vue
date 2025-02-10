@@ -116,9 +116,9 @@ import { Link } from '@inertiajs/vue3';
                     <ul id="dropdown-activity" class="hidden space-y-2 py-2">
                         <li>
                             <Link
-                                href="#"
+                                :href="route('school.activity.admissionStudent')"
                                 class="group flex w-full items-center rounded-lg p-2 pl-11 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >Penerimaan Siswa Baru</Link
+                                >Pendaftaran Siswa Baru</Link
                             >
                         </li>
                         <li>

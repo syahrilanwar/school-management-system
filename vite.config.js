@@ -17,4 +17,19 @@ export default defineConfig({
             },
         }),
     ],
+    // optimizeDeps: {
+    //     include: ['@ckeditor/ckeditor5-build-classic'],
+    // },
+    // build: {
+    //     commonjsOptions: {
+    //         include: [/ckeditor5/],
+    //     },
+    //     rollupOptions: {
+    //         output: {
+    //             manualChunks: {
+    //                 ckeditor: ['@ckeditor/ckeditor5-build-classic'],
+    //             },
+    //         },
+    //     },
+    // },
 });
