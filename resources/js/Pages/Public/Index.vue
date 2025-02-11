@@ -25,21 +25,12 @@ defineProps({
     <Head title="Home" />
     <div class="bg-white">
         <!-- header -->
-        <nav
-            class="z-50 border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
-        >
-            <div
-                class="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4"
-            >
-                <Link
-                    href="/"
-                    class="flex items-center space-x-3 rtl:space-x-reverse"
-                >
+        <nav class="z-50 border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+            <div class="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4">
+                <Link href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <ApplicationLogo class="h-12" />
                 </Link>
-                <div
-                    class="flex items-center space-x-1 md:order-2 md:space-x-2 rtl:space-x-reverse"
-                >
+                <div class="flex items-center space-x-1 md:order-2 md:space-x-2 rtl:space-x-reverse">
                     <Link
                         v-if="$page.props.auth.user"
                         :href="route('portal')"
@@ -86,10 +77,7 @@ defineProps({
                         </svg>
                     </button>
                 </div>
-                <div
-                    class="hidden w-full md:block md:w-auto"
-                    id="navbar-multi-level"
-                >
+                <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
                     <ul
                         class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse"
                     >
@@ -381,50 +369,32 @@ defineProps({
         <main class="flex-row">
             <!-- jumbotron 1 -->
             <section
-                class="relative flex h-screen bg-[url('/public/assets/pages/jumbotron.jpg')] bg-cover bg-fixed bg-no-repeat"
+                class="relative flex h-screen bg-[url('/assets/pages/jumbotron.jpg')] bg-cover bg-fixed bg-no-repeat"
             >
-                <div
-                    class="absolute inset-0 bg-gradient-to-b from-white to-transparent"
-                ></div>
-                <div
-                    class="z-10 mx-auto my-auto max-w-5xl py-24 text-center lg:py-56"
-                >
+                <div class="absolute inset-0 bg-gradient-to-b from-white to-transparent"></div>
+                <div class="z-10 mx-auto my-auto max-w-5xl py-24 text-center lg:py-56">
                     <h1
                         class="mb-4 space-y-4 text-2xl font-extrabold uppercase leading-none tracking-tight text-white md:text-3xl lg:text-4xl"
                     >
                         <div>Selamat Datang di</div>
                         <div>Sekolah Harapan Bangsa</div>
                     </h1>
-                    <p
-                        class="mb-8 text-base font-normal text-white sm:px-16 lg:px-48 lg:text-lg"
-                    >
-                        Menjadi sekolah terbaik dalam layanan, maksimal
-                        mencerdaskan generasi berkarakter yang menghasilkan
-                        karya unggul bagi Indonesia
+                    <p class="mb-8 text-base font-normal text-white sm:px-16 lg:px-48 lg:text-lg">
+                        Menjadi sekolah terbaik dalam layanan, maksimal mencerdaskan generasi berkarakter yang
+                        menghasilkan karya unggul bagi Indonesia
                     </p>
-                    <div
-                        class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
-                    >
+                    <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
                         <!-- direction page if need -->
                     </div>
                 </div>
             </section>
             <!-- carousel -->
             <section>
-                <div
-                    id="default-carousel"
-                    class="relative w-full"
-                    data-carousel="slide"
-                >
+                <div id="default-carousel" class="relative w-full" data-carousel="slide">
                     <!-- Carousel wrapper -->
-                    <div
-                        class="relative h-48 overflow-hidden bg-black md:h-[50rem]"
-                    >
+                    <div class="relative h-48 overflow-hidden bg-black md:h-[50rem]">
                         <!-- Item 1 -->
-                        <div
-                            class="hidden duration-700 ease-in-out"
-                            data-carousel-item
-                        >
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img
                                 src="/assets/pages/slider1.jpg"
                                 class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
@@ -432,10 +402,7 @@ defineProps({
                             />
                         </div>
                         <!-- Item 2 -->
-                        <div
-                            class="hidden duration-700 ease-in-out"
-                            data-carousel-item
-                        >
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img
                                 src="/assets/pages/slider2.jpg"
                                 class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
@@ -443,10 +410,7 @@ defineProps({
                             />
                         </div>
                         <!-- Item 3 -->
-                        <div
-                            class="hidden duration-700 ease-in-out"
-                            data-carousel-item
-                        >
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img
                                 src="/assets/pages/slider3.jpg"
                                 class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
@@ -455,9 +419,7 @@ defineProps({
                         </div>
                     </div>
                     <!-- Slider indicators -->
-                    <div
-                        class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse"
-                    >
+                    <div class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse">
                         <button
                             type="button"
                             class="h-3 w-3 rounded-full"
@@ -675,9 +637,7 @@ defineProps({
             </section>
             <!-- news -->
             <section>
-                <div
-                    class="mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-16"
-                >
+                <div class="mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-16">
                     <h1
                         class="mb-4 text-center text-xl font-extrabold uppercase leading-none tracking-tight text-blue-700 dark:text-white md:mb-12 md:text-2xl lg:text-3xl"
                     >
@@ -692,12 +652,8 @@ defineProps({
                             :key="index"
                             class="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
                         >
-                            <div
-                                class="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-72"
-                            >
-                                <div
-                                    class="absolute inset-0 flex items-center justify-center"
-                                >
+                            <div class="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-72">
+                                <div class="absolute inset-0 flex items-center justify-center">
                                     <img
                                         alt=""
                                         loading="lazy"
@@ -713,16 +669,10 @@ defineProps({
                                 </div>
                             </div>
                             <div>
-                                <h3
-                                    class="text-base font-medium tracking-tight text-gray-900"
-                                >
-                                    Event
-                                </h3>
+                                <h3 class="text-base font-medium tracking-tight text-gray-900">Event</h3>
                                 <p class="mt-2 text-sm text-gray-600">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Dolor qui ea fuga aliquam
-                                    eaque odio quidem sint voluptas impedit rem
-                                    amet, expedita fugit, tempora, inventore
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor qui ea fuga aliquam
+                                    eaque odio quidem sint voluptas impedit rem amet, expedita fugit, tempora, inventore
                                     dolore praesentium quos quis in.
                                 </p>
                             </div>
@@ -738,12 +688,8 @@ defineProps({
                             :key="index"
                             class="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
                         >
-                            <div
-                                class="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40"
-                            >
-                                <div
-                                    class="absolute inset-0 flex items-center justify-center"
-                                >
+                            <div class="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40">
+                                <div class="absolute inset-0 flex items-center justify-center">
                                     <img
                                         alt=""
                                         loading="lazy"
@@ -759,16 +705,10 @@ defineProps({
                                 </div>
                             </div>
                             <div>
-                                <h3
-                                    class="text-base font-medium tracking-tight text-gray-900"
-                                >
-                                    News
-                                </h3>
+                                <h3 class="text-base font-medium tracking-tight text-gray-900">News</h3>
                                 <p class="mt-2 text-sm text-gray-600">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Dolor qui ea fuga aliquam
-                                    eaque odio quidem sint voluptas impedit rem
-                                    amet, expedita fugit, tempora, inventore
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor qui ea fuga aliquam
+                                    eaque odio quidem sint voluptas impedit rem amet, expedita fugit, tempora, inventore
                                     dolore praesentium quos quis in.
                                 </p>
                             </div>
@@ -780,27 +720,18 @@ defineProps({
             <section
                 class="relative flex bg-[url('https://hbics.sch.id/wp-content/uploads/2021/10/Hnet.com-image-4-scaled.jpg')] bg-cover bg-fixed bg-no-repeat"
             >
-                <div
-                    class="absolute inset-0 bg-gradient-to-b from-yellow-300 to-white opacity-70"
-                ></div>
-                <div
-                    class="z-10 mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-32"
-                >
+                <div class="absolute inset-0 bg-gradient-to-b from-yellow-300 to-white opacity-70"></div>
+                <div class="z-10 mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-32">
                     <h1
                         class="mb-4 text-xl font-extrabold uppercase leading-none tracking-tight text-blue-700 dark:text-white md:mb-6 md:text-2xl lg:text-3xl"
                     >
                         Mari Bergabung!
                     </h1>
-                    <p
-                        class="mb-8 text-base font-normal text-gray-900 dark:text-gray-400 sm:px-16 lg:px-48"
-                    >
-                        Dengan lebih dari 750 siswa dan didukung oleh lebih dari
-                        50 guru terbaik, Sekolah Harapan Bangsa telah melahirkan
-                        lebih dari 500 lulusan terbaik.
+                    <p class="mb-8 text-base font-normal text-gray-900 dark:text-gray-400 sm:px-16 lg:px-48">
+                        Dengan lebih dari 750 siswa dan didukung oleh lebih dari 50 guru terbaik, Sekolah Harapan Bangsa
+                        telah melahirkan lebih dari 500 lulusan terbaik.
                     </p>
-                    <div
-                        class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
-                    >
+                    <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
                         <a
                             href="#"
                             class="inline-flex items-center justify-center rounded-lg bg-blue-700 px-4 py-3 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
@@ -835,9 +766,8 @@ defineProps({
                             Testimoni
                         </h1>
                         <p class="mt-4 text-base tracking-tight text-gray-700">
-                            Dipercaya oleh wali, siswa, dan pengajar. Sekolah
-                            kami mengutamakan kemudahan dan fokus pada kualitas
-                            pendidikan yang efektif.
+                            Dipercaya oleh wali, siswa, dan pengajar. Sekolah kami mengutamakan kemudahan dan fokus pada
+                            kualitas pendidikan yang efektif.
                         </p>
                     </div>
                     <ul
@@ -845,14 +775,9 @@ defineProps({
                         class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3"
                     >
                         <li>
-                            <ul
-                                role="list"
-                                class="flex flex-col gap-y-6 sm:gap-y-8"
-                            >
+                            <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
                                 <li>
-                                    <figure
-                                        class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10"
-                                    >
+                                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10">
                                         <svg
                                             aria-hidden="true"
                                             width="105"
@@ -864,33 +789,19 @@ defineProps({
                                             ></path>
                                         </svg>
                                         <blockquote class="relative">
-                                            <p
-                                                class="text-sm tracking-tight text-gray-900"
-                                            >
-                                                TaxPal is so easy to use I can’t
-                                                help but wonder if it’s really
-                                                doing the things the government
-                                                expects me to do.
+                                            <p class="text-sm tracking-tight text-gray-900">
+                                                TaxPal is so easy to use I can’t help but wonder if it’s really doing
+                                                the things the government expects me to do.
                                             </p>
                                         </blockquote>
                                         <figcaption
                                             class="relative mt-6 flex items-center justify-between border-t border-gray-100 pt-6"
                                         >
                                             <div>
-                                                <div
-                                                    class="font-display text-sm text-gray-900"
-                                                >
-                                                    Sheryl Berge
-                                                </div>
-                                                <div
-                                                    class="mt-1 text-sm text-gray-500"
-                                                >
-                                                    CEO at Lynch LLC
-                                                </div>
+                                                <div class="font-display text-sm text-gray-900">Sheryl Berge</div>
+                                                <div class="mt-1 text-sm text-gray-500">CEO at Lynch LLC</div>
                                             </div>
-                                            <div
-                                                class="overflow-hidden rounded-full bg-gray-50"
-                                            >
+                                            <div class="overflow-hidden rounded-full bg-gray-50">
                                                 <img
                                                     alt=""
                                                     loading="lazy"
@@ -905,9 +816,7 @@ defineProps({
                                     </figure>
                                 </li>
                                 <li>
-                                    <figure
-                                        class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10"
-                                    >
+                                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10">
                                         <svg
                                             aria-hidden="true"
                                             width="105"
@@ -919,36 +828,22 @@ defineProps({
                                             ></path>
                                         </svg>
                                         <blockquote class="relative">
-                                            <p
-                                                class="text-sm tracking-tight text-gray-900"
-                                            >
-                                                I’m trying to get a hold of
-                                                someone in support, I’m in a lot
-                                                of trouble right now and they
-                                                are saying it has something to
-                                                do with my books. Please get
-                                                back to me right away.
+                                            <p class="text-sm tracking-tight text-gray-900">
+                                                I’m trying to get a hold of someone in support, I’m in a lot of trouble
+                                                right now and they are saying it has something to do with my books.
+                                                Please get back to me right away.
                                             </p>
                                         </blockquote>
                                         <figcaption
                                             class="relative mt-6 flex items-center justify-between border-t border-gray-100 pt-6"
                                         >
                                             <div>
-                                                <div
-                                                    class="font-display text-sm text-gray-900"
-                                                >
-                                                    Amy Hahn
-                                                </div>
-                                                <div
-                                                    class="mt-1 text-sm text-gray-500"
-                                                >
-                                                    Director at Velocity
-                                                    Industries
+                                                <div class="font-display text-sm text-gray-900">Amy Hahn</div>
+                                                <div class="mt-1 text-sm text-gray-500">
+                                                    Director at Velocity Industries
                                                 </div>
                                             </div>
-                                            <div
-                                                class="overflow-hidden rounded-full bg-gray-50"
-                                            >
+                                            <div class="overflow-hidden rounded-full bg-gray-50">
                                                 <img
                                                     alt=""
                                                     loading="lazy"
@@ -965,14 +860,9 @@ defineProps({
                             </ul>
                         </li>
                         <li>
-                            <ul
-                                role="list"
-                                class="flex flex-col gap-y-6 sm:gap-y-8"
-                            >
+                            <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
                                 <li>
-                                    <figure
-                                        class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10"
-                                    >
+                                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10">
                                         <svg
                                             aria-hidden="true"
                                             width="105"
@@ -984,36 +874,20 @@ defineProps({
                                             ></path>
                                         </svg>
                                         <blockquote class="relative">
-                                            <p
-                                                class="text-sm tracking-tight text-gray-900"
-                                            >
-                                                The best part about TaxPal is
-                                                every time I pay my employees,
-                                                my bank balance doesn’t go down
-                                                like it used to. Looking forward
-                                                to spending this extra cash when
-                                                I figure out why my card is
-                                                being declined.
+                                            <p class="text-sm tracking-tight text-gray-900">
+                                                The best part about TaxPal is every time I pay my employees, my bank
+                                                balance doesn’t go down like it used to. Looking forward to spending
+                                                this extra cash when I figure out why my card is being declined.
                                             </p>
                                         </blockquote>
                                         <figcaption
                                             class="relative mt-6 flex items-center justify-between border-t border-gray-100 pt-6"
                                         >
                                             <div>
-                                                <div
-                                                    class="font-display text-sm text-gray-900"
-                                                >
-                                                    Leland Kiehn
-                                                </div>
-                                                <div
-                                                    class="mt-1 text-sm text-gray-500"
-                                                >
-                                                    Founder of Kiehn and Sons
-                                                </div>
+                                                <div class="font-display text-sm text-gray-900">Leland Kiehn</div>
+                                                <div class="mt-1 text-sm text-gray-500">Founder of Kiehn and Sons</div>
                                             </div>
-                                            <div
-                                                class="overflow-hidden rounded-full bg-gray-50"
-                                            >
+                                            <div class="overflow-hidden rounded-full bg-gray-50">
                                                 <img
                                                     alt=""
                                                     loading="lazy"
@@ -1028,9 +902,7 @@ defineProps({
                                     </figure>
                                 </li>
                                 <li>
-                                    <figure
-                                        class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10"
-                                    >
+                                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10">
                                         <svg
                                             aria-hidden="true"
                                             width="105"
@@ -1042,34 +914,19 @@ defineProps({
                                             ></path>
                                         </svg>
                                         <blockquote class="relative">
-                                            <p
-                                                class="text-sm tracking-tight text-gray-900"
-                                            >
-                                                There are so many things I had
-                                                to do with my old software that
-                                                I just don’t do at all with
-                                                TaxPal. Suspicious but I can’t
-                                                say I don’t love it.
+                                            <p class="text-sm tracking-tight text-gray-900">
+                                                There are so many things I had to do with my old software that I just
+                                                don’t do at all with TaxPal. Suspicious but I can’t say I don’t love it.
                                             </p>
                                         </blockquote>
                                         <figcaption
                                             class="relative mt-6 flex items-center justify-between border-t border-gray-100 pt-6"
                                         >
                                             <div>
-                                                <div
-                                                    class="font-display text-sm text-gray-900"
-                                                >
-                                                    Erin Powlowski
-                                                </div>
-                                                <div
-                                                    class="mt-1 text-sm text-gray-500"
-                                                >
-                                                    COO at Armstrong Inc
-                                                </div>
+                                                <div class="font-display text-sm text-gray-900">Erin Powlowski</div>
+                                                <div class="mt-1 text-sm text-gray-500">COO at Armstrong Inc</div>
                                             </div>
-                                            <div
-                                                class="overflow-hidden rounded-full bg-gray-50"
-                                            >
+                                            <div class="overflow-hidden rounded-full bg-gray-50">
                                                 <img
                                                     alt=""
                                                     loading="lazy"
@@ -1086,14 +943,9 @@ defineProps({
                             </ul>
                         </li>
                         <li>
-                            <ul
-                                role="list"
-                                class="flex flex-col gap-y-6 sm:gap-y-8"
-                            >
+                            <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
                                 <li>
-                                    <figure
-                                        class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10"
-                                    >
+                                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10">
                                         <svg
                                             aria-hidden="true"
                                             width="105"
@@ -1105,34 +957,19 @@ defineProps({
                                             ></path>
                                         </svg>
                                         <blockquote class="relative">
-                                            <p
-                                                class="text-sm tracking-tight text-gray-900"
-                                            >
-                                                I used to have to remit tax to
-                                                the EU and with TaxPal I somehow
-                                                don’t have to do that anymore.
-                                                Nervous to travel there now
-                                                though.
+                                            <p class="text-sm tracking-tight text-gray-900">
+                                                I used to have to remit tax to the EU and with TaxPal I somehow don’t
+                                                have to do that anymore. Nervous to travel there now though.
                                             </p>
                                         </blockquote>
                                         <figcaption
                                             class="relative mt-6 flex items-center justify-between border-t border-gray-100 pt-6"
                                         >
                                             <div>
-                                                <div
-                                                    class="font-display text-sm text-gray-900"
-                                                >
-                                                    Peter Renolds
-                                                </div>
-                                                <div
-                                                    class="mt-1 text-sm text-gray-500"
-                                                >
-                                                    Founder of West Inc
-                                                </div>
+                                                <div class="font-display text-sm text-gray-900">Peter Renolds</div>
+                                                <div class="mt-1 text-sm text-gray-500">Founder of West Inc</div>
                                             </div>
-                                            <div
-                                                class="overflow-hidden rounded-full bg-gray-50"
-                                            >
+                                            <div class="overflow-hidden rounded-full bg-gray-50">
                                                 <img
                                                     alt=""
                                                     loading="lazy"
@@ -1147,9 +984,7 @@ defineProps({
                                     </figure>
                                 </li>
                                 <li>
-                                    <figure
-                                        class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10"
-                                    >
+                                    <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-gray-900/10">
                                         <svg
                                             aria-hidden="true"
                                             width="105"
@@ -1161,35 +996,22 @@ defineProps({
                                             ></path>
                                         </svg>
                                         <blockquote class="relative">
-                                            <p
-                                                class="text-sm tracking-tight text-gray-900"
-                                            >
-                                                This is the fourth email I’ve
-                                                sent to your support team. I am
-                                                literally being held in jail for
-                                                tax fraud. Please answer your
-                                                damn emails, this is important.
+                                            <p class="text-sm tracking-tight text-gray-900">
+                                                This is the fourth email I’ve sent to your support team. I am literally
+                                                being held in jail for tax fraud. Please answer your damn emails, this
+                                                is important.
                                             </p>
                                         </blockquote>
                                         <figcaption
                                             class="relative mt-6 flex items-center justify-between border-t border-gray-100 pt-6"
                                         >
                                             <div>
-                                                <div
-                                                    class="font-display text-sm text-gray-900"
-                                                >
-                                                    Amy Hahn
-                                                </div>
-                                                <div
-                                                    class="mt-1 text-sm text-gray-500"
-                                                >
-                                                    Director at Velocity
-                                                    Industries
+                                                <div class="font-display text-sm text-gray-900">Amy Hahn</div>
+                                                <div class="mt-1 text-sm text-gray-500">
+                                                    Director at Velocity Industries
                                                 </div>
                                             </div>
-                                            <div
-                                                class="overflow-hidden rounded-full bg-gray-50"
-                                            >
+                                            <div class="overflow-hidden rounded-full bg-gray-50">
                                                 <img
                                                     alt=""
                                                     loading="lazy"
@@ -1211,9 +1033,7 @@ defineProps({
             <!-- map -->
             <section>
                 <div class="mx-auto py-8 text-center lg:py-16">
-                    <h1
-                        class="mb-4 text-3xl font-extrabold uppercase leading-none text-blue-800 md:mb-20"
-                    >
+                    <h1 class="mb-4 text-3xl font-extrabold uppercase leading-none text-blue-800 md:mb-20">
                         Temui Kami
                     </h1>
                     <iframe
@@ -1234,53 +1054,32 @@ defineProps({
                 <div class="gap-2 md:flex md:justify-between">
                     <div class="mb-6 md:mb-0">
                         <a href="#" class="flex items-center">
-                            <img
-                                src="/assets/icons/main-school-logo.png"
-                                class="me-3 h-12"
-                                alt="Logo"
-                            />
+                            <img src="/assets/icons/main-school-logo.png" class="me-3 h-12" alt="Logo" />
                         </a>
                     </div>
                     <div class="mb-6 mr-auto md:mb-0">
                         <a href="#" class="flex items-center">
-                            <img
-                                src="/assets/icons/main-foundation-logo.png"
-                                class="me-3 h-12"
-                                alt="Logo"
-                            />
+                            <img src="/assets/icons/main-foundation-logo.png" class="me-3 h-12" alt="Logo" />
                         </a>
                     </div>
                     <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
                         <div>
-                            <h2
-                                class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white"
-                            >
+                            <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                                 Pendaftaran
                             </h2>
-                            <ul
-                                class="text-sm font-medium text-gray-500 dark:text-gray-400"
-                            >
+                            <ul class="text-sm font-medium text-gray-500 dark:text-gray-400">
                                 <li class="mb-4">
-                                    <a href="#" class="hover:underline"
-                                        >Info Pendaftaran</a
-                                    >
+                                    <a href="#" class="hover:underline">Info Pendaftaran</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h2
-                                class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white"
-                            >
+                            <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                                 Ikuti Kami
                             </h2>
-                            <ul
-                                class="text-sm font-medium text-gray-500 dark:text-gray-400"
-                            >
+                            <ul class="text-sm font-medium text-gray-500 dark:text-gray-400">
                                 <li class="mb-4">
-                                    <a
-                                        target="_blank"
-                                        href="https://www.facebook.com/HBICS/"
-                                        class="hover:underline"
+                                    <a target="_blank" href="https://www.facebook.com/HBICS/" class="hover:underline"
                                         >Facebook</a
                                     >
                                 </li>
@@ -1303,23 +1102,15 @@ defineProps({
                             </ul>
                         </div>
                         <div>
-                            <h2
-                                class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white"
-                            >
+                            <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                                 Hubungi Kami
                             </h2>
-                            <ul
-                                class="text-sm font-medium text-gray-500 dark:text-gray-400"
-                            >
+                            <ul class="text-sm font-medium text-gray-500 dark:text-gray-400">
                                 <li class="mb-4">
-                                    <a href="#" class="hover:underline"
-                                        >Masukan Saran</a
-                                    >
+                                    <a href="#" class="hover:underline">Masukan Saran</a>
                                 </li>
                                 <li class="mb-4">
-                                    <a href="#" class="hover:underline"
-                                        >Karir</a
-                                    >
+                                    <a href="#" class="hover:underline">Karir</a>
                                 </li>
                                 <li>
                                     <a href="#" class="hover:underline">FAQ</a>
@@ -1328,19 +1119,12 @@ defineProps({
                         </div>
                     </div>
                 </div>
-                <hr
-                    class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8"
-                />
+                <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <span
-                        class="text-sm text-gray-500 dark:text-gray-400 sm:text-center"
+                    <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center"
                         >© {{ new Date().getFullYear() }}
-                        <a
-                            href="https://saffix.id/"
-                            target="_blank"
-                            class="hover:underline"
-                            >saffix.id</a
-                        >. All Rights Reserved.
+                        <a href="https://saffix.id/" target="_blank" class="hover:underline">saffix.id</a>. All Rights
+                        Reserved.
                     </span>
                     <div class="mt-4 flex sm:mt-0 sm:justify-center">
                         <a
@@ -1356,11 +1140,7 @@ defineProps({
                                 fill="currentColor"
                                 class="h-5 w-5"
                             >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path
                                     d="M18 2a1 1 0 0 1 .993 .883l.007 .117v4a1 1 0 0 1 -.883 .993l-.117 .007h-3v1h3a1 1 0 0 1 .991 1.131l-.02 .112l-1 4a1 1 0 0 1 -.858 .75l-.113 .007h-2v6a1 1 0 0 1 -.883 .993l-.117 .007h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-6h-2a1 1 0 0 1 -.993 -.883l-.007 -.117v-4a1 1 0 0 1 .883 -.993l.117 -.007h2v-1a6 6 0 0 1 5.775 -5.996l.225 -.004h3z"
                                 />
@@ -1380,11 +1160,7 @@ defineProps({
                                 fill="currentColor"
                                 class="h-5 w-5"
                             >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path
                                     d="M16 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-8a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-4 5a4 4 0 0 0 -3.995 3.8l-.005 .2a4 4 0 1 0 4 -4m4.5 -1.5a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1"
                                 />
@@ -1403,11 +1179,7 @@ defineProps({
                                 fill="currentColor"
                                 class="h-5 w-5"
                             >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path
                                     d="M18 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-12a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-9 6v6a1 1 0 0 0 1.514 .857l5 -3a1 1 0 0 0 0 -1.714l-5 -3a1 1 0 0 0 -1.514 .857z"
                                 />

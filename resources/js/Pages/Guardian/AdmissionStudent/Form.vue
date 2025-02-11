@@ -512,7 +512,7 @@ export default {
             this.healthForm.insurance_network = this.admission_student.data.insurance_network;
             this.healthForm.recomended_hospital = this.admission_student.data.recomended_hospital;
             this.healthForm.doctor_name = this.admission_student.data.doctor_name;
-            this.healthForm.questionnaires = this.admission_student.data.questionnaires;
+            this.healthForm.questionnaires = this.admission_student.data.questionnaires ?? questionnaires;
             // set additionalForm
             this.additionalForm.need_vehicle = this.admission_student.data.need_vehicle;
 

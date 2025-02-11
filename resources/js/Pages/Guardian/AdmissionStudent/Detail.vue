@@ -57,77 +57,160 @@ export default {
                     <h1 class="text-lg font-semibold text-gray-900 dark:text-white md:pb-2">
                         Detail Pendaftaran Siswa Baru
                     </h1>
-                    <div
-                        v-if="admission_student.data.status == 'VERIFIED'"
-                        id="alert-verified"
-                        class="mb-4 rounded-lg border border-purple-300 bg-purple-50 p-4 text-purple-800 dark:border-purple-800 dark:bg-gray-800 dark:text-purple-400"
-                        role="alert"
-                    >
-                        <div class="flex items-center">
-                            <svg
-                                class="me-2 h-4 w-4 shrink-0"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
-                                />
-                            </svg>
-                            <span class="sr-only">Info</span>
-                            <h3 class="text-base font-medium">Pendaftaran telah diverifikasi</h3>
+                    <!-- alert -->
+                    <div>
+                        <div
+                            v-if="admission_student.data.status == 'VERIFIED'"
+                            id="alert-verified"
+                            class="mb-4 rounded-lg border border-purple-300 bg-purple-50 p-4 text-purple-800 dark:border-purple-800 dark:bg-gray-800 dark:text-purple-400"
+                            role="alert"
+                        >
+                            <div class="flex items-center">
+                                <svg
+                                    class="me-2 h-4 w-4 shrink-0"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                                    />
+                                </svg>
+                                <span class="sr-only">Info</span>
+                                <h3 class="text-base font-medium">Pendaftaran telah diverifikasi</h3>
+                            </div>
+                            <div class="mb-4 mt-2 text-sm">
+                                Selamat! Pendaftaran Anda telah berhasil diverifikasi. Silakan atur jadwal pertemuan
+                                atau interview sesuai ketersediaan Anda dan konfirmasi segera. Kami menantikan kehadiran
+                                Anda!
+                            </div>
+                            <div class="flex">
+                                <button
+                                    type="button"
+                                    class="rounded-lg border border-purple-800 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-purple-800 hover:bg-purple-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-200 dark:border-purple-600 dark:text-purple-400 dark:hover:bg-purple-600 dark:hover:text-white dark:focus:ring-purple-800"
+                                    data-dismiss-target="#alert-verified"
+                                    aria-label="Close"
+                                >
+                                    tutup
+                                </button>
+                            </div>
                         </div>
-                        <div class="mb-4 mt-2 text-sm">
-                            Selamat! Pendaftaran Anda telah berhasil diverifikasi. Silakan atur jadwal pertemuan atau
-                            interview sesuai ketersediaan Anda dan konfirmasi segera. Kami menantikan kehadiran Anda!
+                        <div
+                            v-if="admission_student.data.status == 'UNVERIFIED'"
+                            id="alert-unverified"
+                            class="mb-4 rounded-lg border border-red-300 bg-red-50 p-4 text-red-800 dark:border-red-800 dark:bg-gray-800 dark:text-red-400"
+                            role="alert"
+                        >
+                            <div class="flex items-center">
+                                <svg
+                                    class="me-2 h-4 w-4 shrink-0"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                                    />
+                                </svg>
+                                <span class="sr-only">Info</span>
+                                <h3 class="text-base font-medium">Pendaftaran telah ditolak</h3>
+                            </div>
+                            <div class="mb-4 mt-2 text-sm">
+                                Maaf, pendaftaran Anda tidak dapat diproses karena data tidak valid. Pastikan formulir
+                                terisi lengkap dan berkas sesuai ketentuan. Silakan periksa kembali, coba lagi, atau
+                                hubungi kami untuk bantuan.
+                            </div>
+                            <div class="flex">
+                                <button
+                                    type="button"
+                                    class="rounded-lg border border-red-800 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-red-800 hover:bg-red-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-200 dark:border-red-600 dark:text-red-400 dark:hover:bg-red-600 dark:hover:text-white dark:focus:ring-red-800"
+                                    data-dismiss-target="#alert-unverified"
+                                    aria-label="Close"
+                                >
+                                    tutup
+                                </button>
+                            </div>
                         </div>
-                        <div class="flex">
-                            <button
-                                type="button"
-                                class="rounded-lg border border-purple-800 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-purple-800 hover:bg-purple-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-purple-200 dark:border-purple-600 dark:text-purple-400 dark:hover:bg-purple-600 dark:hover:text-white dark:focus:ring-purple-800"
-                                data-dismiss-target="#alert-verified"
-                                aria-label="Close"
-                            >
-                                tutup
-                            </button>
+                        <div
+                            v-if="admission_student.data.status == 'ACCEPTED'"
+                            id="alert-accepted"
+                            class="mb-4 rounded-lg border border-green-300 bg-green-50 p-4 text-green-800 dark:border-green-800 dark:bg-gray-800 dark:text-green-400"
+                            role="alert"
+                        >
+                            <div class="flex items-center">
+                                <svg
+                                    class="me-2 h-4 w-4 shrink-0"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                                    />
+                                </svg>
+                                <span class="sr-only">Info</span>
+                                <h3 class="text-base font-medium">
+                                    Selamat, {{ admission_student.data.name }} diterima sebagai Siswa
+                                </h3>
+                            </div>
+                            <div class="mb-4 mt-2 text-sm">
+                                Selamat! Pendaftaran Anda telah berhasil diterima. Silakan lanjutkan proses pembayaran
+                                sekolah untuk menyelesaikan tahap berikutnya. Jika membutuhkan bantuan, jangan ragu
+                                untuk menghubungi kami.
+                            </div>
+                            <div class="flex">
+                                <button
+                                    type="button"
+                                    class="rounded-lg border border-green-800 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-green-800 hover:bg-green-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200 dark:border-green-600 dark:text-green-400 dark:hover:bg-green-600 dark:hover:text-white dark:focus:ring-green-800"
+                                    data-dismiss-target="#alert-accepted"
+                                    aria-label="Close"
+                                >
+                                    tutup
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        v-if="admission_student.data.status == 'UNVERIFIED'"
-                        id="alert-unverified"
-                        class="mb-4 rounded-lg border border-red-300 bg-red-50 p-4 text-red-800 dark:border-red-800 dark:bg-gray-800 dark:text-red-400"
-                        role="alert"
-                    >
-                        <div class="flex items-center">
-                            <svg
-                                class="me-2 h-4 w-4 shrink-0"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
-                                />
-                            </svg>
-                            <span class="sr-only">Info</span>
-                            <h3 class="text-base font-medium">Pendaftaran telah ditolak</h3>
-                        </div>
-                        <div class="mb-4 mt-2 text-sm">
-                            Maaf, pendaftaran Anda tidak dapat diproses karena data tidak valid. Pastikan formulir
-                            terisi lengkap dan berkas sesuai ketentuan. Silakan periksa kembali, coba lagi, atau hubungi
-                            kami untuk bantuan.
-                        </div>
-                        <div class="flex">
-                            <button
-                                type="button"
-                                class="rounded-lg border border-red-800 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-red-800 hover:bg-red-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-200 dark:border-red-600 dark:text-red-400 dark:hover:bg-red-600 dark:hover:text-white dark:focus:ring-red-800"
-                                data-dismiss-target="#alert-unverified"
-                                aria-label="Close"
-                            >
-                                tutup
-                            </button>
+                        <div
+                            v-if="admission_student.data.status == 'REJECTED'"
+                            id="alert-rejected"
+                            class="mb-4 rounded-lg border border-red-300 bg-red-50 p-4 text-red-800 dark:border-red-800 dark:bg-gray-800 dark:text-red-400"
+                            role="alert"
+                        >
+                            <div class="flex items-center">
+                                <svg
+                                    class="me-2 h-4 w-4 shrink-0"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                                    />
+                                </svg>
+                                <span class="sr-only">Info</span>
+                                <h3 class="text-base font-medium">
+                                    Mohon maaf, {{ admission_student.data.name }} tidak diterima sebagai Siswa
+                                </h3>
+                            </div>
+                            <div class="mb-4 mt-2 text-sm">
+                                Kami menghargai usaha Anda dalam mengikuti proses pendaftaran. Sayangnya, pendaftaran
+                                Anda belum dapat kami terima untuk saat ini. Jangan berkecil hati, Anda dapat mencoba
+                                kembali di kesempatan berikutnya. Jika memiliki pertanyaan lebih lanjut, jangan ragu
+                                untuk menghubungi kami.
+                            </div>
+                            <div class="flex">
+                                <button
+                                    type="button"
+                                    class="rounded-lg border border-red-800 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-red-800 hover:bg-red-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-200 dark:border-red-600 dark:text-red-400 dark:hover:bg-red-600 dark:hover:text-white dark:focus:ring-red-800"
+                                    data-dismiss-target="#alert-rejected"
+                                    aria-label="Close"
+                                >
+                                    Tutup
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="grid gap-4 py-2 sm:gap-8 md:grid-cols-2 md:py-4">
@@ -495,7 +578,14 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div v-if="admission_student.data.status != 'VERIFIED'" class="flex justify-start space-x-4">
+                    <div
+                        v-if="
+                            admission_student.data.status == 'DRAFT' &&
+                            admission_student.data.status == 'VERIFIED' &&
+                            admission_student.data.status == 'UNVERIFIED'
+                        "
+                        class="flex justify-start space-x-4"
+                    >
                         <Link
                             :href="
                                 route('guardian.admissionStudent.form', {
@@ -523,7 +613,13 @@ export default {
                             >Kirim Form Pendaftaran</DefaultButton
                         >
                     </div>
-                    <div v-if="admission_student.data.status == 'VERIFIED'">
+                    <div
+                        v-if="
+                            admission_student.data.status != 'DRAFT' &&
+                            admission_student.data.status != 'PENDING' &&
+                            admission_student.data.status != 'UNVERIFIED'
+                        "
+                    >
                         <hr class="my-4" />
                         <h1 class="text-lg font-semibold text-gray-900 dark:text-white md:pb-4">Tahapan Pendaftaran</h1>
                         <ol class="relative mx-3 max-w-4xl border-s border-gray-200 dark:border-gray-700">

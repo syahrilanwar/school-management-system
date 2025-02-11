@@ -50,7 +50,7 @@ import { Link } from '@inertiajs/vue3';
                 </li>
                 <li>
                     <Link
-                        href="#"
+                        :href="route('school.student')"
                         class="group flex items-center rounded-lg p-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                         <svg

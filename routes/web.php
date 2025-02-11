@@ -3,7 +3,9 @@
 use App\Http\Controllers\Guardian\AdmissionStudentController;
 use App\Http\Controllers\Guardian\GuardianController;
 use App\Http\Controllers\Guardian\TransactionPaymentController;
+use App\Http\Controllers\Office\Finance\Activity\AdmissionStudentController as FinanceActivityAdmissionStudentController;
 use App\Http\Controllers\Office\Finance\FinanceController;
+use App\Http\Controllers\Office\GA\Activity\AdmissionStudentController as GAActivityAdmissionStudentController;
 use App\Http\Controllers\Office\GA\GAController;
 use App\Http\Controllers\Office\HCM\HCMController;
 use App\Http\Controllers\Office\ICC\Activity\AdmissionStudentController as ActivityAdmissionStudentController;
@@ -14,6 +16,7 @@ use App\Http\Controllers\Office\OfficeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\School\Activity\AdmissionStudentController as SchoolActivityAdmissionStudentController;
 use App\Http\Controllers\School\SchoolController;
+use App\Http\Controllers\School\StudentController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -73,6 +76,13 @@ Route::middleware(['auth', 'verified'])
             ->name('.ga')
             ->group(function () {
                 Route::get('/', [GAController::class, 'index']);
+                // activity routes
+                Route::prefix('activity/admission-student')
+                    ->name('.activity.admissionStudent')
+                    ->group(function () {
+                        Route::get('/', [GAActivityAdmissionStudentController::class, 'index']);
+                        Route::get('{registration_number}/detail', [GAActivityAdmissionStudentController::class, 'detail'])->name('.detail');
+                    });
             });
         // qrd routes
         Route::prefix('qrd')
@@ -85,6 +95,13 @@ Route::middleware(['auth', 'verified'])
             ->name('.finance')
             ->group(function () {
                 Route::get('/', [FinanceController::class, 'index']);
+                // activity routes
+                Route::prefix('activity/admission-student')
+                    ->name('.activity.admissionStudent')
+                    ->group(function () {
+                        Route::get('/', [FinanceActivityAdmissionStudentController::class, 'index']);
+                        Route::get('{registration_number}/detail', [FinanceActivityAdmissionStudentController::class, 'detail'])->name('.detail');
+                    });
             });
     });
 // school routes
@@ -93,6 +110,13 @@ Route::middleware(['auth', 'verified'])
     ->name('school')
     ->group(function () {
         Route::get('/', [SchoolController::class, 'index']);
+        // student routes
+        Route::prefix('student')
+            ->name('.student')
+            ->group(function () {
+                Route::get('/', [StudentController::class, 'index']);
+                Route::get('{school_national_id}/detail', [StudentController::class, 'detail'])->name('.detail');
+            });
         // activity routes
         Route::prefix('activity/admission-student')
             ->name('.activity.admissionStudent')

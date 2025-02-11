@@ -6,9 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\AdmissionStudentResource;
 use App\Models\AdmissionStudent;
 use App\Models\AdmissionStudentStage;
+use App\Models\Profile;
+use App\Models\Student;
+use App\Models\StudentGuardian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use Ramsey\Uuid\Uuid;
 
 class AdmissionStudentController extends Controller
 {
@@ -91,6 +95,35 @@ class AdmissionStudentController extends Controller
             ]);
 
             $message = request('status') == 'ACCEPTED' ? 'Berhasil menerima sebagai Siswa' : 'Berhasil menolak calon Siswa';
+
+            if (request('status') == 'ENROLLED') {
+                $message = 'Berhasil menyelesaikan pendaftaran. Siswa sudah ditempatkan disekolah';
+
+                $profile_created = Profile::create([
+                    'name' => $admission_student->name,
+                    'birth_place' => $admission_student->birth_place,
+                    'birth_date' => $admission_student->birth_date,
+                    'gender' => $admission_student->gender,
+                    'blood_type' => $admission_student->blood_type,
+                    'religion' => $admission_student->religion,
+                    'phone' => $admission_student->phone,
+                    'address' => $admission_student->address,
+                    'postal_code' => $admission_student->postal_code,
+                ]);
+
+                $student_created = Student::firstOrCreate([
+                    'profile_id' => $profile_created->id,
+                ], [
+                    'school_id' => $admission_student->school_id,
+                    'school_grade_id' => $admission_student->school_grade_id,
+                    'school_national_id' => Uuid::uuid1(),
+                ]);
+
+                StudentGuardian::create([
+                    'student_id' => $student_created->id,
+                    'guardian_id' => $admission_student->transaction->customer_id,
+                ]);
+            }
 
             DB::commit();
 

@@ -137,6 +137,15 @@ export default {
                                         <Badge v-if="admission_student.status == 'UNVERIFIED'" type="red">{{
                                             admission_student.status_label
                                         }}</Badge>
+                                        <Badge v-if="admission_student.status == 'ACCEPTED'" type="green">{{
+                                            admission_student.status_label
+                                        }}</Badge>
+                                        <Badge v-if="admission_student.status == 'REJECTED'" type="red">{{
+                                            admission_student.status_label
+                                        }}</Badge>
+                                        <Badge v-if="admission_student.status == 'ENROLLED'" type="dark">{{
+                                            admission_student.status_label
+                                        }}</Badge>
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-3 font-medium text-gray-900 dark:text-white">
                                         <div class="flex items-center justify-end space-x-3">

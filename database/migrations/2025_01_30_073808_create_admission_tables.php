@@ -90,7 +90,7 @@ return new class extends Migration
             $table->json('families')->nullable();
             $table->json('questionnaires')->nullable();
             $table->json('school_info_source')->nullable();
-            $table->string('status'); // DRAFT, PENDING, VERIFIED, WAITING_INTERVIEW, PASSED, FAILED, WAITING_PAYMENT, ACCEPTED, CANCELED
+            $table->string('status');  // DRAFT, PENDING, VERIFIED, UNVERIFIED, ACCEPTED, REJECTED, ENROLLED
             $table->timestampsTz();
             $table->softDeletes();
         });
@@ -103,7 +103,7 @@ return new class extends Migration
             $table->foreignId('officer_id')->nullable()->constrained('employees');
             $table->dateTime('scheduled_at')->nullable();
             $table->longText('description')->nullable();
-            $table->string('status'); // PENDING, SCHEDULED, INTERVIEW, PASSED, FAILED
+            $table->string('status'); // PENDING, INTERVIEW, PASSED, FAILED, DOING, DONE
             $table->timestampsTz();
             $table->softDeletes();
         });

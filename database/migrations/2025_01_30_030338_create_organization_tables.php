@@ -123,6 +123,7 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->foreignId('profile_id')->constrained('profiles');
             $table->foreignId('school_id')->constrained('schools');
+            $table->foreignId('school_grade_id')->constrained('school_grades');
             $table->string('school_national_id')->unique();
             $table->timestampsTz();
             $table->softDeletes();
