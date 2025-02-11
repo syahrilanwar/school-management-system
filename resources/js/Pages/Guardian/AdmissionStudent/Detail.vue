@@ -579,11 +579,7 @@ export default {
                         </div>
                     </div>
                     <div
-                        v-if="
-                            admission_student.data.status == 'DRAFT' &&
-                            admission_student.data.status == 'VERIFIED' &&
-                            admission_student.data.status == 'UNVERIFIED'
-                        "
+                        v-if="admission_student.data.status == 'DRAFT' || admission_student.data.status == 'UNVERIFIED'"
                         class="flex justify-start space-x-4"
                     >
                         <Link
